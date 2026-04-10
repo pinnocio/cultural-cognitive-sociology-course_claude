@@ -1,0 +1,138 @@
+---
+title: "Cultural and Cognitive Sociology"
+subtitle: "A Graduate Seminar with Methods Laboratory"
+author: "MA Graduate Seminar"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+description: |
+  A rigorous, methodologically integrated graduate course in Cultural and
+  Cognitive Sociology. Covers theory, quantitative methods (LCA, EFA/CFA,
+  SEM, MCA, regression), qualitative methods, and computational approaches.
+  Built for MA students with thesis and doctoral development in mind.
+url: ''
+cover-image: ''
+github-repo: ''
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo       = TRUE,
+  warning    = FALSE,
+  message    = FALSE,
+  fig.width  = 8,
+  fig.height = 5,
+  fig.align  = "center",
+  cache      = FALSE,
+  tidy       = FALSE
+)
+
+# Reproducibility
+set.seed(20240101)
+```
+
+# Preface {-}
+
+## How This Course Is Organized {-}
+
+This course runs on three interlocking tracks across fifteen weeks:
+
+**Track A — Theory.** The conceptual architecture of cultural and cognitive
+sociology: what the field claims, what it disputes, and where its active
+frontiers are.
+
+**Track B — Methods Laboratory.** Operational implementation of the methods
+used to study cultural and cognitive phenomena. Every theoretical module has
+a corresponding lab. Code is written to run, not to illustrate.
+
+**Track C — Research Development.** Four cumulative assignments scaffold a
+thesis-quality research design across the semester. The final deliverable
+(Assignment 4) is a complete research design paper, 7,000–10,000 words.
+
+The course does not treat theory and methods as separable. Method selection
+is a theoretical act. Operationalization decisions carry ontological
+commitments. These connections are made explicit throughout.
+
+---
+
+## Pedagogical Principles {-}
+
+1. **Constructs before measures.** Every quantitative exercise begins with
+   the theoretical construct, then asks how (and whether) it can be
+   operationalized with the available data.
+
+2. **Replication before innovation.** Lab exercises begin by replicating
+   published results. Only once a method is understood as implemented do
+   students modify and extend it.
+
+3. **Failure is data.** When a model fits poorly, when a factor structure
+   does not replicate, when a class solution is theoretically uninterpretable
+   — this is informative, not a mistake to be hidden.
+
+4. **Pre-registration as discipline.** Assignment 3 requires a pre-registration
+   document before analysis. This trains the habit of separating confirmatory
+   from exploratory inference.
+
+---
+
+## Prerequisites {-}
+
+Students should arrive with:
+
+- Introductory graduate statistics (regression, basic probability)
+- Working R installation (≥ 4.2.0)
+- Familiarity with `tidyverse` data manipulation
+
+No prior SEM, LCA, or MCA is assumed. These are built from scratch in the
+methods labs.
+
+Run the following to install all packages used in this course:
+
+```{r install-packages, eval=FALSE}
+source("packages.R")
+```
+
+---
+
+## Datasets Used {-}
+
+| Dataset | Source | Access |
+|---------|--------|--------|
+| World Values Survey (WVS) Wave 7 | worldvaluessurvey.org | Free registration |
+| European Social Survey (ESS) Round 10 | europeansocialsurvey.org | Free registration |
+| General Social Survey (GSS) 2022 | gss.norc.org | Free download |
+| ISSP Religion Module III | issp.org | Free download |
+| Google Books Ngrams | books.google.com/ngrams | API / bulk download |
+| `poLCA` built-in datasets | R package | Installed with package |
+| `lavaan` built-in datasets | R package | Installed with package |
+
+Where external data require registration, the lab sections provide
+code to load and clean the data once downloaded, plus synthetic
+equivalents that mirror the variable structure for in-class use.
+
+---
+
+## Assignment Overview {-}
+
+| Assignment | Due | Weight | Description |
+|------------|-----|--------|-------------|
+| A1: Conceptual Map | Week 3 | 15% | Trace one construct across five empirical studies |
+| A2: Data Exploration | Week 6 | 20% | Research question + preliminary descriptives from a real dataset |
+| A3: Pre-Registration | Week 10 | 25% | Full analytic plan, pre-specified, OSF-format |
+| A4: Research Design Paper | Week 15 | 40% | 7,000–10,000 words; complete design or partial empirical analysis |
+
+---
+
+## A Note on Reproducibility {-}
+
+All lab code sets a random seed explicitly. Results should be fully
+reproducible across machines given the same package versions. Session
+information is printed at the end of each chapter. If your results
+diverge, check package versions first.
+
+```{r session-info-preface, collapse=TRUE}
+R.version.string
+```

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1 Computational Approaches to Culture | 07-computational.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1 Computational Approaches to Culture | 07-computational.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1 Computational Approaches to Culture | 07-computational.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cultural & Cognitive Sociology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#computational"><i class="fa fa-check"></i><b>1</b> Computational Approaches to Culture</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#the-scale-advantage-and-its-limits"><i class="fa fa-check"></i><b>1.1</b> 7.1 The Scale Advantage and Its Limits</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#topic-modeling-lda"><i class="fa fa-check"></i><b>1.2</b> 7.2 Topic Modeling (LDA)</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#lab7a"><i class="fa fa-check"></i><b>1.3</b> Lab 7a: Topic Modeling with <code>topicmodels</code></a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#lab7b"><i class="fa fa-check"></i><b>1.4</b> Lab 7b: Belief Network Analysis</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#core-readings"><i class="fa fa-check"></i>Core Readings</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com" target="blank">Source</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="computational" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Week 1</span> Computational Approaches to Culture<a href="#computational" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Weeks 13–14 | Methods Lab 7: Topic Models, Word Embeddings, Belief Networks</strong></p>
+<hr />
+<div id="the-scale-advantage-and-its-limits" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 7.1 The Scale Advantage and Its Limits<a href="#the-scale-advantage-and-its-limits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Computational methods operate on data at scales unavailable to
+traditional sociology: millions of documents, decades of text,
+behavioral trace data from digital platforms. This creates genuine
+analytical possibilities — but also specific risks.</p>
+<p><strong>What computational methods add:</strong></p>
+<ul>
+<li><em>Historical depth</em>: Google Books Ngrams corpus covers 500 years of
+English-language text. Changes in word co-occurrence patterns over
+time can be used to track shifts in cultural meaning.</li>
+<li><em>Breadth</em>: A topic model applied to 100,000 grant proposals (DiMaggio,
+Nag &amp; Blei, 2013) can identify discursive shifts invisible to any
+manual reader.</li>
+<li><em>Consistency</em>: Algorithms apply the same coding rules to every document.
+This is a different kind of consistency than intersubjective agreement.</li>
+</ul>
+<p><strong>What computational methods do not add:</strong></p>
+<ul>
+<li><em>Interpretive validity</em>: Topics in LDA are distributions over words.
+Whether “Topic 3” is correctly labeled “democratic legitimation” is a
+human interpretive judgment, not an algorithmic output.</li>
+<li><em>Causal inference</em>: Observing that a word’s cultural associations
+changed between 1950 and 2000 does not identify what caused the change.</li>
+<li><em>Depth</em>: Counting word frequencies is not the same as understanding
+what a text means.</li>
+</ul>
+<div class="caution-box">
+<p><strong>The garbage in problem.</strong> Computational methods are particularly
+sensitive to corpus composition decisions. Which texts are included?
+Which excluded? The Google Books corpus overrepresents academic and
+literary text; underrepresents oral culture, ephemeral texts, and
+non-print media. Kozlowski et al. (2019) acknowledge this limitation
+but cannot fully resolve it. Corpus decisions are theoretical decisions
+and should be treated as such.</p>
+</div>
+<hr />
+</div>
+<div id="topic-modeling-lda" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 7.2 Topic Modeling (LDA)<a href="#topic-modeling-lda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Latent Dirichlet Allocation (LDA) is a generative probabilistic model.
+The assumed generative process for a document:</p>
+<ol style="list-style-type: decimal">
+<li>Draw a topic distribution <span class="math inline">\(\theta_d \sim \text{Dir}(\alpha)\)</span> for document <span class="math inline">\(d\)</span></li>
+<li>For each word position: draw topic <span class="math inline">\(z \sim \text{Multinomial}(\theta_d)\)</span></li>
+<li>Draw word <span class="math inline">\(w \sim \text{Multinomial}(\beta_z)\)</span>, where <span class="math inline">\(\beta_z\)</span> is
+the word distribution of topic <span class="math inline">\(z\)</span></li>
+</ol>
+<p>After fitting, inference produces:
+- <span class="math inline">\(\theta_d\)</span>: each document’s mixture of topics (document-topic matrix)
+- <span class="math inline">\(\beta_z\)</span>: each topic’s distribution over words (topic-word matrix)</p>
+<p><strong>Hyperparameters</strong>: <span class="math inline">\(\alpha\)</span> (document-topic sparsity) and <span class="math inline">\(\eta\)</span> (topic-
+word sparsity). High <span class="math inline">\(\alpha\)</span> = documents mix many topics; low <span class="math inline">\(\alpha\)</span> =
+documents focus on few topics.</p>
+<p><strong>Number of topics (<span class="math inline">\(K\)</span>)</strong>: No fully automatic solution. Common approaches:
+perplexity on held-out data, coherence scores (C_v, NPMI), and —
+most importantly — interpretive validity of the resulting topics.</p>
+<hr />
+</div>
+<div id="lab7a" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Lab 7a: Topic Modeling with <code>topicmodels</code><a href="#lab7a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>We apply LDA to a corpus of simulated sociological abstracts, selected
+to span multiple research traditions. The goal: identify latent thematic
+structure and evaluate topic interpretability.</p>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(topicmodels)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240107</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Simulated abstract corpus (N = 120 abstracts)</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># Four latent topic clusters:</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#   T1: Bourdieu / class / taste / cultural capital</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#   T2: Religion / morality / values / belief</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co">#   T3: Networks / trust / social capital / civic participation</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">#   T4: Institutions / logics / organizations / fields</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="co"># Topic-specific vocabulary</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>vocab_bourdieu  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;capital&quot;</span>, <span class="st">&quot;field&quot;</span>, <span class="st">&quot;habitus&quot;</span>, <span class="st">&quot;class&quot;</span>, <span class="st">&quot;distinction&quot;</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>                     <span class="st">&quot;taste&quot;</span>, <span class="st">&quot;practice&quot;</span>, <span class="st">&quot;reproduction&quot;</span>, <span class="st">&quot;cultural&quot;</span>, <span class="st">&quot;symbolic&quot;</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>                     <span class="st">&quot;stratification&quot;</span>, <span class="st">&quot;consumption&quot;</span>, <span class="st">&quot;education&quot;</span>, <span class="st">&quot;status&quot;</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>vocab_religion  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;religion&quot;</span>, <span class="st">&quot;belief&quot;</span>, <span class="st">&quot;prayer&quot;</span>, <span class="st">&quot;church&quot;</span>, <span class="st">&quot;faith&quot;</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>                     <span class="st">&quot;moral&quot;</span>, <span class="st">&quot;sacred&quot;</span>, <span class="st">&quot;ritual&quot;</span>, <span class="st">&quot;spirituality&quot;</span>, <span class="st">&quot;God&quot;</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>                     <span class="st">&quot;denomination&quot;</span>, <span class="st">&quot;attendance&quot;</span>, <span class="st">&quot;evangelical&quot;</span>, <span class="st">&quot;secular&quot;</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>vocab_networks  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;network&quot;</span>, <span class="st">&quot;trust&quot;</span>, <span class="st">&quot;ties&quot;</span>, <span class="st">&quot;reciprocity&quot;</span>, <span class="st">&quot;civic&quot;</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>                     <span class="st">&quot;participation&quot;</span>, <span class="st">&quot;social&quot;</span>, <span class="st">&quot;capital&quot;</span>, <span class="st">&quot;bridging&quot;</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>                     <span class="st">&quot;bonding&quot;</span>, <span class="st">&quot;community&quot;</span>, <span class="st">&quot;cooperation&quot;</span>, <span class="st">&quot;association&quot;</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>vocab_instit    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;institution&quot;</span>, <span class="st">&quot;logic&quot;</span>, <span class="st">&quot;organization&quot;</span>, <span class="st">&quot;field&quot;</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>                     <span class="st">&quot;legitimacy&quot;</span>, <span class="st">&quot;isomorphism&quot;</span>, <span class="st">&quot;practice&quot;</span>, <span class="st">&quot;governance&quot;</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>                     <span class="st">&quot;professions&quot;</span>, <span class="st">&quot;bureaucracy&quot;</span>, <span class="st">&quot;norms&quot;</span>, <span class="st">&quot;policy&quot;</span>, <span class="st">&quot;actor&quot;</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="co"># Common sociological vocabulary (noise)</span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>vocab_common    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;study&quot;</span>, <span class="st">&quot;analysis&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;results&quot;</span>, <span class="st">&quot;theory&quot;</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>                     <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;findings&quot;</span>, <span class="st">&quot;argue&quot;</span>, <span class="st">&quot;examine&quot;</span>, <span class="st">&quot;suggest&quot;</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>                     <span class="st">&quot;show&quot;</span>, <span class="st">&quot;using&quot;</span>, <span class="st">&quot;among&quot;</span>, <span class="st">&quot;also&quot;</span>, <span class="st">&quot;significant&quot;</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>                     <span class="st">&quot;effect&quot;</span>, <span class="st">&quot;models&quot;</span>, <span class="st">&quot;survey&quot;</span>, <span class="st">&quot;interview&quot;</span>, <span class="st">&quot;qualitative&quot;</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>generate_abstract <span class="ot">&lt;-</span> <span class="cf">function</span>(primary_vocab, <span class="at">n_words =</span> <span class="dv">80</span>) {</span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>  words <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a>    <span class="fu">sample</span>(primary_vocab, <span class="fu">round</span>(n_words <span class="sc">*</span> <span class="fl">0.55</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>    <span class="fu">sample</span>(vocab_common,  <span class="fu">round</span>(n_words <span class="sc">*</span> <span class="fl">0.35</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>    <span class="fu">sample</span>(<span class="fu">c</span>(vocab_bourdieu, vocab_religion, vocab_networks, vocab_instit),</span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>           <span class="fu">round</span>(n_words <span class="sc">*</span> <span class="fl">0.10</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a>  )</span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="fu">sample</span>(words), <span class="at">collapse =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a>}</span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>abstracts <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>  <span class="at">doc_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">120</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>  <span class="at">true_topic =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Bourdieu/Class&quot;</span>, <span class="st">&quot;Religion/Morality&quot;</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>                      <span class="st">&quot;Networks/Trust&quot;</span>, <span class="st">&quot;Institutions/Logics&quot;</span>), <span class="at">each =</span> <span class="dv">30</span>),</span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">c</span>(</span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">30</span>, <span class="fu">generate_abstract</span>(vocab_bourdieu)),</span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">30</span>, <span class="fu">generate_abstract</span>(vocab_religion)),</span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">30</span>, <span class="fu">generate_abstract</span>(vocab_networks)),</span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">30</span>, <span class="fu">generate_abstract</span>(vocab_instit))</span>
+<span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a>  )</span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a>)</span>
+<span id="cb1-63"><a href="#cb1-63" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Corpus: N =&quot;</span>, <span class="fu">nrow</span>(abstracts), <span class="st">&quot;abstracts</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Corpus: N = 120 abstracts</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;True topic distribution:&quot;</span>, <span class="fu">table</span>(abstracts<span class="sc">$</span>true_topic), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## True topic distribution: 30 30 30 30</code></pre>
+<p>Before we can run LDA, we need to convert the raw text into a format the model can consume: a <strong>Document-Term Matrix (DTM)</strong>. A DTM is a rectangular array where each row is one document, each column is one unique word (term), and each cell contains the count of that word in that document. If a corpus has 120 documents and 500 unique words, the DTM has 120 rows and 500 columns — most cells will be zero, because any given document uses only a small fraction of the total vocabulary.</p>
+<p>Two preprocessing decisions matter here. First, we remove <strong>stop words</strong> (common function words like “the”, “and”, “of”). These words carry no topical information — every document uses them at roughly the same rate — so including them would drown out the substantively meaningful variation. Second, we <strong>filter by document frequency</strong>: we remove words that appear in fewer than 3 documents (too rare to anchor a topic reliably) and words that appear in more than 80% of documents (too universal to discriminate between topics). Without this filtering, the model’s vocabulary is dominated by noise terms that appear at random across all documents, making topics harder to interpret and slowing computation.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Build Document-Term Matrix</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># Remove stop words; filter rare and common terms</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>dtm_tidy <span class="ot">&lt;-</span> abstracts <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">&quot;word&quot;</span>) <span class="sc">%&gt;%</span>   <span class="co"># drop function words (the, and, of...)</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">nchar</span>(word) <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span>              <span class="co"># drop very short tokens (e.g. &quot;vs&quot;, &quot;i&quot;)</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="fu">count</span>(doc_id, word, <span class="at">name =</span> <span class="st">&quot;n&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="co"># Remove words appearing in &lt; 3 or &gt; 80% of documents:</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  <span class="co"># rare words add noise; near-universal words don&#39;t differentiate topics</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>  <span class="fu">group_by</span>(word) <span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">doc_freq =</span> <span class="fu">n_distinct</span>(doc_id[n <span class="sc">&gt;</span> <span class="dv">0</span>])) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>  <span class="fu">filter</span>(doc_freq <span class="sc">&gt;=</span> <span class="dv">3</span>, doc_freq <span class="sc">&lt;=</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">max</span>(doc_id))</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> dtm_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>  <span class="fu">cast_dtm</span>(doc_id, word, n)   <span class="co"># reshape from tidy (one row per doc-word pair)</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>                               <span class="co"># to wide DTM format required by topicmodels</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;DTM dimensions:&quot;</span>, <span class="fu">nrow</span>(dtm), <span class="st">&quot;documents ×&quot;</span>, <span class="fu">ncol</span>(dtm), <span class="st">&quot;terms</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## DTM dimensions: 120 documents × 67 terms</code></pre>
+<div class="lab-box">
+<p><strong>Reading the output.</strong> The DTM dimensions tell you the scope of what the model will work with. The row count (120) confirms all documents are present. The column count — the number of retained terms — will be substantially smaller than the raw vocabulary because stop word removal and frequency filtering eliminate a large share of unique tokens. A raw corpus of 120 abstracts might contain 400–600 unique non-stop tokens, but after filtering out terms appearing in fewer than 3 documents or more than 80% of documents, the retained vocabulary typically drops to roughly 30–70% of that figure. This reduction is healthy: the terms that survive are those that are both common enough to be reliable signals and distinctive enough to separate topics. If the retained vocabulary were still in the hundreds, you might inspect whether the frequency thresholds are appropriate for your corpus size.</p>
+</div>
+<p>Before fitting the model, two decisions deserve explanation. The <code>control = list(seed = 20240107)</code> argument fixes the random number generator seed. LDA is initialized randomly — different starting points can produce different topic orderings (though usually similar topic content). Setting a seed makes the results exactly reproducible: anyone running this code will get the same output. In research you should always report the seed. The argument <code>k = 4</code> tells the model how many topics to find. LDA cannot discover K on its own; you must specify it. Here we set K = 4 because we know the ground truth — we generated the corpus from four topic vocabularies. In real research you don’t know the true K, so you fit models across a range of values and compare them using perplexity, coherence scores, and — most importantly — whether the resulting topics make substantive sense.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Fit LDA models for K = 2, 3, 4, 5, 6</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># Compare perplexity (lower = better fit on held-out data)</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># For reproducibility, fix K=4 (matching true topics)</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>lda_4 <span class="ot">&lt;-</span> <span class="fu">LDA</span>(dtm, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">control =</span> <span class="fu">list</span>(<span class="at">seed =</span> <span class="dv">20240107</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co"># Perplexity comparison (using full data; held-out is better in practice)</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>perplexity_df <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>, <span class="cf">function</span>(k) {</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">LDA</span>(dtm, <span class="at">k =</span> k, <span class="at">control =</span> <span class="fu">list</span>(<span class="at">seed =</span> <span class="dv">20240107</span>))</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">K =</span> k, <span class="at">Perplexity =</span> <span class="fu">perplexity</span>(m, <span class="at">newdata =</span> dtm))</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>})</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>perplexity_df <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Table 7.1: LDA perplexity by number of topics. Lower perplexity = better fit. Note: perplexity alone does not determine the optimal K — interpretability must also be considered.&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:tm-fit">Table 1.1: </span><span id="tab:tm-fit">Table 1.2: </span>Table 7.1: LDA perplexity by number of topics. Lower perplexity = better fit. Note: perplexity alone does not determine the optimal K — interpretability must also be considered.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+K
+</th>
+<th style="text-align:right;">
+Perplexity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+49.9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+43.7
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+37.3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+37.6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+37.9
+</td>
+</tr>
+</tbody>
+</table>
+<div class="lab-box">
+<p><strong>Reading the output (Table 7.1).</strong> Perplexity measures how surprised the model is by the text — specifically, how well the learned topic distributions predict word occurrences. Lower perplexity means the model fits the data better. You will typically see perplexity fall as K increases, because more topics give the model more flexibility to account for word patterns. This creates a problem: a model with K = 50 will almost always have lower perplexity than K = 4, but the 50 topics may be fragmented, redundant, or uninterpretable.</p>
+<p>In this corpus, K = 4 is the correct answer for a reason perplexity cannot tell you: the data were generated from exactly four distinct vocabularies. A perplexity curve may show the steepest improvement going from K = 2 to K = 3 to K = 4, with smaller gains thereafter — an “elbow” that points toward K = 4. But even that pattern is not guaranteed from perplexity alone. The decisive test is topic interpretability: do the top terms of each topic form a coherent, nameable cluster? That requires human judgment, which is what Figure 7.1 will support.</p>
+<p>One important caveat: here we compute perplexity on the same data used to fit the model. In rigorous practice, you would hold out a random 20% of documents, fit the model on the remaining 80%, and evaluate perplexity on the held-out set. In-sample perplexity is optimistic and should be treated as an approximation.</p>
+</div>
+<p>The beta matrix is the word side of LDA’s output. For each topic, it gives the probability of every word in the vocabulary given that topic. Words with high beta for a topic are “characteristic” of that topic — they appear in that topic’s documents at above-chance rates. Plotting the top-beta terms is the standard first step in assigning human labels to topics.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Top terms per topic</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>terms_df <span class="ot">&lt;-</span> <span class="fu">tidy</span>(lda_4, <span class="at">matrix =</span> <span class="st">&quot;beta&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">slice_max</span>(beta, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    <span class="at">topic_label =</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(<span class="fu">as.character</span>(topic),</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>      <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 1: Networks/Trust&quot;</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>      <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 2: Religion/Morality&quot;</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>      <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 3: Institutions/Logics&quot;</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>      <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 4: Bourdieu/Class&quot;</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>    ),</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>    <span class="at">term =</span> <span class="fu">reorder_within</span>(term, beta, topic)</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>  )</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="fu">ggplot</span>(terms_df, <span class="fu">aes</span>(<span class="at">x =</span> term, <span class="at">y =</span> beta, <span class="at">fill =</span> <span class="fu">as.factor</span>(topic))) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> topic_label, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>  <span class="fu">scale_x_reordered</span>() <span class="sc">+</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#27ae60&quot;</span>, <span class="st">&quot;#e67e22&quot;</span>, <span class="st">&quot;#8e44ad&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Top 10 Terms per LDA Topic (K=4)&quot;</span>,</span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a>    <span class="at">x     =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Beta (term probability given topic)&quot;</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:tm-top-terms"></span>
+<img src="07-computational_files/figure-html/tm-top-terms-1.png" alt="Figure 7.1: Top 10 terms per topic, by beta (probability of term given topic). Topic labels are human-assigned after inspection of the term lists." width="672" />
+<p class="caption">
+Figure 1.1: Figure 7.1: Top 10 terms per topic, by beta (probability of term given topic). Topic labels are human-assigned after inspection of the term lists.
+</p>
+</div>
+<div class="lab-box">
+<p><strong>Reading the output (Figure 7.1).</strong> Each panel shows the ten words most characteristic of one topic. The x-axis (beta) is the probability of that word given the topic — in a vocabulary of, say, 50 terms, a beta of 0.04 means that word accounts for 4% of all word tokens in that topic. Higher bars mean the word is more tightly associated with that topic and less spread across others.</p>
+<p>To assign a human label, scan the top terms and ask: what concept or research tradition would produce this word list? A topic dominated by “habitus,” “class,” “distinction,” “taste,” and “capital” is clearly Bourdieusian cultural sociology. A topic with “church,” “prayer,” “sacred,” “evangelical,” and “ritual” is clearly the sociology of religion. The label you assign is an interpretive act — it is your claim about what latent theme the model has detected.</p>
+<p>A “bad” topic is one whose top terms do not form a coherent cluster: for example, a topic mixing “prayer,” “market,” “network,” and “climate” with similar beta values. That pattern signals that the model is fitting noise, not a real thematic structure, and is often a symptom of the wrong K. In this simulated corpus, the topics should be clean and easily labeled because the data were generated from distinct vocabularies. In real research corpora, topic interpretability is harder-won and should be evaluated carefully before accepting any labeling.</p>
+</div>
+<p>So far we have examined beta — the word side of the model, describing what each topic is made of. The gamma matrix is the complementary document side. For every document, gamma gives the probability of that document belonging to each topic. If a document has gamma = 0.90 for Topic 2 and gamma values near 0.03 for the other three topics, it is effectively a “pure” Topic 2 document. If gamma values are spread more evenly — say, 0.40 / 0.35 / 0.15 / 0.10 — the document draws on multiple topics simultaneously. Real documents, unlike our simulated abstracts, are often genuinely mixed.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Document-topic probabilities (gamma)</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>gamma_df <span class="ot">&lt;-</span> <span class="fu">tidy</span>(lda_4, <span class="at">matrix =</span> <span class="st">&quot;gamma&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">left_join</span>(abstracts <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">doc_id =</span> doc_id, true_topic) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">doc_id =</span> <span class="fu">as.character</span>(doc_id)),</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;document&quot;</span> <span class="ot">=</span> <span class="st">&quot;doc_id&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>    <span class="at">topic_label =</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(<span class="fu">as.character</span>(topic),</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>      <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 1&quot;</span>, <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 2&quot;</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>      <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 3&quot;</span>, <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="st">&quot;Topic 4&quot;</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>    )</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>  )</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="fu">ggplot</span>(gamma_df, <span class="fu">aes</span>(<span class="at">x =</span> document, <span class="at">y =</span> gamma, <span class="at">fill =</span> topic_label)) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> true_topic, <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#27ae60&quot;</span>, <span class="st">&quot;#e67e22&quot;</span>, <span class="st">&quot;#8e44ad&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Document-Topic Distributions (Gamma)&quot;</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Documents faceted by true topic; stacked bars = inferred topic mixture&quot;</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">&quot;Document ID&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Gamma (topic proportion)&quot;</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>    <span class="at">fill     =</span> <span class="st">&quot;Inferred topic&quot;</span></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(), <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:tm-doc-topic"></span>
+<img src="07-computational_files/figure-html/tm-doc-topic-1.png" alt="Figure 7.2: Document-topic gamma distributions. Each bar represents a document's topic mixture. Documents cluster strongly into their true topic, with some cross-topic mixing." width="672" />
+<p class="caption">
+Figure 1.2: Figure 7.2: Document-topic gamma distributions. Each bar represents a document’s topic mixture. Documents cluster strongly into their true topic, with some cross-topic mixing.
+</p>
+</div>
+<div class="lab-box">
+<p><strong>Reading the output (Figure 7.2).</strong> Each stacked bar is one document. The height of the colored segment for each topic is that document’s gamma for that topic. The four panels separate documents by their known true topic.</p>
+<p>Look for two things. First, <strong>dominance</strong>: in each panel, is one color (one inferred topic) consistently taking up most of the bar? If documents generated from the Bourdieu vocabulary are predominantly assigned to Topic 4 (Bourdieu/Class), the model is recovering the true structure. Second, <strong>correspondence</strong>: does the dominant inferred topic match the panel label? In this simulated corpus, correspondence should be high because the topic vocabularies are distinct. Imperfect correspondence — a Bourdieu document assigned mostly to Institutions/Logics — can occur because both topics share terms like “field” and “practice.”</p>
+<p>The degree of mixing across topics (bars with three or four visible colors) tells you whether documents are “pure” or genuinely multi-thematic. In real research corpora, substantial mixing is normal and often theoretically interesting: a paper can engage Bourdieusian theory within an institutional logics framework. What you should flag as a model quality concern is systematic misclassification — an entire true-topic panel dominated by the wrong inferred topic — which would suggest either the wrong K or topics that are not sufficiently distinct.</p>
+</div>
+<hr />
+</div>
+<div id="lab7b" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Lab 7b: Belief Network Analysis<a href="#lab7b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>Boutyline &amp; Vaisey (2017) propose analyzing the <em>network structure</em> of
+ideological belief systems. Attitude items are treated as nodes; their
+partial correlations as edges. Network density = ideological constraint;
+modularity = ideological compartmentalization.</p>
+<p>We replicate this approach on a simulated attitude battery.</p>
+</div>
+<p>A belief network is not a network of people. It is a network of <strong>attitudes</strong>. Each node represents one survey item (e.g., “support for redistribution,” “views on abortion”). Each edge represents the statistical association between two attitudes — how strongly knowing someone’s position on one item predicts their position on another. A denser network, with more and stronger edges, means the attitude items are more tightly intercorrelated: knowing one attitude gives you substantial information about all the others. This is what Boutyline &amp; Vaisey (2017), following Converse (1964), call <strong>ideological constraint</strong> — the degree to which an individual’s attitudes hang together as a coherent, internally consistent system rather than being held independently.</p>
+<p>The network approach to constraint has a specific advantage over traditional factor-analytic approaches: it does not assume a single underlying dimension, and it can reveal which specific attitude pairs are connected and which are isolated, allowing you to map the architecture of a belief system rather than just measure its overall cohesion.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">library</span>(qgraph)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240108</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co"># Simulate belief system data (N = 600)</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co"># 12 attitude items across 3 ideological domains:</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#   - Economic attitudes (redistribution, welfare, taxation)</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#   - Social attitudes (abortion, gender, immigration)</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#   - Environmental attitudes</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co"># Two groups: high-constraint ideologues vs. low-constraint non-ideologues</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>n_ideologue <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>n_nonideol  <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co"># Ideologues: single underlying dimension drives all attitudes</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>ideol_factor <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_ideologue)</span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>items_ideologue <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>  <span class="co"># Economic domain (high loadings)</span></span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a>  <span class="at">econ_redistrib =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.75</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.66</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>  <span class="at">econ_welfare   =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.70</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.71</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a>  <span class="at">econ_tax       =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.72</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.69</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a>  <span class="at">econ_market    =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="sc">-</span><span class="fl">0.68</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.73</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a>  <span class="co"># Social domain (high loadings)</span></span>
+<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a>  <span class="at">soc_abortion   =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.78</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.62</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>  <span class="at">soc_gender     =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.72</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.69</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a>  <span class="at">soc_immigr     =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.65</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.76</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a>  <span class="at">soc_religion   =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="sc">-</span><span class="fl">0.60</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.80</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>  <span class="co"># Environmental domain (moderate loadings — cross-cutting in ideologues)</span></span>
+<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a>  <span class="at">env_climate    =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.55</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.83</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a>  <span class="at">env_regulate   =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fl">0.50</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.86</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a>  <span class="at">env_nuclear    =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="sc">-</span><span class="fl">0.30</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.95</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a>  <span class="at">env_tech       =</span> <span class="fu">round</span>(scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="sc">-</span><span class="fl">0.25</span> <span class="sc">*</span> ideol_factor <span class="sc">+</span> <span class="fu">rnorm</span>(n_ideologue, <span class="dv">0</span>, <span class="fl">0.96</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>))),</span>
+<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a></span>
+<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">&quot;High constraint&quot;</span></span>
+<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a>)</span>
+<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a><span class="co"># Non-ideologues: attitude items are relatively independent</span></span>
+<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a>items_nonideol <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a>  <span class="at">econ_redistrib =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-46"><a href="#cb10-46" tabindex="-1"></a>  <span class="at">econ_welfare   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-47"><a href="#cb10-47" tabindex="-1"></a>  <span class="at">econ_tax       =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-48"><a href="#cb10-48" tabindex="-1"></a>  <span class="at">econ_market    =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-49"><a href="#cb10-49" tabindex="-1"></a>  <span class="at">soc_abortion   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-50"><a href="#cb10-50" tabindex="-1"></a>  <span class="at">soc_gender     =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-51"><a href="#cb10-51" tabindex="-1"></a>  <span class="at">soc_immigr     =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-52"><a href="#cb10-52" tabindex="-1"></a>  <span class="at">soc_religion   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-53"><a href="#cb10-53" tabindex="-1"></a>  <span class="at">env_climate    =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-54"><a href="#cb10-54" tabindex="-1"></a>  <span class="at">env_regulate   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-55"><a href="#cb10-55" tabindex="-1"></a>  <span class="at">env_nuclear    =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-56"><a href="#cb10-56" tabindex="-1"></a>  <span class="at">env_tech       =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, n_nonideol, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-57"><a href="#cb10-57" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">&quot;Low constraint&quot;</span></span>
+<span id="cb10-58"><a href="#cb10-58" tabindex="-1"></a>)</span>
+<span id="cb10-59"><a href="#cb10-59" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" tabindex="-1"></a>belief_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(items_ideologue, items_nonideol)</span></code></pre></div>
+<div class="lab-box">
+<p><strong>What the two groups represent.</strong> The high-constraint group operationalizes Converse’s (1964) concept of the ideological “believer”: all 12 attitude items are generated by adding noise to a single latent factor (<code>ideol_factor</code>). Someone who scores high on this factor supports redistribution, opposes free markets, supports abortion rights, and favors climate regulation — a consistent left-wing package. The cross-item correlations are strong because all items reflect the same underlying dimension.</p>
+<p>The low-constraint group operationalizes the non-ideologue: each of the 12 items is sampled independently and uniformly from the 1–7 scale. These respondents’ attitudes are essentially random with respect to each other. Knowing they strongly support redistribution tells you nothing about their views on abortion or climate regulation. The expected correlation between any two items is zero. In network terms, a near-empty graph.</p>
+<p>This contrast is a clean simulation of the empirical pattern Converse documented in 1964 survey data: most Americans’ attitudes were poorly constrained, while political elites’ attitudes were tightly organized around a liberal-conservative dimension.</p>
+</div>
+<p>The <code>qgraph()</code> function from the <code>qgraph</code> package visualizes the correlation matrix as a network. It treats the matrix as an adjacency matrix: each attitude item is a node, and the correlation between any pair of items becomes an edge. Edge thickness encodes correlation magnitude; edge color encodes sign (typically green for positive, red for negative). The <code>minimum = 0.05</code> argument suppresses edges with absolute correlation below 0.05, which removes visual clutter from near-zero associations without distorting the interpretable structure. Node color here encodes attitude domain (blue = economic, orange = social, green = environmental), making it easy to see whether within-domain or cross-domain connections are stronger.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>item_cols <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">names</span>(belief_df), <span class="st">&quot;group&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>colors    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;#e67e22&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;#27ae60&quot;</span>, <span class="dv">4</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>node_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="st">&quot;Redistrib.&quot;</span>, <span class="st">&quot;Welfare&quot;</span>, <span class="st">&quot;Tax&quot;</span>, <span class="st">&quot;Market&quot;</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="st">&quot;Abortion&quot;</span>, <span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Immigr.&quot;</span>, <span class="st">&quot;Religion&quot;</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>  <span class="st">&quot;Climate&quot;</span>, <span class="st">&quot;Regulate&quot;</span>, <span class="st">&quot;Nuclear&quot;</span>, <span class="st">&quot;Tech&quot;</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>)</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co"># High-constraint network</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>cor_high <span class="ot">&lt;-</span> <span class="fu">cor</span>(items_ideologue <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>group))</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>cor_low  <span class="ot">&lt;-</span> <span class="fu">cor</span>(items_nonideol  <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>group))</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="fu">qgraph</span>(cor_high,</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>       <span class="at">layout    =</span> <span class="st">&quot;spring&quot;</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>       <span class="at">title     =</span> <span class="st">&quot;High-Constraint Belief Network&quot;</span>,</span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>       <span class="at">color     =</span> colors,</span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>       <span class="at">labels    =</span> node_labels,</span>
+<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a>       <span class="at">label.cex =</span> <span class="fl">0.85</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a>       <span class="at">minimum   =</span> <span class="fl">0.05</span>,   <span class="co"># suppress near-zero edges for visual clarity</span></span>
+<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a>       <span class="at">cut       =</span> <span class="dv">0</span>,</span>
+<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a>       <span class="at">vsize     =</span> <span class="dv">8</span>,</span>
+<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>       <span class="at">graph     =</span> <span class="st">&quot;cor&quot;</span>,</span>
+<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>       <span class="at">theme     =</span> <span class="st">&quot;colorblind&quot;</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a><span class="fu">qgraph</span>(cor_low,</span>
+<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a>       <span class="at">layout    =</span> <span class="st">&quot;spring&quot;</span>,</span>
+<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a>       <span class="at">title     =</span> <span class="st">&quot;Low-Constraint Belief Network&quot;</span>,</span>
+<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a>       <span class="at">color     =</span> colors,</span>
+<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a>       <span class="at">labels    =</span> node_labels,</span>
+<span id="cb11-32"><a href="#cb11-32" tabindex="-1"></a>       <span class="at">label.cex =</span> <span class="fl">0.85</span>,</span>
+<span id="cb11-33"><a href="#cb11-33" tabindex="-1"></a>       <span class="at">minimum   =</span> <span class="fl">0.05</span>,   <span class="co"># same threshold applied to both networks for comparability</span></span>
+<span id="cb11-34"><a href="#cb11-34" tabindex="-1"></a>       <span class="at">cut       =</span> <span class="dv">0</span>,</span>
+<span id="cb11-35"><a href="#cb11-35" tabindex="-1"></a>       <span class="at">vsize     =</span> <span class="dv">8</span>,</span>
+<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a>       <span class="at">graph     =</span> <span class="st">&quot;cor&quot;</span>,</span>
+<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a>       <span class="at">theme     =</span> <span class="st">&quot;colorblind&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:belief-network-plot"></span>
+<img src="07-computational_files/figure-html/belief-network-plot-1.png" alt="Figure 7.3: Belief networks for high-constraint (left) and low-constraint (right) groups. Edge weight = partial correlation between items (EBIC graphical LASSO). High-constraint network is denser, indicating ideological coherence. Node color = attitude domain." width="1152" />
+<p class="caption">
+Figure 1.3: Figure 7.3: Belief networks for high-constraint (left) and low-constraint (right) groups. Edge weight = partial correlation between items (EBIC graphical LASSO). High-constraint network is denser, indicating ideological coherence. Node color = attitude domain.
+</p>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="lab-box">
+<p><strong>Reading the output (Figure 7.3).</strong> The most immediate thing to notice is the visual density difference. The high-constraint network (left) should show many edges — thick lines connecting most or all nodes. The low-constraint network (right) should appear sparse, with few visible edges surviving the minimum = 0.05 threshold.</p>
+<p>Within the high-constraint network, look at which domains are most tightly internally connected. Economic attitudes (blue nodes) tend to form a tight cluster because all four items load strongly on the underlying factor. Social attitudes (orange) similarly cluster. Environmental attitudes (green) should show somewhat weaker internal connections and weaker cross-domain ties, because the environmental items were given lower factor loadings (0.25–0.55 versus 0.65–0.78 for the other domains). This variation in connection strength reflects the simulation design, but it also mirrors real-world findings: environmental attitudes in the U.S. are less tightly integrated into the liberal-conservative dimension than economic or social attitudes.</p>
+<p>Cross-domain edges — connections between, say, an economic item and a social item — are theoretically important. In the high-constraint network they should be present, reflecting the single underlying factor that drives all attitudes. Their presence is what makes the system “ideological” in Converse’s sense: the factor organizes attitudes across substantively different domains.</p>
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Network density: measure of ideological constraint</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>network_density <span class="ot">&lt;-</span> <span class="cf">function</span>(cor_matrix, <span class="at">threshold =</span> <span class="fl">0.10</span>) {</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  adj <span class="ot">&lt;-</span> <span class="fu">abs</span>(cor_matrix) <span class="sc">&gt;</span> threshold      <span class="co"># treat correlations above threshold as edges</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">diag</span>(adj) <span class="ot">&lt;-</span> <span class="dv">0</span>                          <span class="co"># a node cannot be connected to itself</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="fu">sum</span>(adj) <span class="sc">/</span> (<span class="fu">nrow</span>(adj) <span class="sc">*</span> (<span class="fu">nrow</span>(adj) <span class="sc">-</span> <span class="dv">1</span>)) <span class="co"># proportion of possible edges that exist</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>}</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>dens_high <span class="ot">&lt;-</span> <span class="fu">network_density</span>(cor_high)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>dens_low  <span class="ot">&lt;-</span> <span class="fu">network_density</span>(cor_low)</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Belief Network Density</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Belief Network Density</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;─────────────────────────────</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## ─────────────────────────────</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;High-constraint group:&quot;</span>, <span class="fu">round</span>(dens_high, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## High-constraint group: 0.985</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Low-constraint group: &quot;</span>, <span class="fu">round</span>(dens_low, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Low-constraint group:  0.106</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Density ratio:&quot;</span>, <span class="fu">round</span>(dens_high <span class="sc">/</span> dens_low, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Density ratio: 9.29</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Note: Higher density = more ideological constraint = attitudes are</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Note: Higher density = more ideological constraint = attitudes are</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;more strongly correlated (Boutyline &amp; Vaisey, 2017).</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## more strongly correlated (Boutyline &amp; Vaisey, 2017).</code></pre>
+<div class="lab-box">
+<p><strong>Reading the output.</strong> Network density is the proportion of all possible edges that actually exist above the correlation threshold. With 12 nodes, the maximum possible number of undirected edges is 12 × 11 / 2 = 66. A density of 0.80 means approximately 53 of those 66 possible connections are present; a density of 0.10 means only about 7 are.</p>
+<p>The density ratio (high-constraint density divided by low-constraint density) is the key comparative quantity. A ratio substantially greater than 1 — say, 4 or 5 — is strong evidence that the two groups differ in ideological structure, not just in the content of their attitudes. This is the core empirical claim of Boutyline &amp; Vaisey (2017): network density indexes constraint, and constraint varies systematically across social groups (by education, political engagement, partisan identity). In their empirical work on U.S. survey data, strong partisans and politically engaged respondents showed denser belief networks than non-partisans and the disengaged — a finding that would be missed by simply comparing group means on individual attitude items.</p>
+</div>
+<div class="caution-box">
+<p><strong>Methodological note: raw correlations vs. graphical LASSO.</strong> The analysis above uses raw (zero-order) correlations as edge weights. This means an edge between “redistribution” and “abortion” could reflect their direct association, but also any indirect path running through a third variable (e.g., both are correlated with “welfare,” which is correlated with both). In real research, Boutyline &amp; Vaisey (2017) and subsequent work recommend using <strong>EBIC graphical LASSO</strong> instead, available in <code>qgraph</code> via <code>graph = "glasso"</code>. Graphical LASSO estimates <em>partial</em> correlations — the association between two attitudes after controlling for all other attitudes simultaneously. This produces a sparser, more interpretable network where edges represent direct relationships rather than correlations that might be entirely mediated by a third attitude. In this lab we use raw correlations for computational simplicity and to keep the focus on the conceptual logic, but treat the graphical LASSO approach as the methodological standard for any publishable analysis.</p>
+</div>
+<hr />
+</div>
+<div id="core-readings" class="section level2 unnumbered hasAnchor">
+<h2>Core Readings<a href="#core-readings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul class="reading-list">
+<li>
+Kozlowski, A. C., Taddy, M., &amp; Evans, J. A. (2019). The Geometry of Culture. <em>American Sociological Review, 84</em>(5), 905–949. [Word embeddings for cultural meaning]
+</li>
+<li>
+DiMaggio, P., Nag, M., &amp; Blei, D. (2013). Exploiting Affinities Between Topic Modeling and the Sociological Perspective. <em>Poetics, 41</em>(6), 570–606.
+</li>
+<li>
+Boutyline, A., &amp; Vaisey, S. (2017). Belief Network Analysis: A Relational Approach to Understanding the Structure of Attitudes. <em>American Journal of Sociology, 122</em>(5), 1371–1447.
+</li>
+<li>
+Mohr, J. W., et al. (2020). <em>Measuring Culture</em>. Columbia University Press. Chapters 1, 4, 6.
+</li>
+<li>
+Blei, D. M., Ng, A. Y., &amp; Jordan, M. I. (2003). Latent Dirichlet Allocation. <em>Journal of Machine Learning Research, 3</em>, 993–1022. [LDA original paper]
+</li>
+<li>
+Grimmer, J., Roberts, M. E., &amp; Stewart, B. M. (2022). <em>Text as Data</em>. Princeton University Press. Chapters 1–3, 13.
+</li>
+</ul>
+<hr />
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.5.3 (2026-03-11 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26200)
+## 
+## Matrix products: default
+##   LAPACK version 3.12.1
+## 
+## locale:
+## [1] LC_COLLATE=English_Israel.utf8  LC_CTYPE=English_Israel.utf8   
+## [3] LC_MONETARY=English_Israel.utf8 LC_NUMERIC=C                   
+## [5] LC_TIME=English_Israel.utf8    
+## 
+## time zone: Asia/Jerusalem
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] qgraph_1.9.8         igraph_2.2.2         topicmodels_0.2-17  
+##  [4] ggrepel_0.9.8        tidytext_0.4.3       car_3.1-5           
+##  [7] carData_3.0-6        lmerTest_3.2-1       lme4_2.0-1          
+## [10] Matrix_1.7-4         lavaanPlot_0.8.1     semPlot_1.1.8       
+## [13] poLCA_1.6.0.2        MASS_7.3-65          scatterplot3d_0.3-45
+## [16] patchwork_1.3.2      kableExtra_1.4.0     factoextra_2.0.0    
+## [19] semTools_0.5-8       lavaan_0.6-21        GPArotation_2025.3-1
+## [22] psych_2.6.3          lubridate_1.9.5      forcats_1.0.1       
+## [25] stringr_1.6.0        dplyr_1.2.0          purrr_1.2.1         
+## [28] readr_2.2.0          tidyr_1.3.2          tibble_3.3.1        
+## [31] ggplot2_4.0.2        tidyverse_2.0.0      rmarkdown_2.31      
+## 
+## loaded via a namespace (and not attached):
+##   [1] splines_4.5.3         later_1.4.8           XML_3.99-0.23        
+##   [4] rpart_4.1.24          lifecycle_1.0.5       Rdpack_2.6.6         
+##   [7] NLP_0.3-2             lattice_0.22-9        rockchalk_1.8.157    
+##  [10] backports_1.5.0       SnowballC_0.7.1       magrittr_2.0.4       
+##  [13] openxlsx_4.2.8.1      Hmisc_5.2-5           sass_0.4.10          
+##  [16] jquerylib_0.1.4       yaml_2.3.12           httpuv_1.6.17        
+##  [19] otel_0.2.0            skimr_2.2.2           zip_2.3.3            
+##  [22] pbapply_1.7-4         minqa_1.2.8           RColorBrewer_1.1-3   
+##  [25] multcomp_1.4-30       abind_1.4-8           quadprog_1.5-8       
+##  [28] nnet_7.3-20           TH.data_1.1-5         sandwich_3.1-1       
+##  [31] tm_0.7-18             tokenizers_0.3.0      arm_1.15-2           
+##  [34] svglite_2.2.2         codetools_0.2-20      xml2_1.5.2           
+##  [37] tidyselect_1.2.1      farver_2.1.2          stats4_4.5.3         
+##  [40] base64enc_0.1-6       jsonlite_2.0.0        Formula_1.2-5        
+##  [43] survival_3.8-6        emmeans_2.0.2         systemfonts_1.3.2    
+##  [46] tools_4.5.3           Rcpp_1.1.1            glue_1.8.0           
+##  [49] mnormt_2.1.2          gridExtra_2.3         xfun_0.57            
+##  [52] withr_3.0.2           numDeriv_2016.8-1.1   fastmap_1.2.0        
+##  [55] boot_1.3-32           digest_0.6.39         mi_1.2               
+##  [58] timechange_0.4.0      R6_2.6.1              mime_0.13            
+##  [61] estimability_1.5.1    textshaping_1.0.5     colorspace_2.1-2     
+##  [64] ClaudeR_0.2.0         gtools_3.9.5          jpeg_0.1-11          
+##  [67] DiagrammeR_1.0.11     generics_0.1.4        data.table_1.18.2.1  
+##  [70] corpcor_1.6.10        htmlwidgets_1.6.4     pkgconfig_2.0.3      
+##  [73] sem_3.1-16            gtable_0.3.6          modeltools_0.2-24    
+##  [76] S7_0.2.1              janeaustenr_1.0.0     htmltools_0.5.9      
+##  [79] bookdown_0.46         scales_1.4.0          png_0.1-9            
+##  [82] reformulas_0.4.4      knitr_1.51            rstudioapi_0.18.0    
+##  [85] tzdb_0.5.0            reshape2_1.4.5        coda_0.19-4.1        
+##  [88] visNetwork_2.1.4      checkmate_2.3.4       nlme_3.1-168         
+##  [91] nloptr_2.2.1          repr_1.1.7            cachem_1.1.0         
+##  [94] zoo_1.8-15            parallel_4.5.3        miniUI_0.1.2         
+##  [97] foreign_0.8-91        pillar_1.11.1         grid_4.5.3           
+## [100] vctrs_0.7.2           slam_0.1-55           promises_1.5.0       
+## [103] OpenMx_2.22.11        xtable_1.8-8          cluster_2.1.8.2      
+## [106] htmlTable_2.4.3       evaluate_1.0.5        pbivnorm_0.6.0       
+## [109] mvtnorm_1.3-6         cli_3.6.5             kutils_1.73          
+## [112] compiler_4.5.3        rlang_1.1.7           labeling_0.4.3       
+## [115] fdrtool_1.2.18        plyr_1.8.9            stringi_1.8.7        
+## [118] viridisLite_0.4.3     lisrelToR_0.3         hms_1.1.4            
+## [121] glasso_1.11           shiny_1.13.0          rbibutils_2.4.1      
+## [124] RcppParallel_5.1.11-2 bslib_0.10.0</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  },
+  "info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1 Latent Variable Methods I: LCA and Factor Analysis | 04-lca-fa.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1 Latent Variable Methods I: LCA and Factor Analysis | 04-lca-fa.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1 Latent Variable Methods I: LCA and Factor Analysis | 04-lca-fa.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cultural & Cognitive Sociology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#latent"><i class="fa fa-check"></i><b>1</b> Latent Variable Methods I: LCA and Factor Analysis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#why-latent-variable-models"><i class="fa fa-check"></i><b>1.1</b> 4.1 Why Latent Variable Models?</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#exploratory-factor-analysis"><i class="fa fa-check"></i><b>1.2</b> 4.2 Exploratory Factor Analysis</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#lab4a"><i class="fa fa-check"></i><b>1.3</b> Lab 4a: EFA on Values Data (WVS Structure)</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#lab4b"><i class="fa fa-check"></i><b>1.4</b> Lab 4b: Latent Class Analysis — Moral Schemas</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path=""><a href="#b.2-gss-structure-moral-attitudes-lca-vaisey-2009-replication"><i class="fa fa-check"></i><b>1.4.1</b> 4b.2 GSS-Structure Moral Attitudes LCA (Vaisey 2009 Replication)</a></li>
+<li class="chapter" data-level="1.4.2" data-path=""><a href="#b.3-the-3-step-method-using-class-as-a-predictor"><i class="fa fa-check"></i><b>1.4.2</b> 4b.3 The 3-Step Method: Using Class as a Predictor</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#confirmatory-factor-analysis-and-measurement-invariance"><i class="fa fa-check"></i><b>1.5</b> 4.3 Confirmatory Factor Analysis and Measurement Invariance</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#core-readings"><i class="fa fa-check"></i>Core Readings</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com" target="blank">Source</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="latent" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Week 1</span> Latent Variable Methods I: LCA and Factor Analysis<a href="#latent" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Weeks 7–8 | Methods Lab 4: LCA + EFA/CFA</strong></p>
+<hr />
+<div id="why-latent-variable-models" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 4.1 Why Latent Variable Models?<a href="#why-latent-variable-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cultural constructs — schemas, moral orientations, cultural capital,
+logics — are <strong>latent</strong>: they are inferred from patterns in observable
+indicators, not measured directly. Latent variable models are therefore
+the appropriate quantitative paradigm for cultural sociology.</p>
+<p>Two foundational approaches:</p>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="37%" />
+<col width="30%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Manifest indicators</th>
+<th>Latent variable</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Factor Analysis (EFA/CFA)</td>
+<td>Continuous (or treated as)</td>
+<td>Continuous dimensions</td>
+<td>Values scales, attitude dimensions</td>
+</tr>
+<tr class="even">
+<td>Latent Class Analysis (LCA)</td>
+<td>Categorical</td>
+<td>Categorical types</td>
+<td>Moral typologies, ideological clusters</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exploratory-factor-analysis" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 4.2 Exploratory Factor Analysis<a href="#exploratory-factor-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>EFA decomposes a correlation matrix into a smaller number of latent
+factors. The model: each observed variable is a linear combination
+of common factors plus a unique factor.</p>
+<p><span class="math display">\[X_i = \lambda_{i1}F_1 + \lambda_{i2}F_2 + \cdots + \lambda_{ik}F_k + \epsilon_i\]</span></p>
+<p>where <span class="math inline">\(\lambda_{ij}\)</span> are <strong>factor loadings</strong> (the correlation between
+variable <span class="math inline">\(i\)</span> and factor <span class="math inline">\(j\)</span>), <span class="math inline">\(F_j\)</span> are common factors, and <span class="math inline">\(\epsilon_i\)</span>
+is unique variance.</p>
+<p><strong>Key decisions in EFA:</strong></p>
+<ol style="list-style-type: decimal">
+<li><strong>Factor extraction method</strong>: maximum likelihood (ML) preferred for
+hypothesis testing; principal axis factoring (PAF) when normality
+is in doubt.</li>
+<li><strong>Number of factors</strong>: parallel analysis (most defensible) &gt; scree
+plot &gt; Kaiser criterion (eigenvalue &gt; 1, widely criticized as
+overextracting).</li>
+<li><strong>Rotation</strong>: orthogonal (Varimax — factors are uncorrelated) vs.
+oblique (Oblimin, Promax — factors may correlate). In cultural
+sociology, oblique is usually theoretically appropriate because
+attitudes and values are correlated.</li>
+<li><strong>Loading cutoff</strong>: |λ| &gt; .40 is conventional; |λ| &gt; .30 in small
+samples. Items with cross-loadings (loading &gt;.30 on two factors)
+are ambiguous.</li>
+</ol>
+<hr />
+</div>
+<div id="lab4a" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Lab 4a: EFA on Values Data (WVS Structure)<a href="#lab4a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>We use the Schwartz Basic Human Values framework (10 value types,
+measured by 21 items in WVS) as the EFA target. The Schwartz model
+predicts a two-dimensional circular structure (openness to change vs.
+conservation; self-enhancement vs. self-transcendence). We test
+whether the factor structure supports this prediction.</p>
+</div>
+<p>We begin by loading libraries and constructing a simulated dataset that mirrors the structure of WVS values items. Simulating data here lets us know the true factor structure in advance, which is useful for learning to evaluate whether the EFA recovers it correctly.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(GPArotation)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(semTools)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240104</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co"># Simulate WVS-structure values data (N = 1200)</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co"># 10 Schwartz value types, 2 items each (shortened from 21)</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co"># True factor structure: 2 higher-order dimensions</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Dim 1: Openness to Change (OC) &lt;--&gt; Conservation (CON)</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="co"># Dim 2: Self-Transcendence (ST) &lt;--&gt; Self-Enhancement (SE)</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co"># 10 value types:</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="co">#   OC pole:  Stimulation (STI), Self-Direction (SD), Hedonism (HED)</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co">#   CON pole: Tradition (TRA), Conformity (CON2), Security (SEC)</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="co">#   ST pole:  Universalism (UNI), Benevolence (BEN)</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="co">#   SE pole:  Power (POW), Achievement (ACH)</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1200</span></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="co"># Latent factor scores: correlated (r ≈ -0.25)</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>oc_score  <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(n)    <span class="co"># Openness to Change</span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>st_score  <span class="ot">&lt;-</span>  <span class="fu">rnorm</span>(n)    <span class="co"># Self-Transcendence</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a><span class="co"># Some correlation between the two higher-order dimensions</span></span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>oc_score  <span class="ot">&lt;-</span> oc_score <span class="sc">+</span> <span class="fl">0.15</span> <span class="sc">*</span> st_score</span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a><span class="co"># Simulate 20 value items (2 per value type)</span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="co"># Each item loads primarily on one factor with specific secondary loadings</span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>sim_item <span class="ot">&lt;-</span> <span class="cf">function</span>(primary_factor, primary_load,</span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>                     <span class="at">secondary_factor =</span> <span class="cn">NULL</span>, <span class="at">secondary_load =</span> <span class="dv">0</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>                     <span class="at">noise_sd =</span> <span class="fl">0.7</span>) {</span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a>  val <span class="ot">&lt;-</span> primary_load <span class="sc">*</span> primary_factor</span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(secondary_factor)) {</span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>    val <span class="ot">&lt;-</span> val <span class="sc">+</span> secondary_load <span class="sc">*</span> secondary_factor</span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a>  }</span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>  raw <span class="ot">&lt;-</span> val <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, noise_sd)</span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>  <span class="co"># Discretize to 6-point Likert (1=Not like me, 6=Very much like me)</span></span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>  raw_scaled <span class="ot">&lt;-</span> scales<span class="sc">::</span><span class="fu">rescale</span>(raw, <span class="at">to =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>))</span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a>  <span class="fu">round</span>(raw_scaled)</span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>}</span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a>values_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>  <span class="co"># Openness to Change pole</span></span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>  <span class="at">STI1  =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.65</span>),</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>  <span class="at">STI2  =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.60</span>,  st_score,  <span class="fl">0.15</span>),</span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>  <span class="at">SD1   =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.70</span>),</span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>  <span class="at">SD2   =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.65</span>,  st_score,  <span class="fl">0.10</span>),</span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>  <span class="at">HED1  =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.55</span>, <span class="sc">-</span>st_score,  <span class="fl">0.15</span>),  <span class="co"># HED near SE pole too</span></span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>  <span class="at">HED2  =</span> <span class="fu">sim_item</span>(oc_score,  <span class="fl">0.50</span>, <span class="sc">-</span>st_score,  <span class="fl">0.20</span>),</span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a>  <span class="co"># Conservation pole (negative OC)</span></span>
+<span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a>  <span class="at">TRA1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.68</span>),</span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a>  <span class="at">TRA2  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.62</span>,  st_score,  <span class="fl">0.10</span>),</span>
+<span id="cb1-63"><a href="#cb1-63" tabindex="-1"></a>  <span class="at">CON1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.65</span>),</span>
+<span id="cb1-64"><a href="#cb1-64" tabindex="-1"></a>  <span class="at">CON2  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.60</span>,  st_score,  <span class="fl">0.12</span>),</span>
+<span id="cb1-65"><a href="#cb1-65" tabindex="-1"></a>  <span class="at">SEC1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.55</span>,  st_score,  <span class="fl">0.10</span>),</span>
+<span id="cb1-66"><a href="#cb1-66" tabindex="-1"></a>  <span class="at">SEC2  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_score, <span class="fl">0.58</span>),</span>
+<span id="cb1-67"><a href="#cb1-67" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" tabindex="-1"></a>  <span class="co"># Self-Transcendence pole</span></span>
+<span id="cb1-69"><a href="#cb1-69" tabindex="-1"></a>  <span class="at">UNI1  =</span> <span class="fu">sim_item</span>(st_score,  <span class="fl">0.70</span>),</span>
+<span id="cb1-70"><a href="#cb1-70" tabindex="-1"></a>  <span class="at">UNI2  =</span> <span class="fu">sim_item</span>(st_score,  <span class="fl">0.72</span>),</span>
+<span id="cb1-71"><a href="#cb1-71" tabindex="-1"></a>  <span class="at">BEN1  =</span> <span class="fu">sim_item</span>(st_score,  <span class="fl">0.65</span>),</span>
+<span id="cb1-72"><a href="#cb1-72" tabindex="-1"></a>  <span class="at">BEN2  =</span> <span class="fu">sim_item</span>(st_score,  <span class="fl">0.68</span>),</span>
+<span id="cb1-73"><a href="#cb1-73" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" tabindex="-1"></a>  <span class="co"># Self-Enhancement pole (negative ST)</span></span>
+<span id="cb1-75"><a href="#cb1-75" tabindex="-1"></a>  <span class="at">POW1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_score, <span class="fl">0.65</span>),</span>
+<span id="cb1-76"><a href="#cb1-76" tabindex="-1"></a>  <span class="at">POW2  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_score, <span class="fl">0.60</span>),</span>
+<span id="cb1-77"><a href="#cb1-77" tabindex="-1"></a>  <span class="at">ACH1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_score, <span class="fl">0.58</span>, oc_score,  <span class="fl">0.10</span>),</span>
+<span id="cb1-78"><a href="#cb1-78" tabindex="-1"></a>  <span class="at">ACH2  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_score, <span class="fl">0.55</span>, oc_score,  <span class="fl">0.15</span>)</span>
+<span id="cb1-79"><a href="#cb1-79" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-80"><a href="#cb1-80" tabindex="-1"></a>  <span class="co"># Clamp to valid range [1, 6]</span></span>
+<span id="cb1-81"><a href="#cb1-81" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(., <span class="dv">1</span>), <span class="dv">6</span>)))</span>
+<span id="cb1-82"><a href="#cb1-82" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Simulated dataset: N =&quot;</span>, <span class="fu">nrow</span>(values_df), <span class="st">&quot; | Items =&quot;</span>, <span class="fu">ncol</span>(values_df), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Simulated dataset: N = 1200  | Items = 20</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;All items on 6-point scale (1 = Not at all like me, 6 = Very much like me)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## All items on 6-point scale (1 = Not at all like me, 6 = Very much like me)</code></pre>
+<p>Before running the EFA itself, we need to determine how many factors to extract. Parallel analysis is the most defensible approach: it compares the actual eigenvalues from your data against eigenvalues produced from random data of the same dimensions. We retain only those factors whose eigenvalues exceed what we would expect by chance.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Step 1: Parallel analysis to determine number of factors</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>parallel_result <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  values_df,</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="at">fm     =</span> <span class="st">&quot;ml&quot;</span>,    <span class="co"># maximum likelihood extraction, consistent with the EFA we will run next</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="at">fa     =</span> <span class="st">&quot;fa&quot;</span>,    <span class="co"># factor analysis (not PCA) — we want common factor variance, not total variance</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="at">n.iter =</span> <span class="dv">20</span>,      <span class="co"># number of random datasets to simulate for the comparison line</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="at">main   =</span> <span class="st">&quot;Parallel Analysis for Values Data&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:efa-parallel"></span>
+<img src="04-lca-fa_files/figure-html/efa-parallel-1.png" alt="Figure 4.1: Parallel analysis scree plot. The intersection of the 'FA actual data' line with the 'FA simulated data' line indicates the number of factors to retain. Factors above the simulated line carry more variance than expected by chance." width="672" />
+<p class="caption">
+Figure 1.1: Figure 4.1: Parallel analysis scree plot. The intersection of the ‘FA actual data’ line with the ‘FA simulated data’ line indicates the number of factors to retain. Factors above the simulated line carry more variance than expected by chance.
+</p>
+</div>
+<pre><code>## Parallel analysis suggests that the number of factors =  2  and the number of components =  NA</code></pre>
+<div class="lab-box">
+<p><strong>Reading the parallel analysis plot.</strong> The plot shows two lines: one for the actual eigenvalues from your data (solid) and one for the mean eigenvalues from randomly generated datasets of the same size (dashed). Read across from left to right. Each point on the x-axis represents one factor. The rule is: retain factors where the actual data line sits <em>above</em> the simulated data line — those are factors that account for more variance than would arise from random noise alone.</p>
+<p>In this plot, you should see the actual line drop below the simulated line after the second factor. This tells us to retain <strong>2 factors</strong>, which aligns exactly with Schwartz’s two-dimensional model (Openness vs. Conservation; Self-Transcendence vs. Self-Enhancement). If the lines had crossed after the third or fourth factor, we would need to reconsider whether a two-factor solution is adequate — and whether Schwartz’s higher-order theory holds in this data.</p>
+<p>The Kaiser criterion (eigenvalue &gt; 1) often suggests too many factors in samples of this size. Parallel analysis is strictly preferable.</p>
+</div>
+<p>Now that we have determined that 2 factors are appropriate, we run the EFA. We use oblique rotation (Promax) rather than orthogonal rotation (Varimax) because Schwartz’s theory explicitly predicts that the two dimensions are not independent — people who score high on Self-Transcendence tend, modestly, to score higher on Conservation. Forcing orthogonality would misrepresent the actual structure.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Step 2: Run EFA with oblique rotation (Promax)</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># We specify nfactors = 2 based on theory and parallel analysis</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>efa_2 <span class="ot">&lt;-</span> <span class="fu">fa</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  values_df,</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="at">nfactors =</span> <span class="dv">2</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="at">fm       =</span> <span class="st">&quot;ml&quot;</span>,      <span class="co"># maximum likelihood: allows model fit statistics (RMSEA, TLI) to be computed</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="at">rotate   =</span> <span class="st">&quot;promax&quot;</span>,  <span class="co"># oblique rotation: allows factors to correlate, appropriate for Schwartz dimensions</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="at">scores   =</span> <span class="st">&quot;tenBerge&quot;</span> <span class="co"># factor score estimation method: most accurate for oblique solutions</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>)</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co"># Factor loadings table</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>loadings_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">unclass</span>(efa_2<span class="sc">$</span>loadings)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;item&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Factor1 =</span> ML1, <span class="at">Factor2 =</span> ML2) <span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    <span class="at">h2         =</span> efa_2<span class="sc">$</span>communality,</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>    <span class="at">uniqueness =</span> efa_2<span class="sc">$</span>uniquenesses,</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    <span class="at">value_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;STI&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Stimulation (OC)&quot;</span>,</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;SD&quot;</span>)  <span class="sc">~</span> <span class="st">&quot;Self-Direction (OC)&quot;</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;HED&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Hedonism (OC/SE)&quot;</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;TRA&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Tradition (CON)&quot;</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;CON&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Conformity (CON)&quot;</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;SEC&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Security (CON)&quot;</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;UNI&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Universalism (ST)&quot;</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;BEN&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Benevolence (ST)&quot;</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;POW&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Power (SE)&quot;</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>      <span class="fu">str_detect</span>(item, <span class="st">&quot;ACH&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Achievement (SE)&quot;</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a>    )</span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a>  )</span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a>loadings_df <span class="sc">%&gt;%</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(item, value_type, Factor1, Factor2, h2) <span class="sc">%&gt;%</span></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(Factor1, Factor2, h2), <span class="sc">~</span> <span class="fu">round</span>(., <span class="dv">3</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Item&quot;</span>, <span class="st">&quot;Value Type (Schwartz)&quot;</span>, <span class="st">&quot;Factor 1&quot;</span>, <span class="st">&quot;Factor 2&quot;</span>, <span class="st">&quot;h²&quot;</span>),</span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a>    <span class="at">caption   =</span> <span class="st">&quot;Table 4.1: EFA loadings (Promax rotation). Factor 1 ≈ Openness vs. Conservation; Factor 2 ≈ Self-Transcendence vs. Self-Enhancement. Loadings &gt; .40 in bold.&quot;</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">3</span>, <span class="at">bold =</span> <span class="fu">abs</span>(loadings_df<span class="sc">$</span>Factor1) <span class="sc">&gt;</span> <span class="fl">0.40</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">4</span>, <span class="at">bold =</span> <span class="fu">abs</span>(loadings_df<span class="sc">$</span>Factor2) <span class="sc">&gt;</span> <span class="fl">0.40</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:efa-run">Table 1.1: </span><span id="tab:efa-run">Table 1.2: </span>Table 4.1: EFA loadings (Promax rotation). Factor 1 ≈ Openness vs. Conservation; Factor 2 ≈ Self-Transcendence vs. Self-Enhancement. Loadings &gt; .40 in bold.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Item
+</th>
+<th style="text-align:left;">
+Value Type (Schwartz)
+</th>
+<th style="text-align:right;">
+Factor 1
+</th>
+<th style="text-align:right;">
+Factor 2
+</th>
+<th style="text-align:right;">
+h²
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+STI1
+</td>
+<td style="text-align:left;">
+Stimulation (OC)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.622
+</td>
+<td style="text-align:right;">
+0.045
+</td>
+<td style="text-align:right;">
+0.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STI2
+</td>
+<td style="text-align:left;">
+Stimulation (OC)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.615
+</td>
+<td style="text-align:right;">
+0.210
+</td>
+<td style="text-align:right;">
+0.430
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SD1
+</td>
+<td style="text-align:left;">
+Self-Direction (OC)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.656
+</td>
+<td style="text-align:right;">
+0.095
+</td>
+<td style="text-align:right;">
+0.443
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SD2
+</td>
+<td style="text-align:left;">
+Self-Direction (OC)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.622
+</td>
+<td style="text-align:right;">
+0.134
+</td>
+<td style="text-align:right;">
+0.410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HED1
+</td>
+<td style="text-align:left;">
+Hedonism (OC/SE)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.598
+</td>
+<td style="text-align:right;">
+-0.089
+</td>
+<td style="text-align:right;">
+0.362
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HED2
+</td>
+<td style="text-align:left;">
+Hedonism (OC/SE)
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.483
+</td>
+<td style="text-align:right;">
+-0.196
+</td>
+<td style="text-align:right;">
+0.266
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRA1
+</td>
+<td style="text-align:left;">
+Tradition (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.616
+</td>
+<td style="text-align:right;">
+-0.030
+</td>
+<td style="text-align:right;">
+0.382
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRA2
+</td>
+<td style="text-align:left;">
+Tradition (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.644
+</td>
+<td style="text-align:right;">
+0.060
+</td>
+<td style="text-align:right;">
+0.416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CON1
+</td>
+<td style="text-align:left;">
+Conformity (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.602
+</td>
+<td style="text-align:right;">
+-0.033
+</td>
+<td style="text-align:right;">
+0.365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CON2
+</td>
+<td style="text-align:left;">
+Conformity (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.585
+</td>
+<td style="text-align:right;">
+0.047
+</td>
+<td style="text-align:right;">
+0.343
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SEC1
+</td>
+<td style="text-align:left;">
+Security (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.539
+</td>
+<td style="text-align:right;">
+0.102
+</td>
+<td style="text-align:right;">
+0.297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SEC2
+</td>
+<td style="text-align:left;">
+Security (CON)
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.605
+</td>
+<td style="text-align:right;">
+-0.033
+</td>
+<td style="text-align:right;">
+0.368
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UNI1
+</td>
+<td style="text-align:left;">
+Universalism (ST)
+</td>
+<td style="text-align:right;">
+0.012
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.654
+</td>
+<td style="text-align:right;">
+0.428
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UNI2
+</td>
+<td style="text-align:left;">
+Universalism (ST)
+</td>
+<td style="text-align:right;">
+0.079
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.646
+</td>
+<td style="text-align:right;">
+0.427
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BEN1
+</td>
+<td style="text-align:left;">
+Benevolence (ST)
+</td>
+<td style="text-align:right;">
+0.018
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.655
+</td>
+<td style="text-align:right;">
+0.430
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BEN2
+</td>
+<td style="text-align:left;">
+Benevolence (ST)
+</td>
+<td style="text-align:right;">
+0.051
+</td>
+<td style="text-align:right;font-weight: bold;">
+0.633
+</td>
+<td style="text-align:right;">
+0.405
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+POW1
+</td>
+<td style="text-align:left;">
+Power (SE)
+</td>
+<td style="text-align:right;">
+-0.044
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.628
+</td>
+<td style="text-align:right;">
+0.397
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+POW2
+</td>
+<td style="text-align:left;">
+Power (SE)
+</td>
+<td style="text-align:right;">
+-0.041
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.582
+</td>
+<td style="text-align:right;">
+0.342
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACH1
+</td>
+<td style="text-align:left;">
+Achievement (SE)
+</td>
+<td style="text-align:right;">
+0.087
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.600
+</td>
+<td style="text-align:right;">
+0.365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACH2
+</td>
+<td style="text-align:left;">
+Achievement (SE)
+</td>
+<td style="text-align:right;">
+0.136
+</td>
+<td style="text-align:right;font-weight: bold;">
+-0.589
+</td>
+<td style="text-align:right;">
+0.361
+</td>
+</tr>
+</tbody>
+</table>
+<div class="lab-box">
+<p><strong>Reading the factor loadings table.</strong></p>
+<p>Each row is one survey item. The Factor 1 and Factor 2 columns show the <strong>pattern coefficients</strong> from the oblique rotation — in a Promax rotation, these are regression-like coefficients, not simple correlations, so they can exceed 1.0 or go below −1.0 in unusual cases, though values between −0.8 and 0.8 are most common. Treat them like standardized regression weights: they tell you how much of each factor is reflected in each item, controlling for the other factor.</p>
+<p><strong>Which items load where.</strong> The bold entries (|loading| &gt; .40) are the primary loadings you should focus on. You should see that STI, SD, HED items load strongly on Factor 1, while TRA, CON, SEC items load negatively on Factor 1 — this is the Openness vs. Conservation bipolar dimension. UNI and BEN items load on Factor 2 (Self-Transcendence), while POW and ACH load negatively on it (Self-Enhancement). This bipolar pattern on both factors is a direct prediction of Schwartz’s circular model.</p>
+<p><strong>What h² means.</strong> The h² column (communality) is the proportion of each item’s total variance that is explained by the two factors together. An h² of 0.50 means 50% of the variance in that item is captured by the factor solution; the remaining 50% is unique (measurement error plus item-specific content). Values below 0.20 suggest an item is poorly represented by the factor solution and might be dropped. Values above 0.70 indicate a well-represented item.</p>
+<p><strong>Cross-loadings.</strong> If an item has loadings above .30 on <em>both</em> factors, it cross-loads. Cross-loading items are theoretically ambiguous — they belong partly to both dimensions. In Schwartz’s model, Hedonism (HED) is explicitly positioned between the Openness and Self-Enhancement poles, so modest cross-loading on both factors is theoretically expected rather than a flaw. If you see unexpected cross-loadings on items that should be clearly on one dimension, that would warrant scrutiny.</p>
+<p><strong>What this tells us about Schwartz’s model.</strong> A clean two-factor solution with bipolar loadings on each factor — positive on one pole, negative on the other — is exactly what Schwartz’s theory predicts. The fact that EFA recovers this structure from the data is evidence that the higher-order two-dimensional framework holds in this sample.</p>
+</div>
+<p>Finally, we examine model fit indices to assess whether a two-factor solution adequately fits the data, and the factor correlation to verify that oblique rotation was the right choice.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;EFA Diagnostics</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## EFA Diagnostics</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;───────────────────────────────────────────────</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## ───────────────────────────────────────────────</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Factor 1 explains:&quot;</span>, <span class="fu">round</span>(efa_2<span class="sc">$</span>Vaccounted[<span class="st">&quot;Proportion Var&quot;</span>, <span class="dv">1</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;% of variance</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Factor 1 explains: 21.9 % of variance</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Factor 2 explains:&quot;</span>, <span class="fu">round</span>(efa_2<span class="sc">$</span>Vaccounted[<span class="st">&quot;Proportion Var&quot;</span>, <span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;% of variance</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Factor 2 explains: 16.3 % of variance</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total variance explained:&quot;</span>, <span class="fu">round</span>(<span class="fu">sum</span>(efa_2<span class="sc">$</span>Vaccounted[<span class="st">&quot;Proportion Var&quot;</span>, ]) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total variance explained: 38.1 %</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Factor correlation (oblique rotation):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Factor correlation (oblique rotation):</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(efa_2<span class="sc">$</span>Phi, <span class="dv">3</span>))</span></code></pre></div>
+<pre><code>##       ML1   ML2
+## ML1 1.000 0.029
+## ML2 0.029 1.000</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">RMSEA:&quot;</span>, <span class="fu">round</span>(efa_2<span class="sc">$</span>RMSEA[<span class="st">&quot;RMSEA&quot;</span>], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## RMSEA: 0.009</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;TLI:  &quot;</span>, <span class="fu">round</span>(efa_2<span class="sc">$</span>TLI, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## TLI:   0.997</code></pre>
+<div class="lab-box">
+<p><strong>Interpreting the diagnostics.</strong></p>
+<p><strong>Variance explained.</strong> The two-factor solution typically accounts for 30–45% of total variance in a values battery of this kind. This may sound low, but remember that each item also contains unique variance (measurement error, item-specific content) that no common factor should explain. In social science, 30–45% is a respectable result for an attitude or values battery with many items. If total variance explained were 15% or below, the factors would be too weak to be substantively meaningful.</p>
+<p><strong>Factor correlation (Phi matrix).</strong> This is the payoff for using oblique rotation. The off-diagonal element in the Phi matrix shows the correlation between Factor 1 and Factor 2. A small-to-moderate correlation (roughly |r| = .10–.30) confirms that the two dimensions are related but distinct — consistent with Schwartz’s claim that Openness and Self-Transcendence share some conceptual territory, but are not redundant. If this correlation were near zero, Varimax (orthogonal) rotation would have been equally appropriate. If it were above .60, the two factors would be difficult to distinguish and a single higher-order factor might be more parsimonious.</p>
+<p><strong>RMSEA (Root Mean Square Error of Approximation).</strong> RMSEA measures how well the factor model approximates the observed covariance matrix, penalizing for model complexity. Conventional thresholds: RMSEA &lt; .05 = close fit; .05–.08 = acceptable; &gt; .10 = poor. A value in the acceptable range here would suggest the two-factor model captures the structure without leaving systematic residuals.</p>
+<p><strong>TLI (Tucker-Lewis Index).</strong> TLI (also called NNFI) compares your model to a null model (no factors at all), adjusting for parsimony. Values above .90 indicate acceptable fit; above .95 indicates good fit. Unlike CFI, TLI penalizes for extracting extra factors, making it conservative in a useful way for deciding between, say, a 2-factor and a 3-factor solution.</p>
+<p><strong>Taken together:</strong> if RMSEA &lt; .08 and TLI &gt; .90, the two-factor solution is defensible for cross-national values research. Failure on both criteria would suggest either that more factors are needed or that the item set does not cleanly capture Schwartz’s dimensions in this population.</p>
+</div>
+<hr />
+</div>
+<div id="lab4b" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Lab 4b: Latent Class Analysis — Moral Schemas<a href="#lab4b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>We replicate the logic of Vaisey (2009), using LCA on GSS-structured
+moral attitude items to identify latent moral types. We then validate
+these types by showing they predict behavioral outcomes (abortion
+attitudes, extramarital sex norms) differently than stated justifications.</p>
+<p>We use the <code>poLCA</code> package and the built-in <code>cheating</code> dataset
+as a warmup, then construct a GSS-like moral attitudes dataset.</p>
+</div>
+<div class="theory-box">
+<p><strong>What LCA does — and how it differs from factor analysis.</strong></p>
+<p>Factor analysis assumes that the latent variable is <em>continuous</em> — respondents fall somewhere along a dimension (e.g., more or less open to change). Latent Class Analysis assumes instead that the latent variable is <em>categorical</em> — respondents belong to one of a small number of discrete types (e.g., Traditionalist, Moderate, Progressive). Rather than assigning everyone a score on a continuum, LCA assigns everyone a probability of belonging to each class.</p>
+<p>LCA works by finding the set of latent classes — and the probability distributions over observed responses within each class — that best explain the observed pattern of item responses. Within each class, the items are assumed to be statistically independent of each other (the “local independence” assumption). The classes do the explanatory work: knowing someone’s class should tell you almost everything about how they will respond to each item.</p>
+<p>This makes LCA ideal for Vaisey’s (2009) dual-process argument. If moral orientations are discrete schemas rather than continuous attitudes — internalized, non-deliberative frameworks — then LCA is the appropriate measurement model. A continuous factor would imply a single graded dimension, which would be inconsistent with the theory.</p>
+</div>
+<p>We begin with a warmup on the built-in <code>cheating</code> dataset to get familiar with <code>poLCA</code> syntax before moving to the substantively more complex GSS moral attitudes data.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">library</span>(poLCA)</span></code></pre></div>
+<pre><code>## Loading required package: scatterplot3d</code></pre>
+<pre><code>## Loading required package: MASS</code></pre>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:patchwork&#39;:
+## 
+##     area</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Warmup: poLCA built-in dataset</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="co"># The cheating dataset (N=319 college students)</span></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a><span class="co"># 4 items on attitudes toward cheating in different contexts</span></span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="fu">data</span>(cheating)</span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;poLCA::cheating dataset</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## poLCA::cheating dataset</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Dimensions:&quot;</span>, <span class="fu">nrow</span>(cheating), <span class="st">&quot;x&quot;</span>, <span class="fu">ncol</span>(cheating), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Dimensions: 319 x 5</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="fu">head</span>(cheating, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##   LIEEXAM LIEPAPER FRAUD COPYEXAM GPA
+## 1       1        1     1        1  NA
+## 2       1        1     1        1  NA
+## 3       1        1     1        1  NA</code></pre>
+<p>To decide how many classes fit the data, we run LCA models with 1, 2, and 3 classes and compare their fit statistics. This is the standard class enumeration procedure: we start simple and add classes until fit no longer improves meaningfully.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># Run 2-class and 3-class LCA on cheating data</span></span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>f_cheat <span class="ot">&lt;-</span> <span class="fu">cbind</span>(LIEEXAM, LIEPAPER, FRAUD, COPYEXAM) <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="co"># 2-class model</span></span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>lca_2_cheat <span class="ot">&lt;-</span> <span class="fu">poLCA</span>(f_cheat, cheating, <span class="at">nclass =</span> <span class="dv">2</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a>                      <span class="at">maxiter =</span> <span class="dv">2000</span>, <span class="at">nrep =</span> <span class="dv">5</span>)</span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a><span class="co"># 3-class model</span></span>
+<span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a>lca_3_cheat <span class="ot">&lt;-</span> <span class="fu">poLCA</span>(f_cheat, cheating, <span class="at">nclass =</span> <span class="dv">3</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a>                      <span class="at">maxiter =</span> <span class="dv">2000</span>, <span class="at">nrep =</span> <span class="dv">5</span>)</span>
+<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a>fit_comparison <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a>  <span class="at">Model   =</span> <span class="fu">c</span>(<span class="st">&quot;1 class&quot;</span>, <span class="st">&quot;2 classes&quot;</span>, <span class="st">&quot;3 classes&quot;</span>),</span>
+<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a>  <span class="at">AIC     =</span> <span class="fu">c</span>(</span>
+<span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a>    <span class="fu">poLCA</span>(f_cheat, cheating, <span class="at">nclass =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>aic,</span>
+<span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a>    lca_2_cheat<span class="sc">$</span>aic,</span>
+<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a>    lca_3_cheat<span class="sc">$</span>aic</span>
+<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a>  ),</span>
+<span id="cb38-19"><a href="#cb38-19" tabindex="-1"></a>  <span class="at">BIC     =</span> <span class="fu">c</span>(</span>
+<span id="cb38-20"><a href="#cb38-20" tabindex="-1"></a>    <span class="fu">poLCA</span>(f_cheat, cheating, <span class="at">nclass =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>bic,</span>
+<span id="cb38-21"><a href="#cb38-21" tabindex="-1"></a>    lca_2_cheat<span class="sc">$</span>bic,</span>
+<span id="cb38-22"><a href="#cb38-22" tabindex="-1"></a>    lca_3_cheat<span class="sc">$</span>bic</span>
+<span id="cb38-23"><a href="#cb38-23" tabindex="-1"></a>  )</span>
+<span id="cb38-24"><a href="#cb38-24" tabindex="-1"></a>)</span>
+<span id="cb38-25"><a href="#cb38-25" tabindex="-1"></a></span>
+<span id="cb38-26"><a href="#cb38-26" tabindex="-1"></a>fit_comparison <span class="sc">%&gt;%</span></span>
+<span id="cb38-27"><a href="#cb38-27" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>,</span>
+<span id="cb38-28"><a href="#cb38-28" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Table 4.2: Fit statistics for 1–3 class LCA on cheating data. BIC selects the model that best balances fit and parsimony.&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-29"><a href="#cb38-29" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:lca-warmup">Table 1.3: </span><span id="tab:lca-warmup">Table 1.4: </span>Table 4.2: Fit statistics for 1–3 class LCA on cheating data. BIC selects the model that best balances fit and parsimony.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Model
+</th>
+<th style="text-align:right;">
+AIC
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1 class
+</td>
+<td style="text-align:right;">
+942.9
+</td>
+<td style="text-align:right;">
+957.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2 classes
+</td>
+<td style="text-align:right;">
+898.1
+</td>
+<td style="text-align:right;">
+931.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3 classes
+</td>
+<td style="text-align:right;">
+900.5
+</td>
+<td style="text-align:right;">
+953.2
+</td>
+</tr>
+</tbody>
+</table>
+<div class="lab-box">
+<p><strong>Reading Table 4.2: using BIC to select number of classes.</strong></p>
+<p>Both AIC and BIC are information criteria — lower values indicate a better-fitting model, after penalizing for model complexity (more classes = more parameters = higher penalty). The key question is which model has the lowest value.</p>
+<p><strong>AIC</strong> (Akaike Information Criterion) applies a lighter penalty per parameter. It tends to favor more complex models. In this table, AIC will likely continue to decrease as you add classes, which is why it is not the primary selection tool for LCA: it often suggests more classes than are substantively interpretable.</p>
+<p><strong>BIC</strong> (Bayesian Information Criterion) applies a heavier penalty, scaled by log(N). It is more conservative and tends to select simpler, more parsimonious models. The convention in LCA is to use BIC as the primary criterion, stopping when BIC is lowest or when the decrease between adjacent models is small (a rough threshold: ΔBIC &lt; 10 is considered weak evidence for the more complex model; ΔBIC &gt; 10 is meaningful).</p>
+<p>In this cheating data, look for the row where BIC is minimized. If BIC is lowest at 2 classes, that is your preferred solution — there is meaningful latent structure (one class vs. two) but adding a third class does not justify the additional parameters. The BIC difference between the 1-class and 2-class models gives you a sense of how strongly the data support a latent class structure at all.</p>
+</div>
+<div id="b.2-gss-structure-moral-attitudes-lca-vaisey-2009-replication" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> 4b.2 GSS-Structure Moral Attitudes LCA (Vaisey 2009 Replication)<a href="#b.2-gss-structure-moral-attitudes-lca-vaisey-2009-replication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240104</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="co"># Simulate GSS-structured moral attitude items (N = 1500)</span></span>
+<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="co"># Three latent moral types:</span></span>
+<span id="cb39-6"><a href="#cb39-6" tabindex="-1"></a><span class="co">#   1. Traditionalist: anti-abortion, anti-premarital sex,</span></span>
+<span id="cb39-7"><a href="#cb39-7" tabindex="-1"></a><span class="co">#      anti-extramarital sex, religious belief strong</span></span>
+<span id="cb39-8"><a href="#cb39-8" tabindex="-1"></a><span class="co">#   2. Moderate: mixed positions</span></span>
+<span id="cb39-9"><a href="#cb39-9" tabindex="-1"></a><span class="co">#   3. Progressive: pro-choice, permissive sexual norms</span></span>
+<span id="cb39-10"><a href="#cb39-10" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb39-11"><a href="#cb39-11" tabindex="-1"></a><span class="co"># All items: 1 = Always wrong, 2 = Almost always wrong,</span></span>
+<span id="cb39-12"><a href="#cb39-12" tabindex="-1"></a><span class="co">#            3 = Only sometimes wrong, 4 = Not wrong at all</span></span>
+<span id="cb39-13"><a href="#cb39-13" tabindex="-1"></a><span class="co"># (poLCA requires integer coding starting at 1)</span></span>
+<span id="cb39-14"><a href="#cb39-14" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb39-15"><a href="#cb39-15" tabindex="-1"></a></span>
+<span id="cb39-16"><a href="#cb39-16" tabindex="-1"></a>n_gss <span class="ot">&lt;-</span> <span class="dv">1500</span></span>
+<span id="cb39-17"><a href="#cb39-17" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="#cb39-18" tabindex="-1"></a><span class="co"># Latent class assignment</span></span>
+<span id="cb39-19"><a href="#cb39-19" tabindex="-1"></a>true_class <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Traditionalist&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;Progressive&quot;</span>),</span>
+<span id="cb39-20"><a href="#cb39-20" tabindex="-1"></a>                     n_gss, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.35</span>, <span class="fl">0.38</span>, <span class="fl">0.27</span>))</span>
+<span id="cb39-21"><a href="#cb39-21" tabindex="-1"></a></span>
+<span id="cb39-22"><a href="#cb39-22" tabindex="-1"></a><span class="co"># Function: sample ordinal item given class-specific probability profile</span></span>
+<span id="cb39-23"><a href="#cb39-23" tabindex="-1"></a>item_by_class <span class="ot">&lt;-</span> <span class="cf">function</span>(class_vec, p_trad, p_mod, p_prog,</span>
+<span id="cb39-24"><a href="#cb39-24" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb39-25"><a href="#cb39-25" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">integer</span>(<span class="fu">length</span>(class_vec))</span>
+<span id="cb39-26"><a href="#cb39-26" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;Traditionalist&quot;</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;Traditionalist&quot;</span>),</span>
+<span id="cb39-27"><a href="#cb39-27" tabindex="-1"></a>                                                <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> p_trad)</span>
+<span id="cb39-28"><a href="#cb39-28" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;Moderate&quot;</span>]       <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;Moderate&quot;</span>),</span>
+<span id="cb39-29"><a href="#cb39-29" tabindex="-1"></a>                                                <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> p_mod)</span>
+<span id="cb39-30"><a href="#cb39-30" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;Progressive&quot;</span>]    <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;Progressive&quot;</span>),</span>
+<span id="cb39-31"><a href="#cb39-31" tabindex="-1"></a>                                                <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> p_prog)</span>
+<span id="cb39-32"><a href="#cb39-32" tabindex="-1"></a>  out</span>
+<span id="cb39-33"><a href="#cb39-33" tabindex="-1"></a>}</span>
+<span id="cb39-34"><a href="#cb39-34" tabindex="-1"></a></span>
+<span id="cb39-35"><a href="#cb39-35" tabindex="-1"></a>gss_moral <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb39-36"><a href="#cb39-36" tabindex="-1"></a>  <span class="co"># GSS: &quot;If a woman wants an abortion for any reason&quot; — always wrong (1) to not wrong (4)</span></span>
+<span id="cb39-37"><a href="#cb39-37" tabindex="-1"></a>  <span class="at">ABANY    =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-38"><a href="#cb39-38" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">80</span>, .<span class="dv">12</span>, .<span class="dv">05</span>, .<span class="dv">03</span>),</span>
+<span id="cb39-39"><a href="#cb39-39" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">30</span>, .<span class="dv">25</span>, .<span class="dv">25</span>, .<span class="dv">20</span>),</span>
+<span id="cb39-40"><a href="#cb39-40" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">10</span>, .<span class="dv">20</span>, .<span class="dv">65</span>)),</span>
+<span id="cb39-41"><a href="#cb39-41" tabindex="-1"></a></span>
+<span id="cb39-42"><a href="#cb39-42" tabindex="-1"></a>  <span class="co"># GSS: Premarital sex</span></span>
+<span id="cb39-43"><a href="#cb39-43" tabindex="-1"></a>  <span class="at">PREMARSX =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-44"><a href="#cb39-44" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">75</span>, .<span class="dv">15</span>, .<span class="dv">07</span>, .<span class="dv">03</span>),</span>
+<span id="cb39-45"><a href="#cb39-45" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">20</span>, .<span class="dv">25</span>, .<span class="dv">30</span>, .<span class="dv">25</span>),</span>
+<span id="cb39-46"><a href="#cb39-46" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">03</span>, .<span class="dv">07</span>, .<span class="dv">20</span>, .<span class="dv">70</span>)),</span>
+<span id="cb39-47"><a href="#cb39-47" tabindex="-1"></a></span>
+<span id="cb39-48"><a href="#cb39-48" tabindex="-1"></a>  <span class="co"># GSS: Extramarital sex</span></span>
+<span id="cb39-49"><a href="#cb39-49" tabindex="-1"></a>  <span class="at">XMARSEX  =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-50"><a href="#cb39-50" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">90</span>, .<span class="dv">07</span>, .<span class="dv">02</span>, .<span class="dv">01</span>),</span>
+<span id="cb39-51"><a href="#cb39-51" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">70</span>, .<span class="dv">18</span>, .<span class="dv">08</span>, .<span class="dv">04</span>),</span>
+<span id="cb39-52"><a href="#cb39-52" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">55</span>, .<span class="dv">25</span>, .<span class="dv">12</span>, .<span class="dv">08</span>)),</span>
+<span id="cb39-53"><a href="#cb39-53" tabindex="-1"></a></span>
+<span id="cb39-54"><a href="#cb39-54" tabindex="-1"></a>  <span class="co"># GSS: Homosexuality</span></span>
+<span id="cb39-55"><a href="#cb39-55" tabindex="-1"></a>  <span class="at">HOMOSEX  =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-56"><a href="#cb39-56" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">82</span>, .<span class="dv">10</span>, .<span class="dv">05</span>, .<span class="dv">03</span>),</span>
+<span id="cb39-57"><a href="#cb39-57" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">22</span>, .<span class="dv">25</span>, .<span class="dv">28</span>),</span>
+<span id="cb39-58"><a href="#cb39-58" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">04</span>, .<span class="dv">06</span>, .<span class="dv">15</span>, .<span class="dv">75</span>)),</span>
+<span id="cb39-59"><a href="#cb39-59" tabindex="-1"></a></span>
+<span id="cb39-60"><a href="#cb39-60" tabindex="-1"></a>  <span class="co"># GSS: Bible is word of God (1=word of god, 2=inspired word, 3=book of fables)</span></span>
+<span id="cb39-61"><a href="#cb39-61" tabindex="-1"></a>  <span class="co"># Recoded: 1=fundamentalist, 2=moderate, 3=secular</span></span>
+<span id="cb39-62"><a href="#cb39-62" tabindex="-1"></a>  <span class="at">BIBLE    =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-63"><a href="#cb39-63" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">70</span>, .<span class="dv">22</span>, .<span class="dv">08</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-64"><a href="#cb39-64" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">20</span>, .<span class="dv">50</span>, .<span class="dv">30</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-65"><a href="#cb39-65" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">30</span>, .<span class="dv">65</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-66"><a href="#cb39-66" tabindex="-1"></a>               <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>),</span>
+<span id="cb39-67"><a href="#cb39-67" tabindex="-1"></a></span>
+<span id="cb39-68"><a href="#cb39-68" tabindex="-1"></a>  <span class="co"># GSS: Pray (1=several/day to 6=never) — recoded to 3 cats</span></span>
+<span id="cb39-69"><a href="#cb39-69" tabindex="-1"></a>  <span class="at">PRAY     =</span> <span class="fu">item_by_class</span>(true_class,</span>
+<span id="cb39-70"><a href="#cb39-70" tabindex="-1"></a>               <span class="at">p_trad =</span> <span class="fu">c</span>(.<span class="dv">70</span>, .<span class="dv">22</span>, .<span class="dv">08</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-71"><a href="#cb39-71" tabindex="-1"></a>               <span class="at">p_mod  =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">45</span>, .<span class="dv">30</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-72"><a href="#cb39-72" tabindex="-1"></a>               <span class="at">p_prog =</span> <span class="fu">c</span>(.<span class="dv">08</span>, .<span class="dv">25</span>, .<span class="dv">67</span>, <span class="cn">NA</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb39-73"><a href="#cb39-73" tabindex="-1"></a>               <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>),</span>
+<span id="cb39-74"><a href="#cb39-74" tabindex="-1"></a></span>
+<span id="cb39-75"><a href="#cb39-75" tabindex="-1"></a>  <span class="at">true_class =</span> true_class</span>
+<span id="cb39-76"><a href="#cb39-76" tabindex="-1"></a>)</span>
+<span id="cb39-77"><a href="#cb39-77" tabindex="-1"></a></span>
+<span id="cb39-78"><a href="#cb39-78" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;GSS-structure dataset: N =&quot;</span>, <span class="fu">nrow</span>(gss_moral), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## GSS-structure dataset: N = 1500</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Items: ABANY, PREMARSX, XMARSEX, HOMOSEX, BIBLE, PRAY</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Items: ABANY, PREMARSX, XMARSEX, HOMOSEX, BIBLE, PRAY</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;True class distribution:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## True class distribution:</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">table</span>(gss_moral<span class="sc">$</span>true_class))</span></code></pre></div>
+<pre><code>## 
+##       Moderate    Progressive Traditionalist 
+##            582            402            516</code></pre>
+<p>Now we run the full class enumeration procedure on the moral attitudes data, testing 1 through 5 latent classes. We use <code>nrep = 10</code> to run the model from multiple random starting points and retain the best solution — LCA optimization can get stuck in local maxima, so multiple starts are essential for reliable results.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb47-2"><a href="#cb47-2" tabindex="-1"></a><span class="co"># Step 1: Class enumeration</span></span>
+<span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a><span class="co"># Run LCA for k = 1 to 5 classes, record fit statistics</span></span>
+<span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb47-5"><a href="#cb47-5" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" tabindex="-1"></a>formula_moral <span class="ot">&lt;-</span> <span class="fu">cbind</span>(ABANY, PREMARSX, XMARSEX, HOMOSEX, BIBLE, PRAY) <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb47-7"><a href="#cb47-7" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" tabindex="-1"></a>fit_stats <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(k) {</span>
+<span id="cb47-9"><a href="#cb47-9" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">poLCA</span>(formula_moral,</span>
+<span id="cb47-10"><a href="#cb47-10" tabindex="-1"></a>             gss_moral <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>true_class),</span>
+<span id="cb47-11"><a href="#cb47-11" tabindex="-1"></a>             <span class="at">nclass  =</span> k,</span>
+<span id="cb47-12"><a href="#cb47-12" tabindex="-1"></a>             <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb47-13"><a href="#cb47-13" tabindex="-1"></a>             <span class="at">maxiter =</span> <span class="dv">3000</span>,</span>
+<span id="cb47-14"><a href="#cb47-14" tabindex="-1"></a>             <span class="at">nrep    =</span> <span class="dv">10</span>)  <span class="co"># run from 10 random starts; keeps best log-likelihood to avoid local maxima</span></span>
+<span id="cb47-15"><a href="#cb47-15" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="#cb47-16" tabindex="-1"></a>  <span class="co"># Compute entropy: measures separation of classes</span></span>
+<span id="cb47-17"><a href="#cb47-17" tabindex="-1"></a>  <span class="co"># Entropy = 1 means perfect class separation; 0 = no separation</span></span>
+<span id="cb47-18"><a href="#cb47-18" tabindex="-1"></a>  <span class="cf">if</span> (k <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb47-19"><a href="#cb47-19" tabindex="-1"></a>    probs   <span class="ot">&lt;-</span> m<span class="sc">$</span>posterior</span>
+<span id="cb47-20"><a href="#cb47-20" tabindex="-1"></a>    entropy <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="sc">-</span><span class="fu">sum</span>(probs <span class="sc">*</span> <span class="fu">log</span>(probs <span class="sc">+</span> <span class="fl">1e-12</span>))) <span class="sc">/</span> (<span class="fu">nrow</span>(probs) <span class="sc">*</span> <span class="fu">log</span>(k))</span>
+<span id="cb47-21"><a href="#cb47-21" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb47-22"><a href="#cb47-22" tabindex="-1"></a>    entropy <span class="ot">&lt;-</span> <span class="cn">NA_real_</span></span>
+<span id="cb47-23"><a href="#cb47-23" tabindex="-1"></a>  }</span>
+<span id="cb47-24"><a href="#cb47-24" tabindex="-1"></a></span>
+<span id="cb47-25"><a href="#cb47-25" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb47-26"><a href="#cb47-26" tabindex="-1"></a>    <span class="at">Classes =</span> k,</span>
+<span id="cb47-27"><a href="#cb47-27" tabindex="-1"></a>    <span class="at">LogLik  =</span> m<span class="sc">$</span>llik,</span>
+<span id="cb47-28"><a href="#cb47-28" tabindex="-1"></a>    <span class="at">Npar    =</span> m<span class="sc">$</span>npar,</span>
+<span id="cb47-29"><a href="#cb47-29" tabindex="-1"></a>    <span class="at">AIC     =</span> m<span class="sc">$</span>aic,</span>
+<span id="cb47-30"><a href="#cb47-30" tabindex="-1"></a>    <span class="at">BIC     =</span> m<span class="sc">$</span>bic,</span>
+<span id="cb47-31"><a href="#cb47-31" tabindex="-1"></a>    <span class="at">Entropy =</span> <span class="fu">round</span>(entropy, <span class="dv">3</span>)</span>
+<span id="cb47-32"><a href="#cb47-32" tabindex="-1"></a>  )</span>
+<span id="cb47-33"><a href="#cb47-33" tabindex="-1"></a>})</span>
+<span id="cb47-34"><a href="#cb47-34" tabindex="-1"></a></span>
+<span id="cb47-35"><a href="#cb47-35" tabindex="-1"></a>fit_stats <span class="sc">%&gt;%</span></span>
+<span id="cb47-36"><a href="#cb47-36" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb47-37"><a href="#cb47-37" tabindex="-1"></a>    <span class="at">digits  =</span> <span class="dv">1</span>,</span>
+<span id="cb47-38"><a href="#cb47-38" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 4.3: LCA fit statistics for k = 1–5 classes. Bolded rows = candidate solutions. BIC is the primary selection criterion; entropy assesses class separability.&quot;</span></span>
+<span id="cb47-39"><a href="#cb47-39" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb47-40"><a href="#cb47-40" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb47-41"><a href="#cb47-41" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">3</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">&quot;#eef4fb&quot;</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:lca-enum">Table 1.5: </span><span id="tab:lca-enum">Table 1.6: </span>Table 4.3: LCA fit statistics for k = 1–5 classes. Bolded rows = candidate solutions. BIC is the primary selection criterion; entropy assesses class separability.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Classes
+</th>
+<th style="text-align:right;">
+LogLik
+</th>
+<th style="text-align:right;">
+Npar
+</th>
+<th style="text-align:right;">
+AIC
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+<th style="text-align:right;">
+Entropy
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-10529.0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+21090.0
+</td>
+<td style="text-align:right;">
+21175.0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+-9705.4
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+19476.7
+</td>
+<td style="text-align:right;">
+19652.1
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+3
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+-9617.3
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+50
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+19334.5
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+19600.2
+</td>
+<td style="text-align:right;font-weight: bold;background-color: rgba(238, 244, 251, 255) !important;">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+-9601.3
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+19336.6
+</td>
+<td style="text-align:right;">
+19692.5
+</td>
+<td style="text-align:right;">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+-9586.9
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+19341.9
+</td>
+<td style="text-align:right;">
+19788.2
+</td>
+<td style="text-align:right;">
+0.7
+</td>
+</tr>
+</tbody>
+</table>
+<div class="lab-box">
+<p><strong>Reading Table 4.3: interpreting the full enumeration.</strong></p>
+<p><strong>Why does AIC keep decreasing?</strong> AIC applies a fixed penalty of 2 per estimated parameter. As you add classes, the model gains many parameters (each new class requires a full set of conditional probabilities for every item), but also improves fit substantially. Because AIC’s penalty is light, it almost always favors more classes — it is not a reliable stopping rule in LCA and should not be used as the primary criterion here.</p>
+<p><strong>Why prefer BIC?</strong> BIC’s penalty scales with log(N), which is log(1500) ≈ 7.3 in this dataset. That is much heavier than AIC’s fixed penalty of 2, so BIC imposes a steeper cost for adding classes. BIC will often level off or increase after the “true” number of classes, making it the preferred stopping rule. In most published LCA research in sociology, BIC is the headline criterion, with other statistics used as supporting evidence.</p>
+<p><strong>What to look for in practice.</strong> Scan the BIC column. The lowest BIC value (or the point where BIC levels off and stops improving meaningfully) is your preferred solution. If BIC is lowest at k = 3, that is the 3-class solution highlighted in blue. If the BIC difference between k = 3 and k = 4 is less than ~10 points, the evidence for 4 classes over 3 is weak; if it is 50+ points, the 3-class solution is strongly preferred.</p>
+<p><strong>What entropy tells you.</strong> Entropy is a summary measure of how cleanly respondents are assigned to classes. Entropy of 1.0 means every respondent has a posterior probability of 1.0 for one class and 0.0 for all others — perfect separation. Entropy of 0.0 means the classes cannot be distinguished at all. Values above 0.80 are considered good; values between 0.60 and 0.80 are acceptable. Entropy does not affect which model you select (that is BIC’s job), but it matters for what you do with the classes afterward. If entropy is low, modal class assignment (assigning people to their most probable class) will misclassify many respondents, and bias corrections like BCH become especially important.</p>
+<p><strong>LogLik and Npar</strong> are provided for transparency. LogLik will always improve as you add classes — a model with more parameters will always fit better. The fit statistics (AIC, BIC) exist precisely to penalize this gain in fit against the cost in parsimony.</p>
+</div>
+<p>With the preferred number of classes identified, we now estimate the final 3-class model and examine the class sizes and conditional probabilities that define each class’s profile.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a><span class="co"># Step 2: Estimate and interpret the 3-class solution</span></span>
+<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a>lca_3 <span class="ot">&lt;-</span> <span class="fu">poLCA</span>(formula_moral,</span>
+<span id="cb48-5"><a href="#cb48-5" tabindex="-1"></a>               gss_moral <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>true_class),</span>
+<span id="cb48-6"><a href="#cb48-6" tabindex="-1"></a>               <span class="at">nclass  =</span> <span class="dv">3</span>,</span>
+<span id="cb48-7"><a href="#cb48-7" tabindex="-1"></a>               <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb48-8"><a href="#cb48-8" tabindex="-1"></a>               <span class="at">maxiter =</span> <span class="dv">3000</span>,</span>
+<span id="cb48-9"><a href="#cb48-9" tabindex="-1"></a>               <span class="at">nrep    =</span> <span class="dv">20</span>)  <span class="co"># more starts for the final model to ensure global optimum</span></span>
+<span id="cb48-10"><a href="#cb48-10" tabindex="-1"></a></span>
+<span id="cb48-11"><a href="#cb48-11" tabindex="-1"></a><span class="co"># Extract conditional probabilities (class profiles)</span></span>
+<span id="cb48-12"><a href="#cb48-12" tabindex="-1"></a>probs_list <span class="ot">&lt;-</span> lca_3<span class="sc">$</span>probs</span>
+<span id="cb48-13"><a href="#cb48-13" tabindex="-1"></a></span>
+<span id="cb48-14"><a href="#cb48-14" tabindex="-1"></a><span class="co"># Build tidy table of conditional probabilities</span></span>
+<span id="cb48-15"><a href="#cb48-15" tabindex="-1"></a>cond_probs <span class="ot">&lt;-</span> <span class="fu">imap_dfr</span>(probs_list, <span class="cf">function</span>(mat, item_name) {</span>
+<span id="cb48-16"><a href="#cb48-16" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(mat) <span class="sc">%&gt;%</span></span>
+<span id="cb48-17"><a href="#cb48-17" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">item =</span> item_name, <span class="at">class =</span> <span class="fu">paste0</span>(<span class="st">&quot;Class &quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb48-18"><a href="#cb48-18" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(item, class), <span class="at">names_to =</span> <span class="st">&quot;response&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;prob&quot;</span>)</span>
+<span id="cb48-19"><a href="#cb48-19" tabindex="-1"></a>})</span>
+<span id="cb48-20"><a href="#cb48-20" tabindex="-1"></a></span>
+<span id="cb48-21"><a href="#cb48-21" tabindex="-1"></a><span class="co"># Class sizes</span></span>
+<span id="cb48-22"><a href="#cb48-22" tabindex="-1"></a>class_sizes <span class="ot">&lt;-</span> <span class="fu">round</span>(lca_3<span class="sc">$</span>P <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb48-23"><a href="#cb48-23" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Class sizes (%):&quot;</span>, <span class="fu">paste</span>(class_sizes, <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Class sizes (%): 36.9, 29, 34.2</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Class 1:&quot;</span>, class_sizes[<span class="dv">1</span>], <span class="st">&quot;% | Class 2:&quot;</span>, class_sizes[<span class="dv">2</span>], <span class="st">&quot;% | Class 3:&quot;</span>, class_sizes[<span class="dv">3</span>], <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Class 1: 36.9 % | Class 2: 29 % | Class 3: 34.2 %</code></pre>
+<div class="lab-box">
+<p><strong>Interpreting the 3-class solution.</strong></p>
+<p>The class sizes (the <code>lca_3$P</code> values, reported as percentages above) show the estimated proportion of the population in each class. These are not simply the number of people assigned to each class — they are model-estimated population prevalences, accounting for classification uncertainty.</p>
+<p>In a sample designed to mirror the GSS, you should see three meaningfully sized groups. No class should be a tiny sliver (say, &lt; 5%) in a well-specified solution; very small classes often indicate overfitting (the model is capturing sample-specific noise rather than genuine population structure) or a local maximum in the optimization.</p>
+<p><strong>What each class represents.</strong> The class labels (Traditionalist, Moderate, Progressive) are assigned by the researcher based on the conditional probability profiles shown in the next figure — the model numbers them arbitrarily, so the numbering may not match those labels. Examine the profile plot to determine which numbered class corresponds to which substantive type.</p>
+<p><strong>Connection to Vaisey (2009).</strong> Vaisey argues that moral orientations are not attitudes that people consciously deliberate about but schemas — deep cognitive structures that generate automatic moral judgments. If this is correct, then the classes identified by LCA should not just be loose attitude clusters but tightly coherent profiles where a respondent’s position on one item strongly predicts their position on others. High entropy supports this: it indicates that respondents are not scattered across classes ambiguously but cluster clearly into discrete types. This is evidence for the “discrete schema” interpretation over a continuous attitude dimension.</p>
+</div>
+<p>The profile plot translates the conditional probability tables into a visual form, making it easier to see how the three classes differ from each other across all items simultaneously.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="co"># Plot probability of most restrictive response per item, by class</span></span>
+<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a>most_restrictive <span class="ot">&lt;-</span> cond_probs <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3" tabindex="-1"></a>  <span class="fu">filter</span>(response <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Pr(1)&quot;</span>, <span class="st">&quot;Pr(1) &quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb52-5"><a href="#cb52-5" tabindex="-1"></a>    <span class="at">item_label =</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(item,</span>
+<span id="cb52-6"><a href="#cb52-6" tabindex="-1"></a>      <span class="at">ABANY    =</span> <span class="st">&quot;Abortion for</span><span class="sc">\n</span><span class="st">any reason&quot;</span>,</span>
+<span id="cb52-7"><a href="#cb52-7" tabindex="-1"></a>      <span class="at">PREMARSX =</span> <span class="st">&quot;Premarital sex&quot;</span>,</span>
+<span id="cb52-8"><a href="#cb52-8" tabindex="-1"></a>      <span class="at">XMARSEX  =</span> <span class="st">&quot;Extramarital sex&quot;</span>,</span>
+<span id="cb52-9"><a href="#cb52-9" tabindex="-1"></a>      <span class="at">HOMOSEX  =</span> <span class="st">&quot;Homosexuality&quot;</span>,</span>
+<span id="cb52-10"><a href="#cb52-10" tabindex="-1"></a>      <span class="at">BIBLE    =</span> <span class="st">&quot;Bible = literal</span><span class="sc">\n</span><span class="st">word of God&quot;</span>,</span>
+<span id="cb52-11"><a href="#cb52-11" tabindex="-1"></a>      <span class="at">PRAY     =</span> <span class="st">&quot;Pray daily&quot;</span></span>
+<span id="cb52-12"><a href="#cb52-12" tabindex="-1"></a>    ),</span>
+<span id="cb52-13"><a href="#cb52-13" tabindex="-1"></a>    <span class="at">class_label =</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(class,</span>
+<span id="cb52-14"><a href="#cb52-14" tabindex="-1"></a>      <span class="st">&quot;Class 1&quot;</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;Class 1 — Traditionalist</span><span class="sc">\n</span><span class="st">(n≈&quot;</span>, <span class="fu">round</span>(lca_3<span class="sc">$</span>N <span class="sc">*</span> lca_3<span class="sc">$</span>P[<span class="dv">1</span>]), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb52-15"><a href="#cb52-15" tabindex="-1"></a>      <span class="st">&quot;Class 2&quot;</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;Class 2 — Moderate</span><span class="sc">\n</span><span class="st">(n≈&quot;</span>, <span class="fu">round</span>(lca_3<span class="sc">$</span>N <span class="sc">*</span> lca_3<span class="sc">$</span>P[<span class="dv">2</span>]), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb52-16"><a href="#cb52-16" tabindex="-1"></a>      <span class="st">&quot;Class 3&quot;</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;Class 3 — Progressive</span><span class="sc">\n</span><span class="st">(n≈&quot;</span>, <span class="fu">round</span>(lca_3<span class="sc">$</span>N <span class="sc">*</span> lca_3<span class="sc">$</span>P[<span class="dv">3</span>]), <span class="st">&quot;)&quot;</span>)</span>
+<span id="cb52-17"><a href="#cb52-17" tabindex="-1"></a>    )</span>
+<span id="cb52-18"><a href="#cb52-18" tabindex="-1"></a>  )</span>
+<span id="cb52-19"><a href="#cb52-19" tabindex="-1"></a></span>
+<span id="cb52-20"><a href="#cb52-20" tabindex="-1"></a><span class="fu">ggplot</span>(most_restrictive, <span class="fu">aes</span>(<span class="at">x =</span> item_label, <span class="at">y =</span> prob, <span class="at">fill =</span> class_label)) <span class="sc">+</span></span>
+<span id="cb52-21"><a href="#cb52-21" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb52-22"><a href="#cb52-22" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb52-23"><a href="#cb52-23" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb52-24"><a href="#cb52-24" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#e67e22&quot;</span>, <span class="st">&quot;#27ae60&quot;</span>),</span>
+<span id="cb52-25"><a href="#cb52-25" tabindex="-1"></a>    <span class="at">name   =</span> <span class="cn">NULL</span></span>
+<span id="cb52-26"><a href="#cb52-26" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb52-27"><a href="#cb52-27" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb52-28"><a href="#cb52-28" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;LCA Class Profiles: Conditional Probability of Most Restrictive Response&quot;</span>,</span>
+<span id="cb52-29"><a href="#cb52-29" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Response = &#39;Always wrong&#39; (ABANY, PREMARSX, XMARSEX, HOMOSEX) or most conservative option&quot;</span>,</span>
+<span id="cb52-30"><a href="#cb52-30" tabindex="-1"></a>    <span class="at">x        =</span> <span class="cn">NULL</span>,</span>
+<span id="cb52-31"><a href="#cb52-31" tabindex="-1"></a>    <span class="at">y        =</span> <span class="st">&quot;P(most restrictive response | class)&quot;</span></span>
+<span id="cb52-32"><a href="#cb52-32" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb52-33"><a href="#cb52-33" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb52-34"><a href="#cb52-34" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:lca-profile-plot"></span>
+<img src="04-lca-fa_files/figure-html/lca-profile-plot-1.png" alt="Figure 4.2: LCA class profiles — conditional probability of each response category given class membership. Class 1 = Traditionalist (strict moral code, high religiosity); Class 2 = Moderate; Class 3 = Progressive (permissive, secular). Profiles are consistent with Vaisey's (2009) three moral orientations." width="960" />
+<p class="caption">
+Figure 1.2: Figure 4.2: LCA class profiles — conditional probability of each response category given class membership. Class 1 = Traditionalist (strict moral code, high religiosity); Class 2 = Moderate; Class 3 = Progressive (permissive, secular). Profiles are consistent with Vaisey’s (2009) three moral orientations.
+</p>
+</div>
+<div class="lab-box">
+<p><strong>Reading Figure 4.2.</strong></p>
+<p>Each cluster of bars along the x-axis corresponds to one survey item. For each item, there are three bars — one per class. The height of each bar is the <strong>conditional probability</strong> of the most restrictive response (coded as category 1: “Always wrong,” or the most conservative option) <em>given that the respondent belongs to that class</em>. The y-axis runs from 0 to 100%.</p>
+<p><strong>How to identify each class.</strong> Look at the overall pattern across items:</p>
+<ul>
+<li>The class with consistently tall bars across all items is the <strong>Traditionalist</strong> class. A high probability of saying abortion is “always wrong,” premarital sex is “always wrong,” homosexuality is “always wrong,” and a high probability of literal Bible belief and daily prayer — all simultaneously — identifies a coherent traditional moral schema.</li>
+<li>The class with medium-height bars across most items is the <strong>Moderate</strong> class. These respondents are more restrictive on some items (extramarital sex) and less restrictive on others (premarital sex, homosexuality), producing a mixed profile.</li>
+<li>The class with consistently short bars is the <strong>Progressive</strong> class. Low probability of “always wrong” on sexual morality items, and low probability of literal Bible belief, defines this group.</li>
+</ul>
+<p><strong>What makes this LCA rather than just cross-tabulation.</strong> Notice that the differences between classes are not just on one item — the classes are differentiated on <em>all items simultaneously</em>. This coherence across items is what LCA is designed to detect. A respondent’s probability of being Traditionalist on one item is tightly coupled with their probability of being Traditionalist on others. This cross-item coherence is the empirical signature of a moral schema in Vaisey’s sense.</p>
+<p><strong>XMARSEX as a discriminating item.</strong> Extramarital sex is typically condemned strongly even by moderates and many progressives — this is theoretically expected, as the taboo on adultery crosses moral boundaries. Look at whether the class differences on XMARSEX are smaller than the differences on ABANY or HOMOSEX. If so, XMARSEX is a less discriminating item between classes, which is itself a substantively interesting finding.</p>
+</div>
+</div>
+<div id="b.3-the-3-step-method-using-class-as-a-predictor" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> 4b.3 The 3-Step Method: Using Class as a Predictor<a href="#b.3-the-3-step-method-using-class-as-a-predictor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="caution-box">
+<p><strong>Why naive class assignment is biased.</strong> Assigning respondents to
+their modal class and then using that assignment in a regression
+introduces measurement error — the assignment is uncertain, and
+ignoring that uncertainty inflates the effect of class on the outcome.
+The BCH correction (Bolck, Croon &amp; Hagenaars, 2004) adjusts for this.
+<code>poLCA</code> does not implement BCH directly; <code>Mplus</code> and the <code>MplusAutomation</code>
+R package are the standard tools for BCH in practice. Below, we
+demonstrate the bias with a comparison.</p>
+</div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="co"># Demonstrate the bias in naive modal class assignment</span></span>
+<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" tabindex="-1"></a><span class="co"># Assign to modal class</span></span>
+<span id="cb53-4"><a href="#cb53-4" tabindex="-1"></a>gss_moral<span class="sc">$</span>modal_class <span class="ot">&lt;-</span> lca_3<span class="sc">$</span>predclass</span>
+<span id="cb53-5"><a href="#cb53-5" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="#cb53-6" tabindex="-1"></a><span class="co"># Outcome: Create a &quot;behavioral permissiveness&quot; index</span></span>
+<span id="cb53-7"><a href="#cb53-7" tabindex="-1"></a><span class="co"># (in real research, this would be a behavioral variable, not attitudes)</span></span>
+<span id="cb53-8"><a href="#cb53-8" tabindex="-1"></a><span class="co"># Here: average of remaining items not used in LCA</span></span>
+<span id="cb53-9"><a href="#cb53-9" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
+<span id="cb53-10"><a href="#cb53-10" tabindex="-1"></a>gss_moral<span class="sc">$</span>permissiveness <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(</span>
+<span id="cb53-11"><a href="#cb53-11" tabindex="-1"></a>  gss_moral[, <span class="fu">c</span>(<span class="st">&quot;ABANY&quot;</span>, <span class="st">&quot;PREMARSX&quot;</span>, <span class="st">&quot;HOMOSEX&quot;</span>)] <span class="sc">+</span> <span class="fu">rnorm</span>(n_gss <span class="sc">*</span> <span class="dv">3</span>, <span class="dv">0</span>, <span class="fl">0.3</span>)</span>
+<span id="cb53-12"><a href="#cb53-12" tabindex="-1"></a>) <span class="sc">/</span> <span class="dv">4</span></span>
+<span id="cb53-13"><a href="#cb53-13" tabindex="-1"></a></span>
+<span id="cb53-14"><a href="#cb53-14" tabindex="-1"></a><span class="co"># Naive regression: class as predictor</span></span>
+<span id="cb53-15"><a href="#cb53-15" tabindex="-1"></a>gss_modal_factor <span class="ot">&lt;-</span> gss_moral <span class="sc">%&gt;%</span></span>
+<span id="cb53-16"><a href="#cb53-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">modal_class =</span> <span class="fu">factor</span>(modal_class,</span>
+<span id="cb53-17"><a href="#cb53-17" tabindex="-1"></a>                               <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Traditionalist&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;Progressive&quot;</span>)))</span>
+<span id="cb53-18"><a href="#cb53-18" tabindex="-1"></a></span>
+<span id="cb53-19"><a href="#cb53-19" tabindex="-1"></a>naive_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(permissiveness <span class="sc">~</span> modal_class, <span class="at">data =</span> gss_modal_factor)</span>
+<span id="cb53-20"><a href="#cb53-20" tabindex="-1"></a></span>
+<span id="cb53-21"><a href="#cb53-21" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Naive modal assignment regression:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Naive modal assignment regression:</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(naive_model)<span class="sc">$</span>coefficients)</span></code></pre></div>
+<pre><code>##                          Estimate  Std. Error   t value      Pr(&gt;|t|)
+## (Intercept)             0.6049386 0.005070014 119.31695  0.000000e+00
+## modal_classModerate     0.2958329 0.007667893  38.58073 1.178444e-226
+## modal_classProgressive -0.2801568 0.007362719 -38.05072 3.365680e-222</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">--- Methodological note ---</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## --- Methodological note ---</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The above coefficients are biased because modal class assignment ignores</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The above coefficients are biased because modal class assignment ignores</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;classification uncertainty. Use BCH correction in Mplus for unbiased estimates.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## classification uncertainty. Use BCH correction in Mplus for unbiased estimates.</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;In R: see ?tidyLPA for 3-step implementation with BCH-like correction.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## In R: see ?tidyLPA for 3-step implementation with BCH-like correction.</code></pre>
+<div class="caution-box">
+<p><strong>Interpreting the regression output — and its limits.</strong></p>
+<p>The coefficient table shows the estimated difference in mean permissiveness between Traditionalists (the reference category) and Moderates, and between Traditionalists and Progressives. The direction should be intuitive: Progressives should score substantially higher on the permissiveness index, Moderates somewhere in between.</p>
+<p>However, these coefficients are <strong>biased upward</strong>. Here is why: when we assign respondents to their modal (most probable) class, we treat that assignment as if it were certain. But many respondents have posterior probabilities like .65/.25/.10 — they are most likely Traditionalist but there is real uncertainty. Treating them as definitively Traditionalist and then regressing on class membership ignores this uncertainty, which systematically inflates the apparent association between class and the outcome (attenuation bias runs in the opposite direction when the predictor is a continuous variable measured with error, but for categorical assignments the direction of bias is more complex and context-dependent).</p>
+<p>The BCH correction addresses this by weighting each respondent’s contribution to the regression by their posterior class probabilities rather than their modal assignment. In practice: use <code>Mplus</code> with the <code>AUXILIARY</code> command, or the <code>MplusAutomation</code> package in R. For publication-ready LCA research, the BCH-corrected estimates should be reported. The naive estimates here are useful for pedagogical illustration but should not be treated as the final result.</p>
+<p><strong>Connection to Vaisey (2009)’s key finding.</strong> Vaisey’s core argument is that moral class membership (the “deep” schema) predicts behavioral outcomes better than consciously stated justifications (the “surface” attitudes). To demonstrate this, you would need two regression models: one using class as predictor and one using stated justifications. If class is a stronger predictor after accounting for stated justifications, this supports the dual-process interpretation. The exercise above is the first step in that analysis.</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="confirmatory-factor-analysis-and-measurement-invariance" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> 4.3 Confirmatory Factor Analysis and Measurement Invariance<a href="#confirmatory-factor-analysis-and-measurement-invariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>CFA tests a <em>specified</em> factor structure rather than discovering it.
+In cultural sociology, CFA is most important for <strong>measurement
+invariance testing</strong>: does a construct mean the same thing across
+groups (countries, cohorts, genders)?</p>
+<div class="theory-box">
+<p><strong>CFA versus EFA — and why invariance testing matters.</strong></p>
+<p>EFA is exploratory: you tell the software how many factors you want, and it finds the factor structure that best fits the data, subject to mathematical constraints. Every item is allowed to load on every factor; rotation chooses the simplest solution. You use EFA when you do not know, or do not want to impose, a specific factor structure.</p>
+<p>CFA is confirmatory: you specify in advance exactly which items load on which factors, fix cross-loadings to zero (unless you explicitly free them), and test whether this theoretically motivated structure fits the observed data. This makes CFA appropriate <em>after</em> EFA has suggested a structure, or when using a well-established scale whose structure is theoretically grounded (like Schwartz values).</p>
+<p>For cross-cultural research, the critical extension of CFA is <strong>measurement invariance testing</strong>. Cross-national comparison assumes that survey items mean the same thing to respondents in different countries. If they do not — if, say, “tradition” items function differently in Germany than in Turkey — then comparing factor scores or latent means across countries is misleading. Invariance testing is the formal procedure for evaluating this assumption.</p>
+<p>The sequence of models — configural, metric, scalar — tests progressively stronger versions of cross-group equivalence. We need at least metric invariance to compare relationships between factors; we need scalar invariance to compare latent means. Discovering partial invariance (some items invariant, others not) is common in practice and allows constrained comparisons if handled correctly.</p>
+</div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb65-2"><a href="#cb65-2" tabindex="-1"></a><span class="co"># Test measurement invariance of the two-factor values model</span></span>
+<span id="cb65-3"><a href="#cb65-3" tabindex="-1"></a><span class="co"># across two simulated country groups (A and B)</span></span>
+<span id="cb65-4"><a href="#cb65-4" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb65-5"><a href="#cb65-5" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240105</span>)</span>
+<span id="cb65-7"><a href="#cb65-7" tabindex="-1"></a></span>
+<span id="cb65-8"><a href="#cb65-8" tabindex="-1"></a><span class="co"># Country B has same factor structure but different intercepts</span></span>
+<span id="cb65-9"><a href="#cb65-9" tabindex="-1"></a><span class="co"># for 2 items (partial non-invariance — the realistic case)</span></span>
+<span id="cb65-10"><a href="#cb65-10" tabindex="-1"></a>n_country <span class="ot">&lt;-</span> <span class="dv">600</span></span>
+<span id="cb65-11"><a href="#cb65-11" tabindex="-1"></a></span>
+<span id="cb65-12"><a href="#cb65-12" tabindex="-1"></a>oc_a  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_country); st_a  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_country)</span>
+<span id="cb65-13"><a href="#cb65-13" tabindex="-1"></a>oc_b  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_country); st_b  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_country)</span>
+<span id="cb65-14"><a href="#cb65-14" tabindex="-1"></a></span>
+<span id="cb65-15"><a href="#cb65-15" tabindex="-1"></a><span class="co"># Intercept difference for TRA1 and POW1 in Country B</span></span>
+<span id="cb65-16"><a href="#cb65-16" tabindex="-1"></a>country_b_offset <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb65-17"><a href="#cb65-17" tabindex="-1"></a>  <span class="at">STI1  =</span> <span class="fu">sim_item</span>(oc_b,  <span class="fl">0.65</span>) <span class="sc">-</span> <span class="fl">0.3</span>,</span>
+<span id="cb65-18"><a href="#cb65-18" tabindex="-1"></a>  <span class="at">SD1   =</span> <span class="fu">sim_item</span>(oc_b,  <span class="fl">0.70</span>),</span>
+<span id="cb65-19"><a href="#cb65-19" tabindex="-1"></a>  <span class="at">TRA1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_b, <span class="fl">0.68</span>) <span class="sc">+</span> <span class="fl">0.4</span>,   <span class="co"># non-invariant intercept: Country B rates tradition items higher</span></span>
+<span id="cb65-20"><a href="#cb65-20" tabindex="-1"></a>  <span class="at">SEC1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_b, <span class="fl">0.55</span>, st_b, <span class="fl">0.10</span>),</span>
+<span id="cb65-21"><a href="#cb65-21" tabindex="-1"></a>  <span class="at">UNI1  =</span> <span class="fu">sim_item</span>(st_b,  <span class="fl">0.70</span>),</span>
+<span id="cb65-22"><a href="#cb65-22" tabindex="-1"></a>  <span class="at">BEN1  =</span> <span class="fu">sim_item</span>(st_b,  <span class="fl">0.65</span>),</span>
+<span id="cb65-23"><a href="#cb65-23" tabindex="-1"></a>  <span class="at">POW1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_b, <span class="fl">0.65</span>) <span class="sc">-</span> <span class="fl">0.5</span>,   <span class="co"># non-invariant intercept: Country B rates power items lower</span></span>
+<span id="cb65-24"><a href="#cb65-24" tabindex="-1"></a>  <span class="at">ACH1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_b, <span class="fl">0.58</span>, oc_b, <span class="fl">0.10</span>),</span>
+<span id="cb65-25"><a href="#cb65-25" tabindex="-1"></a>  <span class="at">country =</span> <span class="st">&quot;B&quot;</span></span>
+<span id="cb65-26"><a href="#cb65-26" tabindex="-1"></a>)</span>
+<span id="cb65-27"><a href="#cb65-27" tabindex="-1"></a></span>
+<span id="cb65-28"><a href="#cb65-28" tabindex="-1"></a>country_a_offset <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb65-29"><a href="#cb65-29" tabindex="-1"></a>  <span class="at">STI1  =</span> <span class="fu">sim_item</span>(oc_a, <span class="fl">0.65</span>),</span>
+<span id="cb65-30"><a href="#cb65-30" tabindex="-1"></a>  <span class="at">SD1   =</span> <span class="fu">sim_item</span>(oc_a, <span class="fl">0.70</span>),</span>
+<span id="cb65-31"><a href="#cb65-31" tabindex="-1"></a>  <span class="at">TRA1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_a, <span class="fl">0.68</span>),</span>
+<span id="cb65-32"><a href="#cb65-32" tabindex="-1"></a>  <span class="at">SEC1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>oc_a, <span class="fl">0.55</span>, st_a, <span class="fl">0.10</span>),</span>
+<span id="cb65-33"><a href="#cb65-33" tabindex="-1"></a>  <span class="at">UNI1  =</span> <span class="fu">sim_item</span>(st_a, <span class="fl">0.70</span>),</span>
+<span id="cb65-34"><a href="#cb65-34" tabindex="-1"></a>  <span class="at">BEN1  =</span> <span class="fu">sim_item</span>(st_a, <span class="fl">0.65</span>),</span>
+<span id="cb65-35"><a href="#cb65-35" tabindex="-1"></a>  <span class="at">POW1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_a, <span class="fl">0.65</span>),</span>
+<span id="cb65-36"><a href="#cb65-36" tabindex="-1"></a>  <span class="at">ACH1  =</span> <span class="fu">sim_item</span>(<span class="sc">-</span>st_a, <span class="fl">0.58</span>, oc_a, <span class="fl">0.10</span>),</span>
+<span id="cb65-37"><a href="#cb65-37" tabindex="-1"></a>  <span class="at">country =</span> <span class="st">&quot;A&quot;</span></span>
+<span id="cb65-38"><a href="#cb65-38" tabindex="-1"></a>)</span>
+<span id="cb65-39"><a href="#cb65-39" tabindex="-1"></a></span>
+<span id="cb65-40"><a href="#cb65-40" tabindex="-1"></a>multi_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(country_a_offset, country_b_offset) <span class="sc">%&gt;%</span></span>
+<span id="cb65-41"><a href="#cb65-41" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="sc">-</span>country, <span class="sc">~</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(., <span class="dv">1</span>), <span class="dv">6</span>)))</span>
+<span id="cb65-42"><a href="#cb65-42" tabindex="-1"></a></span>
+<span id="cb65-43"><a href="#cb65-43" tabindex="-1"></a><span class="co"># CFA model specification</span></span>
+<span id="cb65-44"><a href="#cb65-44" tabindex="-1"></a>cfa_model <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb65-45"><a href="#cb65-45" tabindex="-1"></a><span class="st">  # Factor 1: Openness to Change vs. Conservation</span></span>
+<span id="cb65-46"><a href="#cb65-46" tabindex="-1"></a><span class="st">  OC =~ STI1 + SD1 + TRA1 + SEC1</span></span>
+<span id="cb65-47"><a href="#cb65-47" tabindex="-1"></a></span>
+<span id="cb65-48"><a href="#cb65-48" tabindex="-1"></a><span class="st">  # Factor 2: Self-Transcendence vs. Self-Enhancement</span></span>
+<span id="cb65-49"><a href="#cb65-49" tabindex="-1"></a><span class="st">  ST =~ UNI1 + BEN1 + POW1 + ACH1</span></span>
+<span id="cb65-50"><a href="#cb65-50" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb65-51"><a href="#cb65-51" tabindex="-1"></a></span>
+<span id="cb65-52"><a href="#cb65-52" tabindex="-1"></a><span class="co"># Configural model: same factor structure, all parameters free to vary</span></span>
+<span id="cb65-53"><a href="#cb65-53" tabindex="-1"></a>fit_configural <span class="ot">&lt;-</span> <span class="fu">cfa</span>(cfa_model, <span class="at">data =</span> multi_df,</span>
+<span id="cb65-54"><a href="#cb65-54" tabindex="-1"></a>                       <span class="at">group =</span> <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb65-55"><a href="#cb65-55" tabindex="-1"></a>                       <span class="at">estimator =</span> <span class="st">&quot;MLR&quot;</span>)   <span class="co"># MLR: robust maximum likelihood, appropriate when Likert items are treated as continuous and normality cannot be assumed</span></span>
+<span id="cb65-56"><a href="#cb65-56" tabindex="-1"></a></span>
+<span id="cb65-57"><a href="#cb65-57" tabindex="-1"></a><span class="co"># Metric model: constrain loadings to be equal across groups</span></span>
+<span id="cb65-58"><a href="#cb65-58" tabindex="-1"></a>fit_metric <span class="ot">&lt;-</span> <span class="fu">cfa</span>(cfa_model, <span class="at">data =</span> multi_df,</span>
+<span id="cb65-59"><a href="#cb65-59" tabindex="-1"></a>                   <span class="at">group =</span> <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb65-60"><a href="#cb65-60" tabindex="-1"></a>                   <span class="at">group.equal =</span> <span class="st">&quot;loadings&quot;</span>,  <span class="co"># adds constraint: λ_A = λ_B for all items</span></span>
+<span id="cb65-61"><a href="#cb65-61" tabindex="-1"></a>                   <span class="at">estimator   =</span> <span class="st">&quot;MLR&quot;</span>)</span>
+<span id="cb65-62"><a href="#cb65-62" tabindex="-1"></a></span>
+<span id="cb65-63"><a href="#cb65-63" tabindex="-1"></a><span class="co"># Scalar model: constrain loadings AND intercepts</span></span>
+<span id="cb65-64"><a href="#cb65-64" tabindex="-1"></a>fit_scalar <span class="ot">&lt;-</span> <span class="fu">cfa</span>(cfa_model, <span class="at">data =</span> multi_df,</span>
+<span id="cb65-65"><a href="#cb65-65" tabindex="-1"></a>                   <span class="at">group =</span> <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb65-66"><a href="#cb65-66" tabindex="-1"></a>                   <span class="at">group.equal =</span> <span class="fu">c</span>(<span class="st">&quot;loadings&quot;</span>, <span class="st">&quot;intercepts&quot;</span>),  <span class="co"># adds constraint: τ_A = τ_B; needed to compare latent means</span></span>
+<span id="cb65-67"><a href="#cb65-67" tabindex="-1"></a>                   <span class="at">estimator   =</span> <span class="st">&quot;MLR&quot;</span>)</span>
+<span id="cb65-68"><a href="#cb65-68" tabindex="-1"></a></span>
+<span id="cb65-69"><a href="#cb65-69" tabindex="-1"></a><span class="co"># Compare models</span></span>
+<span id="cb65-70"><a href="#cb65-70" tabindex="-1"></a>inv_results <span class="ot">&lt;-</span> <span class="fu">compareFit</span>(fit_configural, fit_metric, fit_scalar)</span>
+<span id="cb65-71"><a href="#cb65-71" tabindex="-1"></a><span class="fu">summary</span>(inv_results)</span></code></pre></div>
+<pre><code>## ################### Nested Model Comparison #########################
+## 
+## Scaled Chi-Squared Difference Test (method = &quot;satorra.bentler.2001&quot;)
+## 
+## lavaan-&gt;unknown():  
+##    lavaan NOTE: The &quot;Chisq&quot; column contains standard test statistics, not the 
+##    robust test that should be reported per model. A robust difference test is 
+##    a function of two standard (not robust) statistics.
+## 
+##                Df   AIC   BIC   Chisq Chisq diff    RMSEA Df diff Pr(&gt;Chisq)
+## fit_configural 38 41938 42227  94.752                                       
+## fit_metric     44 41946 42200 114.348      19.63 0.043471       6   0.003225
+## fit_scalar     50 42326 42546 506.913     422.46 0.231837       6  &lt; 2.2e-16
+##                   
+## fit_configural    
+## fit_metric     ** 
+## fit_scalar     ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## ####################### Model Fit Indices ###########################
+##                chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+## fit_configural      95.803†        38          .000        .035†      .984†
+## fit_metric         115.467         44          .000        .037       .980 
+## fit_scalar         515.690         50          .000        .087       .868 
+##                tli.robust  srmr        aic        bic
+## fit_configural      .976† .029† 41938.321† 42227.483 
+## fit_metric          .974  .034  41945.918  42200.379†
+## fit_scalar          .852  .059  42326.482  42546.245 
+## 
+## ################## Differences in Fit Indices #######################
+##                             df.scaled rmsea.robust cfi.robust tli.robust  srmr
+## fit_metric - fit_configural         6        0.001     -0.004     -0.002 0.005
+## fit_scalar - fit_metric             6        0.051     -0.111     -0.122 0.026
+##                                 aic     bic
+## fit_metric - fit_configural   7.596 -27.103
+## fit_scalar - fit_metric     380.565 345.865</code></pre>
+<div class="lab-box">
+<p><strong>Reading the <code>compareFit()</code> output.</strong></p>
+<p>The <code>compareFit()</code> summary shows how model fit changes as we move through the invariance sequence. Each step adds a new constraint and the χ² difference test tells us whether that constraint significantly worsens fit.</p>
+<p><strong>Configural model</strong> (same factor structure, all parameters free): This is the baseline. It asks: “Does the same pattern of which items load on which factors hold in both countries?” It does not require any numerical equality — just the same factor structure. A well-fitting configural model is the precondition for testing stronger forms of invariance. If the configural model fits poorly, the factor structure itself differs across groups, and there is nothing to constrain.</p>
+<p><strong>Metric model</strong> (+ equal loadings): This adds the constraint that each item’s factor loading is identical across groups (λ_A = λ_B). This is the minimum required to compare correlations or relationships between factors across groups. The Δχ² test between configural and metric tells you whether constraining loadings to be equal significantly worsens fit. A non-significant result means loadings are equivalent across groups — metric invariance holds.</p>
+<p><strong>Scalar model</strong> (+ equal intercepts): This further constrains item intercepts to be equal (τ_A = τ_B). Equal intercepts mean that respondents with the same level of the latent factor give the same average item response in both countries. This is necessary to compare latent means. A significant Δχ² between metric and scalar means at least one item has a different intercept across groups — which is exactly what we built into Country B for TRA1 and POW1.</p>
+<p><strong>What a significant Δχ² means in practice.</strong> A significant test does not mean you must abandon the comparison — it means you need to identify which items are non-invariant and decide whether partial invariance (freeing a subset of item parameters) allows a defensible comparison. The modification indices in the scalar model will point to the offending items. If 6 of 8 items are scalar invariant, a partial invariance argument is typically acceptable in published work.</p>
+</div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a>extract_fit <span class="ot">&lt;-</span> <span class="cf">function</span>(fit_obj, model_name) {</span>
+<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a>  fit_measures <span class="ot">&lt;-</span> <span class="fu">fitMeasures</span>(fit_obj,</span>
+<span id="cb67-3"><a href="#cb67-3" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;cfi.robust&quot;</span>, <span class="st">&quot;rmsea.robust&quot;</span>, <span class="st">&quot;srmr&quot;</span>, <span class="st">&quot;aic&quot;</span>, <span class="st">&quot;bic&quot;</span>))</span>
+<span id="cb67-4"><a href="#cb67-4" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb67-5"><a href="#cb67-5" tabindex="-1"></a>    <span class="at">Model   =</span> model_name,</span>
+<span id="cb67-6"><a href="#cb67-6" tabindex="-1"></a>    <span class="at">CFI     =</span> <span class="fu">round</span>(fit_measures[<span class="st">&quot;cfi.robust&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb67-7"><a href="#cb67-7" tabindex="-1"></a>    <span class="at">RMSEA   =</span> <span class="fu">round</span>(fit_measures[<span class="st">&quot;rmsea.robust&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb67-8"><a href="#cb67-8" tabindex="-1"></a>    <span class="at">SRMR    =</span> <span class="fu">round</span>(fit_measures[<span class="st">&quot;srmr&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb67-9"><a href="#cb67-9" tabindex="-1"></a>    <span class="at">AIC     =</span> <span class="fu">round</span>(fit_measures[<span class="st">&quot;aic&quot;</span>], <span class="dv">1</span>),</span>
+<span id="cb67-10"><a href="#cb67-10" tabindex="-1"></a>    <span class="at">BIC     =</span> <span class="fu">round</span>(fit_measures[<span class="st">&quot;bic&quot;</span>], <span class="dv">1</span>)</span>
+<span id="cb67-11"><a href="#cb67-11" tabindex="-1"></a>  )</span>
+<span id="cb67-12"><a href="#cb67-12" tabindex="-1"></a>}</span>
+<span id="cb67-13"><a href="#cb67-13" tabindex="-1"></a></span>
+<span id="cb67-14"><a href="#cb67-14" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
+<span id="cb67-15"><a href="#cb67-15" tabindex="-1"></a>  <span class="fu">extract_fit</span>(fit_configural, <span class="st">&quot;Configural (same structure)&quot;</span>),</span>
+<span id="cb67-16"><a href="#cb67-16" tabindex="-1"></a>  <span class="fu">extract_fit</span>(fit_metric,     <span class="st">&quot;Metric (+ equal loadings)&quot;</span>),</span>
+<span id="cb67-17"><a href="#cb67-17" tabindex="-1"></a>  <span class="fu">extract_fit</span>(fit_scalar,     <span class="st">&quot;Scalar (+ equal intercepts)&quot;</span>)</span>
+<span id="cb67-18"><a href="#cb67-18" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb67-19"><a href="#cb67-19" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb67-20"><a href="#cb67-20" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 4.4: Measurement invariance sequence. Metric invariance requires ΔCFI &lt; .010 and ΔRMSEA &lt; .015 relative to configural. Scalar invariance requires the same relative to metric. Failure at scalar = item intercepts differ across groups (differential item functioning).&quot;</span></span>
+<span id="cb67-21"><a href="#cb67-21" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb67-22"><a href="#cb67-22" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb67-23"><a href="#cb67-23" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">&quot;CFI &gt; .95, RMSEA &lt; .06, SRMR &lt; .08 indicate acceptable fit. Robust estimator (MLR) used for non-normal data.&quot;</span>,</span>
+<span id="cb67-24"><a href="#cb67-24" tabindex="-1"></a>           <span class="at">general_title =</span> <span class="st">&quot;Note:&quot;</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption style="font-size: initial !important;">
+<span id="tab:cfa-fit-table">Table 1.7: </span><span id="tab:cfa-fit-table">Table 1.8: </span>Table 4.4: Measurement invariance sequence. Metric invariance requires ΔCFI &lt; .010 and ΔRMSEA &lt; .015 relative to configural. Scalar invariance requires the same relative to metric. Failure at scalar = item intercepts differ across groups (differential item functioning).
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Model
+</th>
+<th style="text-align:right;">
+CFI
+</th>
+<th style="text-align:right;">
+RMSEA
+</th>
+<th style="text-align:right;">
+SRMR
+</th>
+<th style="text-align:right;">
+AIC
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Configural (same structure)
+</td>
+<td style="text-align:right;">
+0.984
+</td>
+<td style="text-align:right;">
+0.035
+</td>
+<td style="text-align:right;">
+0.029
+</td>
+<td style="text-align:right;">
+41938.3
+</td>
+<td style="text-align:right;">
+42227.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metric (+ equal loadings)
+</td>
+<td style="text-align:right;">
+0.980
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.034
+</td>
+<td style="text-align:right;">
+41945.9
+</td>
+<td style="text-align:right;">
+42200.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Scalar (+ equal intercepts)
+</td>
+<td style="text-align:right;">
+0.868
+</td>
+<td style="text-align:right;">
+0.087
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+42326.5
+</td>
+<td style="text-align:right;">
+42546.2
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note:</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> CFI &gt; .95, RMSEA &lt; .06, SRMR &lt; .08 indicate acceptable fit. Robust estimator (MLR) used for non-normal data.
+</td>
+</tr>
+</tfoot>
+</table>
+<div class="lab-box">
+<p><strong>Interpreting Table 4.4: the ΔCFI and ΔRMSEA pattern.</strong></p>
+<p>Read this table by comparing adjacent rows — the change in fit between Configural and Metric, and between Metric and Scalar.</p>
+<p><strong>Thresholds for acceptable invariance.</strong> The conventional criteria (from Cheung &amp; Rensvold, 2002, and Vandenberg &amp; Lance, 2000) are:
+- ΔCFI ≤ .010: the more constrained model does not fit substantially worse
+- ΔRMSEA ≤ .015: similar criterion on the parsimony-corrected fit index</p>
+<p>If Configural → Metric produces ΔCFI ≤ .010, you have <strong>metric invariance</strong>: loadings are equivalent across countries. If Metric → Scalar produces ΔCFI ≤ .010, you have <strong>scalar invariance</strong>: intercepts are also equivalent.</p>
+<p><strong>What to expect in this simulated data.</strong> Because we deliberately introduced non-invariant intercepts for TRA1 and POW1 in Country B, the Scalar model should fit noticeably worse than the Metric model — you should see a CFI drop larger than .010 when moving from Metric to Scalar. The Configural → Metric step should be relatively small (loadings are invariant by design). This is the signature of <strong>partial scalar invariance</strong>: the loading structure is equivalent, some intercepts are equivalent, but others are not.</p>
+<p><strong>What partial invariance means for substantive conclusions.</strong> Partial scalar invariance means you can compare the factor structure and factor relationships across countries (because loadings are equal), but direct comparison of latent means is problematic because items are functioning differently at the level of their intercepts. In practice, researchers often:
+1. Free the non-invariant items and establish partial scalar invariance with the remaining items
+2. Report latent mean comparisons with the caveat that they rest on a partially constrained model
+3. Treat the non-invariant items as substantively interesting — why does TRA1 function differently in Country B? Is it translation, cultural salience, or something else?</p>
+<p>The finding of partial rather than full scalar invariance is common in cross-national values research and does not invalidate the study. It is a finding in its own right: these items are not fully equivalent measures of the same construct across cultural contexts.</p>
+</div>
+<hr />
+</div>
+<div id="core-readings" class="section level2 unnumbered hasAnchor">
+<h2>Core Readings<a href="#core-readings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul class="reading-list">
+<li>
+Vaisey, S. (2009). Motivation and Justification: A Dual-Process Model of Culture in Action. <em>American Journal of Sociology, 114</em>(6), 1675–1715. [Primary empirical template for LCA in cultural sociology]
+</li>
+<li>
+Collins, L. M., &amp; Lanza, S. T. (2010). <em>Latent Class and Latent Transition Analysis</em>. Wiley. Chapters 1–4. [Definitive LCA methodological reference]
+</li>
+<li>
+Fabrigar, L. R., et al. (1999). Evaluating the Use of Exploratory Factor Analysis in Psychological Research. <em>Psychological Methods, 4</em>(3), 272–299.
+</li>
+<li>
+Vandenberg, R. J., &amp; Lance, C. E. (2000). A Review and Synthesis of the Measurement Invariance Literature. <em>Organizational Research Methods, 3</em>(1), 4–70.
+</li>
+<li>
+Bolck, A., Croon, M., &amp; Hagenaars, J. (2004). Estimating Latent Structure Models with Categorical Variables. <em>Sociological Methodology, 34</em>, 45–75. [BCH correction for 3-step LCA]
+</li>
+<li>
+Schwartz, S. H. (1992). Universals in the Content and Structure of Values. <em>Advances in Experimental Social Psychology, 25</em>, 1–65. [Theoretical basis for the values factor structure]
+</li>
+</ul>
+<hr />
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.5.3 (2026-03-11 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26200)
+## 
+## Matrix products: default
+##   LAPACK version 3.12.1
+## 
+## locale:
+## [1] LC_COLLATE=English_Israel.utf8  LC_CTYPE=English_Israel.utf8   
+## [3] LC_MONETARY=English_Israel.utf8 LC_NUMERIC=C                   
+## [5] LC_TIME=English_Israel.utf8    
+## 
+## time zone: Asia/Jerusalem
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] poLCA_1.6.0.2        MASS_7.3-65          scatterplot3d_0.3-45
+##  [4] patchwork_1.3.2      kableExtra_1.4.0     factoextra_2.0.0    
+##  [7] semTools_0.5-8       lavaan_0.6-21        GPArotation_2025.3-1
+## [10] psych_2.6.3          lubridate_1.9.5      forcats_1.0.1       
+## [13] stringr_1.6.0        dplyr_1.2.0          purrr_1.2.1         
+## [16] readr_2.2.0          tidyr_1.3.2          tibble_3.3.1        
+## [19] ggplot2_4.0.2        tidyverse_2.0.0      rmarkdown_2.31      
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.2.1   viridisLite_0.4.3  farver_2.1.2       S7_0.2.1          
+##  [5] fastmap_1.2.0      TH.data_1.1-5      promises_1.5.0     digest_0.6.39     
+##  [9] estimability_1.5.1 timechange_0.4.0   mime_0.13          lifecycle_1.0.5   
+## [13] survival_3.8-6     magrittr_2.0.4     compiler_4.5.3     rlang_1.1.7       
+## [17] sass_0.4.10        tools_4.5.3        yaml_2.3.12        knitr_1.51        
+## [21] labeling_0.4.3     mnormt_2.1.2       xml2_1.5.2         RColorBrewer_1.1-3
+## [25] multcomp_1.4-30    miniUI_0.1.2       withr_3.0.2        grid_4.5.3        
+## [29] stats4_4.5.3       xtable_1.8-8       ClaudeR_0.2.0      emmeans_2.0.2     
+## [33] scales_1.4.0       cli_3.6.5          mvtnorm_1.3-6      generics_0.1.4    
+## [37] otel_0.2.0         rstudioapi_0.18.0  tzdb_0.5.0         cachem_1.1.0      
+## [41] splines_4.5.3      parallel_4.5.3     base64enc_0.1-6    vctrs_0.7.2       
+## [45] Matrix_1.7-4       sandwich_3.1-1     jsonlite_2.0.0     bookdown_0.46     
+## [49] hms_1.1.4          ggrepel_0.9.8      systemfonts_1.3.2  jquerylib_0.1.4   
+## [53] glue_1.8.0         codetools_0.2-20   stringi_1.8.7      gtable_0.3.6      
+## [57] later_1.4.8        quadprog_1.5-8     pillar_1.11.1      htmltools_0.5.9   
+## [61] R6_2.6.1           textshaping_1.0.5  evaluate_1.0.5     shiny_1.13.0      
+## [65] pbivnorm_0.6.0     lattice_0.22-9     httpuv_1.6.17      bslib_0.10.0      
+## [69] Rcpp_1.1.1         svglite_2.2.2      coda_0.19-4.1      nlme_3.1-168      
+## [73] xfun_0.57          zoo_1.8-15         pkgconfig_2.0.3</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  },
+  "info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

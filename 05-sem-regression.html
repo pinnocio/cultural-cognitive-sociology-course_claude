@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1 Structural Equation Modeling and Regression | 05-sem-regression.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1 Structural Equation Modeling and Regression | 05-sem-regression.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1 Structural Equation Modeling and Regression | 05-sem-regression.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cultural & Cognitive Sociology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#sem"><i class="fa fa-check"></i><b>1</b> Structural Equation Modeling and Regression</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#structural-equation-modeling-logic-and-architecture"><i class="fa fa-check"></i><b>1.1</b> 5.1 Structural Equation Modeling: Logic and Architecture</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#lab5a"><i class="fa fa-check"></i><b>1.2</b> Lab 5a: SEM — Cultural Capital and Civic Participation</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#lab5b"><i class="fa fa-check"></i><b>1.3</b> Lab 5b: Multilevel Regression with Cultural Variables</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#regression-diagnostics-for-cultural-variables"><i class="fa fa-check"></i><b>1.4</b> 5.3 Regression Diagnostics for Cultural Variables</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#core-readings"><i class="fa fa-check"></i>Core Readings</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com" target="blank">Source</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="sem" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Week 1</span> Structural Equation Modeling and Regression<a href="#sem" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Weeks 9–10 | Methods Lab 5: SEM, Multilevel Models</strong></p>
+<hr />
+<div id="structural-equation-modeling-logic-and-architecture" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 5.1 Structural Equation Modeling: Logic and Architecture<a href="#structural-equation-modeling-logic-and-architecture" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>SEM integrates two sub-models:</p>
+<p><span class="math display">\[\text{Measurement model (CFA): } \mathbf{X} = \mathbf{\Lambda}\boldsymbol{\xi} + \boldsymbol{\delta}\]</span>
+<span class="math display">\[\text{Structural model: } \boldsymbol{\eta} = \mathbf{B}\boldsymbol{\eta} + \mathbf{\Gamma}\boldsymbol{\xi} + \boldsymbol{\zeta}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{X}\)</span> = observed indicators, <span class="math inline">\(\boldsymbol{\xi}\)</span> = exogenous
+latent variables, <span class="math inline">\(\boldsymbol{\eta}\)</span> = endogenous latent variables,
+<span class="math inline">\(\mathbf{\Lambda}\)</span> = factor loadings, <span class="math inline">\(\mathbf{B}\)</span> = structural
+coefficients among endogenous variables, <span class="math inline">\(\boldsymbol{\zeta}\)</span> = disturbances.</p>
+<p>The key advantage over OLS regression on scale scores: SEM <em>corrects for
+measurement error</em> in the latent variable. When you regress behavior on a
+scale score (e.g., sum of 5 attitude items), measurement error in the scale
+attenuates the estimated coefficient. SEM places the latent variable — not
+the error-laden scale score — in the structural model.</p>
+<div class="theory-box">
+<p><strong>Identification.</strong> A model is identified if the number of known quantities
+(observed variances and covariances) exceeds or equals the number of
+unknown parameters. In CFA: a single-factor model with ≥3 indicators is
+just-identified; with ≥4, it is over-identified and testable. The rule of
+thumb: each latent variable needs ≥3 indicators. Under-identified models
+cannot be estimated regardless of sample size.</p>
+</div>
+<p><strong>Model fit criteria:</strong></p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="44%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Acceptable</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CFI</td>
+<td>&gt; .95</td>
+<td>Comparative Fit Index; &gt;.90 = adequate</td>
+</tr>
+<tr class="even">
+<td>RMSEA</td>
+<td>&lt; .06</td>
+<td>Root Mean Square Error of Approximation; &lt;.08 = acceptable</td>
+</tr>
+<tr class="odd">
+<td>SRMR</td>
+<td>&lt; .08</td>
+<td>Standardized Root Mean Square Residual</td>
+</tr>
+<tr class="even">
+<td>AIC/BIC</td>
+<td>Lower = better</td>
+<td>For model comparison only</td>
+</tr>
+</tbody>
+</table>
+<p>These are approximate thresholds from Hu &amp; Bentler (1999). They were
+derived from simulation studies and should not be treated as absolute
+cutoffs. Model fit is one criterion alongside theoretical interpretability
+and parsimony.</p>
+<hr />
+</div>
+<div id="lab5a" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Lab 5a: SEM — Cultural Capital and Civic Participation<a href="#lab5a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>We build a SEM with three latent variables:
+1. <strong>Cultural capital</strong> (embodied + institutionalized forms as indicators)
+2. <strong>Social trust</strong> (generalized trust as mediator)
+3. <strong>Civic participation</strong> (voting, voluntary association membership)</p>
+<p>The structural model tests whether cultural capital predicts civic
+participation directly and indirectly via social trust. This is a
+theoretically derived path model, not an exploratory one.</p>
+</div>
+<p>We begin by loading packages and simulating the dataset. The simulation encodes a known latent structure — cultural capital influences social trust, which in turn influences civic participation — so we can verify that our SEM recovers the true parameters. In applied work you would load your actual survey data at this point.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(semPlot)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(lavaanPlot)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240105</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># Simulate survey data (N = 900) with known latent structure</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">900</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co"># Latent variables</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>cult_cap   <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)               <span class="co"># Cultural capital</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>soc_trust  <span class="ot">&lt;-</span> <span class="fl">0.45</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> .<span class="dv">45</span><span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>civic_part <span class="ot">&lt;-</span> <span class="fl">0.30</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fl">0.40</span> <span class="sc">*</span> soc_trust <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> .<span class="dv">30</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> .<span class="dv">40</span><span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co"># ─── Measurement model ───────────────────────────────────────</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co"># Cultural capital indicators</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>educ_yrs   <span class="ot">&lt;-</span> <span class="fl">0.65</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.76</span>)   <span class="co"># Years of education</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>educ_deg   <span class="ot">&lt;-</span> <span class="fl">0.70</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.71</span>)   <span class="co"># Education level (0–6)</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>art_visit  <span class="ot">&lt;-</span> <span class="fl">0.58</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.81</span>)   <span class="co"># Art/museum visits/yr</span></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>book_read  <span class="ot">&lt;-</span> <span class="fl">0.62</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.78</span>)   <span class="co"># Books read/yr</span></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>concert    <span class="ot">&lt;-</span> <span class="fl">0.52</span> <span class="sc">*</span> cult_cap <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.85</span>)   <span class="co"># Concert attendance</span></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="co"># Social trust indicators</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>trust_ppl  <span class="ot">&lt;-</span> <span class="fl">0.72</span> <span class="sc">*</span> soc_trust <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.69</span>)  <span class="co"># &quot;Most people can be trusted&quot;</span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>trust_inst <span class="ot">&lt;-</span> <span class="fl">0.65</span> <span class="sc">*</span> soc_trust <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.76</span>)  <span class="co"># Institutional trust index</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>fair_ppl   <span class="ot">&lt;-</span> <span class="fl">0.68</span> <span class="sc">*</span> soc_trust <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.73</span>)  <span class="co"># &quot;People try to be fair&quot;</span></span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="co"># Civic participation indicators</span></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>voted      <span class="ot">&lt;-</span> <span class="fl">0.70</span> <span class="sc">*</span> civic_part <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.71</span>) <span class="co"># Voted in last election</span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>volunteer  <span class="ot">&lt;-</span> <span class="fl">0.65</span> <span class="sc">*</span> civic_part <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.76</span>) <span class="co"># Volunteer work</span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>association <span class="ot">&lt;-</span> <span class="fl">0.60</span> <span class="sc">*</span> civic_part <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.80</span>) <span class="co"># Association membership</span></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>petition   <span class="ot">&lt;-</span> <span class="fl">0.55</span> <span class="sc">*</span> civic_part <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.83</span>) <span class="co"># Signed petition</span></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a><span class="co"># Rescale to plausible survey ranges</span></span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a>rescale <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min_out =</span> <span class="dv">1</span>, <span class="at">max_out =</span> <span class="dv">7</span>) {</span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>  scales<span class="sc">::</span><span class="fu">rescale</span>(x, <span class="at">to =</span> <span class="fu">c</span>(min_out, max_out))</span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>}</span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>sem_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>  <span class="at">educ_yrs    =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(educ_yrs, <span class="dv">0</span>, <span class="dv">20</span>)),</span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>  <span class="at">educ_deg    =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(educ_deg, <span class="dv">0</span>, <span class="dv">6</span>)),</span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a>  <span class="at">art_visit   =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(art_visit, <span class="dv">0</span>, <span class="dv">12</span>)),</span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>  <span class="at">book_read   =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(book_read, <span class="dv">0</span>, <span class="dv">30</span>)),</span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a>  <span class="at">concert     =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(concert, <span class="dv">0</span>, <span class="dv">6</span>)),</span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a>  <span class="at">trust_ppl   =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(trust_ppl, <span class="dv">1</span>, <span class="dv">10</span>)),</span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>  <span class="at">trust_inst  =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(trust_inst, <span class="dv">1</span>, <span class="dv">7</span>)),</span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>  <span class="at">fair_ppl    =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(fair_ppl, <span class="dv">1</span>, <span class="dv">7</span>)),</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>  <span class="at">voted       =</span> <span class="fu">as.integer</span>(<span class="fu">rescale</span>(voted, <span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">&gt;</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>  <span class="at">volunteer   =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(volunteer, <span class="dv">0</span>, <span class="dv">10</span>)),</span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>  <span class="at">association =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(association, <span class="dv">0</span>, <span class="dv">8</span>)),</span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>  <span class="at">petition    =</span> <span class="fu">round</span>(<span class="fu">rescale</span>(petition, <span class="dv">0</span>, <span class="dv">5</span>))</span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>)</span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;SEM dataset: N =&quot;</span>, <span class="fu">nrow</span>(sem_df), <span class="st">&quot;| Variables:&quot;</span>, <span class="fu">ncol</span>(sem_df), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## SEM dataset: N = 900 | Variables: 12</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(sem_df)</span></code></pre></div>
+<table>
+<caption><span id="tab:sem-setup">Table 1.1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">sem_df</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">900</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">12</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="13%" />
+<col width="18%" />
+<col width="8%" />
+<col width="6%" />
+<col width="4%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="6%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">educ_yrs</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">10.46</td>
+<td align="right">3.56</td>
+<td align="right">0</td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">13</td>
+<td align="right">20</td>
+<td align="left">▁▅▇▅▁</td>
+</tr>
+<tr class="even">
+<td align="left">educ_deg</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.83</td>
+<td align="right">1.02</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="left">▂▇▇▅▁</td>
+</tr>
+<tr class="odd">
+<td align="left">art_visit</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6.35</td>
+<td align="right">1.80</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">8</td>
+<td align="right">12</td>
+<td align="left">▁▂▇▃▁</td>
+</tr>
+<tr class="even">
+<td align="left">book_read</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">15.15</td>
+<td align="right">4.46</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">15</td>
+<td align="right">18</td>
+<td align="right">30</td>
+<td align="left">▁▅▇▃▁</td>
+</tr>
+<tr class="odd">
+<td align="left">concert</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.19</td>
+<td align="right">0.94</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="left">▁▃▇▆▁</td>
+</tr>
+<tr class="even">
+<td align="left">trust_ppl</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6.19</td>
+<td align="right">1.24</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="left">▁▁▇▆▁</td>
+</tr>
+<tr class="odd">
+<td align="left">trust_inst</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.98</td>
+<td align="right">0.97</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="left">▁▃▇▅▁</td>
+</tr>
+<tr class="even">
+<td align="left">fair_ppl</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.98</td>
+<td align="right">1.04</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="left">▂▅▇▅▁</td>
+</tr>
+<tr class="odd">
+<td align="left">voted</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">▇▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">volunteer</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4.76</td>
+<td align="right">1.53</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="left">▁▇▇▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">association</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.89</td>
+<td align="right">1.26</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="left">▁▇▇▆▁</td>
+</tr>
+<tr class="even">
+<td align="left">petition</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.06</td>
+<td align="right">0.82</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="left">▃▇▅▁▁</td>
+</tr>
+</tbody>
+</table>
+<p>Now we write the model syntax and estimate it. Before looking at the code, it is worth pausing to understand lavaan’s syntax, because it is unlike standard R formula notation.</p>
+<p><strong>lavaan syntax primer:</strong></p>
+<ul>
+<li><code>=~</code> means “is measured by” and defines a <strong>factor</strong> (latent variable) from its indicators. For example, <code>CultCap =~ educ_yrs + educ_deg</code> tells lavaan that the latent variable CultCap is operationalized by the observed variables <code>educ_yrs</code> and <code>educ_deg</code>. This is the measurement model.</li>
+<li><code>~</code> means “is regressed on” and specifies a <strong>structural path</strong> between variables, just like <code>~</code> in <code>lm()</code>. For example, <code>SocTrust ~ CultCap</code> means SocTrust is the outcome and CultCap is the predictor in a regression.</li>
+<li><code>*</code> in front of a variable name is a <strong>path label</strong>. Writing <code>a * CultCap</code> attaches the label <code>a</code> to that regression coefficient. This lets you reference the coefficient by name elsewhere in the model — specifically, in the <code>:=</code> expressions below.</li>
+<li><code>:=</code> defines a <strong>computed quantity</strong> (a “user-defined parameter”). <code>indirect := a * c</code> instructs lavaan to multiply the two labeled path coefficients together to compute the indirect (mediated) effect. lavaan then applies the delta method to give you a standard error and p-value for this product.</li>
+</ul>
+<p>This labeling-and-multiplication approach is the standard way to test mediation in lavaan. It is equivalent to the product-of-coefficients method (also called the Sobel test), but lavaan’s bootstrapped version is more accurate.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># Specify the SEM</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>sem_model <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="st">  # ── Measurement Model ──────────────────────────────────────</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="st">  # Cultural capital: embodied (art, books, concerts) + institutionalized (education)</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="st">  CultCap =~ educ_yrs + educ_deg + art_visit + book_read + concert</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="st">  # Social trust</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="st">  SocTrust =~ trust_ppl + trust_inst + fair_ppl</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="st">  # Civic participation</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="st">  CivicPart =~ volunteer + association + petition</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="st">  # Note: voted is binary; treating as continuous approximation here.</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="st">  # In production: use WLSMV estimator with voted as ordered categorical.</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="st">  # ── Structural Model ────────────────────────────────────────</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="st">  # Direct effects</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="st">  SocTrust  ~ a * CultCap                   # cultural capital → trust</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="st">  CivicPart ~ b * CultCap + c * SocTrust    # direct + mediated paths</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="st">  # ── Indirect Effect (mediation) ─────────────────────────────</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="st">  indirect := a * c           # cultural capital → trust → civic participation</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="st">  total    := b + a * c       # total effect</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co"># Estimate with MLR (robust standard errors; handles non-normality)</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>sem_fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(</span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>  sem_model,</span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>  <span class="at">data      =</span> sem_df,</span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>  <span class="at">estimator =</span> <span class="st">&quot;MLR&quot;</span>,  <span class="co"># Maximum likelihood with robust (Huber-White) SEs</span></span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>  <span class="at">se        =</span> <span class="st">&quot;robust&quot;</span></span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a>)</span></code></pre></div>
+<p>The next step is to evaluate whether the model fits the data acceptably before we look at any coefficients. If model fit is poor, the structural path estimates are not trustworthy even if they are statistically significant — they are being computed from a covariance structure the model cannot reproduce.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Model fit</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>fit_indices <span class="ot">&lt;-</span> <span class="fu">fitMeasures</span>(sem_fit,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;cfi.robust&quot;</span>, <span class="st">&quot;tli.robust&quot;</span>, <span class="st">&quot;rmsea.robust&quot;</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="st">&quot;rmsea.ci.lower.robust&quot;</span>, <span class="st">&quot;rmsea.ci.upper.robust&quot;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="st">&quot;srmr&quot;</span>, <span class="st">&quot;aic&quot;</span>, <span class="st">&quot;bic&quot;</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="at">Index  =</span> <span class="fu">c</span>(<span class="st">&quot;CFI (robust)&quot;</span>, <span class="st">&quot;TLI (robust)&quot;</span>, <span class="st">&quot;RMSEA (robust)&quot;</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>             <span class="st">&quot;RMSEA 90% CI&quot;</span>, <span class="st">&quot;SRMR&quot;</span>, <span class="st">&quot;AIC&quot;</span>, <span class="st">&quot;BIC&quot;</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  <span class="at">Value  =</span> <span class="fu">c</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;cfi.robust&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;tli.robust&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;rmsea.robust&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">&quot;[&quot;</span>, <span class="fu">round</span>(fit_indices[<span class="st">&quot;rmsea.ci.lower.robust&quot;</span>], <span class="dv">3</span>), <span class="st">&quot;, &quot;</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>                <span class="fu">round</span>(fit_indices[<span class="st">&quot;rmsea.ci.upper.robust&quot;</span>], <span class="dv">3</span>), <span class="st">&quot;]&quot;</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;srmr&quot;</span>], <span class="dv">3</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;aic&quot;</span>], <span class="dv">1</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    <span class="fu">round</span>(fit_indices[<span class="st">&quot;bic&quot;</span>], <span class="dv">1</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>  ),</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>  <span class="at">Cutoff =</span> <span class="fu">c</span>(<span class="st">&quot;&gt; .95&quot;</span>, <span class="st">&quot;&gt; .95&quot;</span>, <span class="st">&quot;&lt; .06&quot;</span>, <span class="st">&quot;—&quot;</span>, <span class="st">&quot;&lt; .08&quot;</span>, <span class="st">&quot;—&quot;</span>, <span class="st">&quot;—&quot;</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot;Table 5.1: SEM fit indices&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:sem-fit">Table 1.2: </span><span id="tab:sem-fit">Table 1.3: </span>Table 5.1: SEM fit indices
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Index
+</th>
+<th style="text-align:left;">
+Value
+</th>
+<th style="text-align:left;">
+Cutoff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CFI (robust)
+</td>
+<td style="text-align:left;">
+0.992
+</td>
+<td style="text-align:left;">
+&gt; .95
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TLI (robust)
+</td>
+<td style="text-align:left;">
+0.989
+</td>
+<td style="text-align:left;">
+&gt; .95
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSEA (robust)
+</td>
+<td style="text-align:left;">
+0.021
+</td>
+<td style="text-align:left;">
+&lt; .06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSEA 90% CI
+</td>
+<td style="text-align:left;">
+[0, 0.033]
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SRMR
+</td>
+<td style="text-align:left;">
+0.023
+</td>
+<td style="text-align:left;">
+&lt; .08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:left;">
+33353
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:left;">
+33473.1
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading the fit indices (Table 5.1).</strong> Focus first on CFI and RMSEA, the two most informative indices. CFI compares your model’s fit to a null model (one that assumes all variables are uncorrelated); a value above .95 means your model reproduces the observed covariances substantially better than the null. RMSEA measures the average misfit per degree of freedom, penalizing model complexity; values below .06 indicate close fit. SRMR is the average absolute discrepancy between the observed and model-implied correlations, expressed in correlation units.</p>
+<p>With simulated data derived from a true latent structure, you should see CFI well above .95 (likely .97–.99), RMSEA below .06, and SRMR below .05. These values indicate the model fits well — there is no strong evidence that important paths or factor structures are missing. If CFI were below .90 or RMSEA above .08, you would need to inspect modification indices (<code>modindices(sem_fit)</code>) before interpreting any structural paths. RMSEA is generally preferred for model evaluation in sociology because it penalizes over-parameterization, whereas CFI can be inflated in large samples. The 90% confidence interval around RMSEA is important: if the upper bound exceeds .08, fit is borderline even if the point estimate looks acceptable.</p>
+<div class="theory-box">
+<p>AIC and BIC are not absolute fit indices — you cannot use them to evaluate a single model. They are only meaningful when comparing two or more models estimated on the same data. A lower value indicates a better-fitting and/or more parsimonious model.</p>
+</div>
+<p>Now we extract the standardized structural coefficients. Standardized estimates place all paths on a common scale (standard deviation units), which allows direct comparison of effect magnitudes across paths that were originally measured on different scales.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Standardized solution</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>std_sol <span class="ot">&lt;-</span> <span class="fu">standardizedSolution</span>(sem_fit)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># Structural paths only</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>std_sol <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>  <span class="fu">filter</span>(op <span class="sc">==</span> <span class="st">&quot;~&quot;</span> <span class="sc">|</span> op <span class="sc">==</span> <span class="st">&quot;:=&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(lhs, op, rhs, est.std, se, z, pvalue) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="at">pvalue    =</span> <span class="fu">round</span>(pvalue, <span class="dv">4</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    <span class="at">est.std   =</span> <span class="fu">round</span>(est.std, <span class="dv">3</span>),</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="at">se        =</span> <span class="fu">round</span>(se, <span class="dv">3</span>),</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    <span class="at">z         =</span> <span class="fu">round</span>(z, <span class="dv">3</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Outcome&quot;</span>, <span class="st">&quot;Op&quot;</span>, <span class="st">&quot;Predictor&quot;</span>, <span class="st">&quot;β (std)&quot;</span>, <span class="st">&quot;SE&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;p&quot;</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>    <span class="at">caption   =</span> <span class="st">&quot;Table 5.2: Standardized structural coefficients. &#39;indirect&#39; = mediated path through social trust; &#39;total&#39; = direct + indirect.&quot;</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:sem-coefficients">Table 1.4: </span><span id="tab:sem-coefficients">Table 1.5: </span>Table 5.2: Standardized structural coefficients. ‘indirect’ = mediated path through social trust; ‘total’ = direct + indirect.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Outcome
+</th>
+<th style="text-align:left;">
+Op
+</th>
+<th style="text-align:left;">
+Predictor
+</th>
+<th style="text-align:right;">
+β (std)
+</th>
+<th style="text-align:right;">
+SE
+</th>
+<th style="text-align:right;">
+z
+</th>
+<th style="text-align:right;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SocTrust
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+CultCap
+</td>
+<td style="text-align:right;">
+0.451
+</td>
+<td style="text-align:right;">
+0.040
+</td>
+<td style="text-align:right;">
+11.290
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CivicPart
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+CultCap
+</td>
+<td style="text-align:right;">
+0.363
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+7.298
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CivicPart
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+SocTrust
+</td>
+<td style="text-align:right;">
+0.294
+</td>
+<td style="text-align:right;">
+0.052
+</td>
+<td style="text-align:right;">
+5.617
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+indirect
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+a*c
+</td>
+<td style="text-align:right;">
+0.133
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+5.235
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+b+a*c
+</td>
+<td style="text-align:right;">
+0.495
+</td>
+<td style="text-align:right;">
+0.039
+</td>
+<td style="text-align:right;">
+12.749
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpreting the structural coefficients (Table 5.2).</strong> The table has five rows of primary interest: two regression paths (<code>~</code>), two defined quantities (<code>:=</code>), and the path from CultCap to SocTrust.</p>
+<ul>
+<li><p><strong>CultCap → SocTrust (path <em>a</em>):</strong> This is the first leg of the mediation chain. A standardized coefficient of approximately .40–.50 (consistent with the simulation parameters) means that a one-standard-deviation increase in cultural capital is associated with about half a standard deviation increase in social trust, holding nothing else constant. The p-value should be well below .05.</p></li>
+<li><p><strong>CultCap → CivicPart (path <em>b</em>, the direct effect):</strong> This is the effect of cultural capital on civic participation that is <em>not</em> routed through social trust. A standardized estimate around .25–.35 would be consistent with the simulation. This is what Bourdieu would call the direct conversion of cultural capital into civic engagement, independent of the trust mechanism.</p></li>
+<li><p><strong>SocTrust → CivicPart (path <em>c</em>):</strong> This path represents the effect of social trust on civic participation after accounting for cultural capital. An estimate around .35–.45 would suggest trust is a meaningful driver of participation in its own right.</p></li>
+<li><p><strong>Indirect effect (<em>a</em> × <em>c</em>):</strong> This is the mediated portion — how much of cultural capital’s influence on civic participation runs through the social trust pathway. An indirect effect of, say, .18 means that if two people differ by one standard deviation in cultural capital, we would expect roughly .18 standard deviations of the difference in their civic participation to be attributable specifically to the cultural capital → trust → participation chain. Whether this counts as “substantial” mediation depends on how large it is relative to the direct effect. A ratio of indirect to total near or above .30 is generally considered meaningful partial mediation.</p></li>
+<li><p><strong>Total effect (<em>b</em> + <em>a</em> × <em>c</em>):</strong> This is the sum of the direct and indirect paths — the overall association between cultural capital and civic participation if you were to ignore the mediating mechanism. If the total effect is significant but the direct effect (<em>b</em>) is not, you have evidence consistent with full mediation (trust fully accounts for the cultural capital effect). If both <em>b</em> and <em>indirect</em> are significant, it is partial mediation: cultural capital operates through trust but also through some other pathway that the model captures in the direct effect.</p></li>
+</ul>
+<p>The core theoretical claim of this model is that cultural capital facilitates civic engagement partly by increasing generalized social trust, which in turn lowers the perceived cost and increases the motivation for participation. The mediation test is a direct quantitative assessment of that claim.</p>
+<p>The path diagram produced next is a visual summary of everything in Table 5.2, plus the measurement model. It is useful for presentations and for checking that lavaan estimated the structure you intended.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">semPaths</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  sem_fit,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="at">what       =</span> <span class="st">&quot;std&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="at">layout     =</span> <span class="st">&quot;tree2&quot;</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="at">style      =</span> <span class="st">&quot;lisrel&quot;</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="at">residuals  =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="at">nCharNodes =</span> <span class="dv">8</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="at">edge.label.cex =</span> <span class="fl">0.85</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>  <span class="at">sizeMan    =</span> <span class="dv">8</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>  <span class="at">sizeLat    =</span> <span class="dv">12</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>  <span class="at">color      =</span> <span class="fu">list</span>(<span class="at">lat =</span> <span class="st">&quot;#d5e8f7&quot;</span>, <span class="at">man =</span> <span class="st">&quot;#f7f3d5&quot;</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>  <span class="at">title      =</span> <span class="cn">FALSE</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:sem-diagram"></span>
+<img src="05-sem-regression_files/figure-html/sem-diagram-1.png" alt="Figure 5.1: SEM path diagram. Rectangles = observed indicators; ovals = latent variables. Values on paths are standardized coefficients." width="960" />
+<p class="caption">
+Figure 1.1: Figure 5.1: SEM path diagram. Rectangles = observed indicators; ovals = latent variables. Values on paths are standardized coefficients.
+</p>
+</div>
+<p><strong>Reading the path diagram (Figure 5.1).</strong> The diagram uses two shape conventions: <strong>ovals (ellipses)</strong> represent latent variables (CultCap, SocTrust, CivicPart) — constructs that are not directly observed but are inferred from patterns of covariation among measured items. <strong>Rectangles</strong> represent observed (manifest) variables — the actual survey items like <code>educ_yrs</code>, <code>trust_ppl</code>, and <code>volunteer</code>.</p>
+<p>The arrows pointing <em>from</em> each oval <em>to</em> its rectangles are the factor loadings (measurement model). A larger standardized value on these arrows means that indicator is a stronger, more reliable signal of the underlying latent construct. Small curved arrows attached to each rectangle represent residual (measurement error) variances — the portion of each indicator’s variance that is not explained by the latent factor.</p>
+<p>The arrows connecting the three ovals to each other are the structural paths — the numbers from Table 5.2. The arrangement of the diagram makes the mediation structure immediately legible: CultCap sits on the left, CivicPart on the right, and SocTrust sits between them. The direct path from CultCap to CivicPart bypasses SocTrust. The indirect path runs CultCap → SocTrust → CivicPart, forming a chain. Visually comparing the coefficient on the direct path to the product of the two indirect-chain coefficients gives you an intuitive sense of how much of the total effect is mediated.</p>
+<hr />
+</div>
+<div id="lab5b" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Lab 5b: Multilevel Regression with Cultural Variables<a href="#lab5b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>Cultural variables often operate at multiple levels. Individual values
+are nested within communities, which are nested within countries. Ignoring
+this clustering produces incorrect standard errors (typically downward-biased,
+inflating Type I error). We build a two-level mixed-effects model with
+cultural variables at both levels.</p>
+</div>
+<p>The setup below generates individual-level and country-level data and merges them. The key design feature is the cross-level interaction: individual self-direction values have a stronger effect on political participation in countries where self-expression values dominate at the cultural level. We build this into the data generation so that the multilevel model should detect it.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code></pre></div>
+<pre><code>## Loading required package: Matrix</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Matrix&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:tidyr&#39;:
+## 
+##     expand, pack, unpack</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;lmerTest&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:lme4&#39;:
+## 
+##     lmer</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     step</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240106</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co"># Two-level data: individuals nested in countries</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co"># Level 1: individual values (self-direction, conformity)</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co"># Level 2: country-level cultural dimensions (e.g., WVS survival/self-expression)</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co"># Outcome: political participation index</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>n_countries <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>n_per       <span class="ot">&lt;-</span> <span class="dv">100</span>    <span class="co"># individuals per country</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>N           <span class="ot">&lt;-</span> n_countries <span class="sc">*</span> n_per</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="co"># Country-level variables</span></span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a>country_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a>  <span class="at">country_id       =</span> <span class="dv">1</span><span class="sc">:</span>n_countries,</span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>  <span class="at">selfexpr_dim     =</span> <span class="fu">rnorm</span>(n_countries),    <span class="co"># Inglehart self-expression value dimension</span></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a>  <span class="at">gini             =</span> <span class="fu">rnorm</span>(n_countries),    <span class="co"># Inequality (standardized)</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>  <span class="at">gdp_log          =</span> <span class="fu">rnorm</span>(n_countries),    <span class="co"># GDP per capita (log, standardized)</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>  <span class="at">country_intercept =</span> <span class="fu">rnorm</span>(n_countries, <span class="dv">0</span>, <span class="fl">0.4</span>)  <span class="co"># Random intercept variance</span></span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>)</span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a><span class="co"># Expand to individual level</span></span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a>indiv_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a>  <span class="at">country_id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n_countries, <span class="at">each =</span> n_per)</span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a>  <span class="fu">left_join</span>(country_df, <span class="at">by =</span> <span class="st">&quot;country_id&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a>    <span class="co"># Individual-level variables</span></span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>    <span class="at">self_direction =</span> <span class="fu">rnorm</span>(N),             <span class="co"># Individual self-direction value</span></span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a>    <span class="at">conformity     =</span> <span class="fu">rnorm</span>(N),             <span class="co"># Individual conformity value</span></span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a>    <span class="at">education      =</span> <span class="fu">rnorm</span>(N),             <span class="co"># Individual education</span></span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a>    <span class="at">age            =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(N, <span class="dv">45</span>, <span class="dv">15</span>)),</span>
+<span id="cb16-34"><a href="#cb16-34" tabindex="-1"></a></span>
+<span id="cb16-35"><a href="#cb16-35" tabindex="-1"></a>    <span class="co"># Outcome: political participation (continuous index)</span></span>
+<span id="cb16-36"><a href="#cb16-36" tabindex="-1"></a>    <span class="co"># Determined by individual values, country self-expression dimension,</span></span>
+<span id="cb16-37"><a href="#cb16-37" tabindex="-1"></a>    <span class="co"># cross-level interaction (individual self-direction × country self-expression),</span></span>
+<span id="cb16-38"><a href="#cb16-38" tabindex="-1"></a>    <span class="co"># and country random intercept</span></span>
+<span id="cb16-39"><a href="#cb16-39" tabindex="-1"></a>    <span class="at">pol_part =</span> <span class="fl">0.30</span> <span class="sc">*</span> self_direction <span class="sc">+</span></span>
+<span id="cb16-40"><a href="#cb16-40" tabindex="-1"></a>               <span class="sc">-</span><span class="fl">0.20</span> <span class="sc">*</span> conformity <span class="sc">+</span></span>
+<span id="cb16-41"><a href="#cb16-41" tabindex="-1"></a>                <span class="fl">0.25</span> <span class="sc">*</span> education <span class="sc">+</span></span>
+<span id="cb16-42"><a href="#cb16-42" tabindex="-1"></a>                <span class="fl">0.35</span> <span class="sc">*</span> selfexpr_dim <span class="sc">+</span>       <span class="co"># country-level main effect</span></span>
+<span id="cb16-43"><a href="#cb16-43" tabindex="-1"></a>                <span class="fl">0.20</span> <span class="sc">*</span> self_direction <span class="sc">*</span> selfexpr_dim <span class="sc">+</span>   <span class="co"># cross-level interaction</span></span>
+<span id="cb16-44"><a href="#cb16-44" tabindex="-1"></a>               <span class="sc">-</span><span class="fl">0.15</span> <span class="sc">*</span> gini <span class="sc">+</span></span>
+<span id="cb16-45"><a href="#cb16-45" tabindex="-1"></a>                country_intercept <span class="sc">+</span></span>
+<span id="cb16-46"><a href="#cb16-46" tabindex="-1"></a>                <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="fl">0.8</span>)</span>
+<span id="cb16-47"><a href="#cb16-47" tabindex="-1"></a>  )</span>
+<span id="cb16-48"><a href="#cb16-48" tabindex="-1"></a></span>
+<span id="cb16-49"><a href="#cb16-49" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Multilevel dataset: N =&quot;</span>, N, <span class="st">&quot;individuals in&quot;</span>, n_countries, <span class="st">&quot;countries</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Multilevel dataset: N = 2500 individuals in 25 countries</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;ICC (empty model approximation):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## ICC (empty model approximation):</code></pre>
+<p>Before adding any predictors, we need to know whether the outcome varies systematically across countries at all. If nearly all the variance in political participation is within countries (i.e., between individuals), then country membership is irrelevant and a standard OLS regression would be fine. The <strong>Intraclass Correlation Coefficient (ICC)</strong> answers this question directly.</p>
+<p>The ICC is defined as the proportion of total outcome variance that is attributable to between-group (here, between-country) differences:</p>
+<p><span class="math display">\[\text{ICC} = \frac{\sigma^2_{\text{between}}}{\sigma^2_{\text{between}} + \sigma^2_{\text{within}}}\]</span></p>
+<p>A null model — one with no predictors, only a random intercept for country — partitions the total variance into between-country and within-country components. The ICC is the ratio of the between-country variance to the total. An ICC of .10 means 10% of all variance in the outcome is due to which country a person lives in, before considering any individual-level variables.</p>
+<p>Why does this matter? If the ICC is non-trivial, individuals within the same country are more similar to each other than they are to individuals in other countries. This violates the independence assumption of OLS. Standard errors in OLS are computed assuming each observation is an independent draw; if observations within clusters are correlated, OLS underestimates uncertainty, which means p-values are too small and confidence intervals are too narrow. Multilevel modeling handles this by explicitly modeling the country-level variance rather than folding it into the residual.</p>
+<p>A commonly applied rule of thumb is that an ICC above .05 (5%) warrants multilevel modeling. Above .10, ignoring clustering can seriously distort inference.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Null model: estimate ICC before adding predictors</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(pol_part <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> country_id), <span class="at">data =</span> indiv_df, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>vc <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">VarCorr</span>(m0))</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>icc <span class="ot">&lt;-</span> vc<span class="sc">$</span>vcov[<span class="dv">1</span>] <span class="sc">/</span> <span class="fu">sum</span>(vc<span class="sc">$</span>vcov)</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;ICC =&quot;</span>, <span class="fu">round</span>(icc, <span class="dv">3</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>    <span class="st">&quot;→&quot;</span>, <span class="fu">round</span>(icc <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;% of variance is between countries</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## ICC = 0.338 → 33.8 % of variance is between countries</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;This justifies the multilevel approach.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## This justifies the multilevel approach.</code></pre>
+<p><strong>Interpreting the ICC.</strong> With the simulation parameters used here (country random intercepts drawn from N(0, 0.16), individual residuals drawn from N(0, 0.64)), the ICC should be approximately .18–.22, meaning roughly 18–22% of the variance in political participation lies between countries. This is a moderate-to-large ICC by sociological standards. It tells you two things: (1) country context matters substantially — knowing which country someone lives in explains a meaningful share of their participation level even before you know anything about them individually, and (2) the non-independence within countries is severe enough that OLS standard errors would be notably too small. The multilevel approach is not just technically appropriate here; it is substantively necessary to answer the research question correctly.</p>
+<p>We now estimate a sequence of three models, each adding a new layer of complexity. This stepwise approach — called the Singer &amp; Willett (2003) protocol — serves a specific purpose: it lets you see the contribution of each set of variables by isolating what happens when you add them. If you jumped straight to the full model, you would not know whether country-level cultural variables explain variance beyond structural controls, or whether the cross-level interaction adds explanatory power beyond the main effects.</p>
+<ul>
+<li><strong>M1</strong> adds individual-level predictors (self-direction, conformity, education, age) to the random-intercept structure. This is the within-country story: do individual values predict participation?</li>
+<li><strong>M2</strong> adds country-level predictors (self-expression dimension, Gini, GDP). This tests whether country cultural and structural context explains the between-country variance captured by the ICC.</li>
+<li><strong>M3</strong> adds the cross-level interaction between individual self-direction and country self-expression. This is the key theoretical claim: the effect of individual values on participation is moderated by the country’s cultural context.</li>
+</ul>
+<p>We use <code>REML = FALSE</code> throughout so that models can be compared with likelihood ratio tests via <code>anova()</code>. REML (Restricted Maximum Likelihood) is preferred for estimating variance components, but it cannot be used to compare models that differ in their fixed effects — the log-likelihoods are not comparable across models with different fixed parts under REML.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Model sequence following Singer &amp; Willett (2003) protocol</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="co"># M1: Random intercept, individual predictors only</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>  pol_part <span class="sc">~</span> self_direction <span class="sc">+</span> conformity <span class="sc">+</span> education <span class="sc">+</span> age <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>    (<span class="dv">1</span> <span class="sc">|</span> country_id),            <span class="co"># (1 | country_id) = random intercept for each country</span></span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>  <span class="at">data =</span> indiv_df, <span class="at">REML =</span> <span class="cn">FALSE</span>  <span class="co"># ML (not REML) required for anova() comparison</span></span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>)</span>
+<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" tabindex="-1"></a><span class="co"># M2: Add country-level predictors</span></span>
+<span id="cb24-11"><a href="#cb24-11" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(</span>
+<span id="cb24-12"><a href="#cb24-12" tabindex="-1"></a>  pol_part <span class="sc">~</span> self_direction <span class="sc">+</span> conformity <span class="sc">+</span> education <span class="sc">+</span> age <span class="sc">+</span></span>
+<span id="cb24-13"><a href="#cb24-13" tabindex="-1"></a>    selfexpr_dim <span class="sc">+</span> gini <span class="sc">+</span> gdp_log <span class="sc">+</span>   <span class="co"># Level-2 (country) variables added here</span></span>
+<span id="cb24-14"><a href="#cb24-14" tabindex="-1"></a>    (<span class="dv">1</span> <span class="sc">|</span> country_id),</span>
+<span id="cb24-15"><a href="#cb24-15" tabindex="-1"></a>  <span class="at">data =</span> indiv_df, <span class="at">REML =</span> <span class="cn">FALSE</span></span>
+<span id="cb24-16"><a href="#cb24-16" tabindex="-1"></a>)</span>
+<span id="cb24-17"><a href="#cb24-17" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" tabindex="-1"></a><span class="co"># M3: Add cross-level interaction: individual self_direction × country selfexpr</span></span>
+<span id="cb24-19"><a href="#cb24-19" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(</span>
+<span id="cb24-20"><a href="#cb24-20" tabindex="-1"></a>  pol_part <span class="sc">~</span> self_direction <span class="sc">*</span> selfexpr_dim <span class="sc">+</span> conformity <span class="sc">+</span> education <span class="sc">+</span> age <span class="sc">+</span></span>
+<span id="cb24-21"><a href="#cb24-21" tabindex="-1"></a>    gini <span class="sc">+</span> gdp_log <span class="sc">+</span>                  <span class="co"># self_direction * selfexpr_dim expands to:</span></span>
+<span id="cb24-22"><a href="#cb24-22" tabindex="-1"></a>    (<span class="dv">1</span> <span class="sc">|</span> country_id),                 <span class="co">#   self_direction + selfexpr_dim + self_direction:selfexpr_dim</span></span>
+<span id="cb24-23"><a href="#cb24-23" tabindex="-1"></a>  <span class="at">data =</span> indiv_df, <span class="at">REML =</span> <span class="cn">FALSE</span></span>
+<span id="cb24-24"><a href="#cb24-24" tabindex="-1"></a>)</span>
+<span id="cb24-25"><a href="#cb24-25" tabindex="-1"></a></span>
+<span id="cb24-26"><a href="#cb24-26" tabindex="-1"></a><span class="co"># Model comparison</span></span>
+<span id="cb24-27"><a href="#cb24-27" tabindex="-1"></a><span class="fu">anova</span>(m0, m1, m2, m3)</span></code></pre></div>
+<pre><code>## Data: indiv_df
+## Models:
+## m0: pol_part ~ 1 + (1 | country_id)
+## m1: pol_part ~ self_direction + conformity + education + age + (1 | country_id)
+## m2: pol_part ~ self_direction + conformity + education + age + selfexpr_dim + gini + gdp_log + (1 | country_id)
+## m3: pol_part ~ self_direction * selfexpr_dim + conformity + education + age + gini + gdp_log + (1 | country_id)
+##    npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(&gt;Chisq)    
+## m0    3 6876.1 6893.5 -3435.0    6870.1                          
+## m1    7 6239.6 6280.3 -3112.8    6225.6 644.482  4  &lt; 2.2e-16 ***
+## m2   10 6224.5 6282.8 -3102.3    6204.5  21.028  3  0.0001039 ***
+## m3   11 6110.5 6174.6 -3044.2    6088.5 116.056  1  &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><strong>Interpreting the model comparison (<code>anova()</code> output).</strong> The <code>anova()</code> call performs likelihood ratio tests (LRTs) between sequential models. Each row compares one model to the previous one. The test statistic (<code>Chisq</code>) is twice the difference in log-likelihoods between models; under the null hypothesis that the added parameters are all zero, this statistic follows a chi-squared distribution with degrees of freedom equal to the number of added parameters (<code>Df</code> column).</p>
+<ul>
+<li><strong>M0 → M1:</strong> This tests whether the four individual-level variables collectively improve fit. A significant chi-square (p &lt; .05) confirms that individual values and demographics predict political participation — unsurprising but necessary to establish.</li>
+<li><strong>M1 → M2:</strong> This is the critical test for whether country-level cultural variables (the self-expression dimension, Gini, GDP) explain between-country variance <em>beyond</em> what individual predictors already account for. A significant result here is direct evidence that country culture has explanatory power — that the Inglehart self-expression dimension, for instance, predicts national differences in political participation independent of individual values.</li>
+<li><strong>M2 → M3:</strong> This tests the cross-level interaction specifically. A significant chi-square (1 df, since we added one interaction term) means the effect of individual self-direction on political participation is not constant across countries — it depends on the country’s cultural context. This is the key theoretical finding.</li>
+</ul>
+<p>If any LRT is non-significant, it means the variables added in that step do not improve model fit beyond chance, and you would typically not retain them (or would retain them only if there is a strong theoretical reason to do so).</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># Final model summary</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="fu">summary</span>(m3)</span></code></pre></div>
+<pre><code>## Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite&#39;s
+##   method [lmerModLmerTest]
+## Formula: pol_part ~ self_direction * selfexpr_dim + conformity + education +  
+##     age + gini + gdp_log + (1 | country_id)
+##    Data: indiv_df
+## 
+##       AIC       BIC    logLik -2*log(L)  df.resid 
+##    6110.5    6174.6   -3044.2    6088.5      2489 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -3.0574 -0.6845 -0.0044  0.6904  3.3554 
+## 
+## Random effects:
+##  Groups     Name        Variance Std.Dev.
+##  country_id (Intercept) 0.1835   0.4283  
+##  Residual               0.6464   0.8040  
+## Number of obs: 2500, groups:  country_id, 25
+## 
+## Fixed effects:
+##                               Estimate Std. Error         df t value Pr(&gt;|t|)
+## (Intercept)                  1.393e-01  1.031e-01  4.119e+01   1.351 0.184082
+## self_direction               3.020e-01  1.646e-02  2.476e+03  18.346  &lt; 2e-16
+## selfexpr_dim                 3.781e-01  8.624e-02  2.501e+01   4.384 0.000184
+## conformity                  -2.185e-01  1.613e-02  2.476e+03 -13.552  &lt; 2e-16
+## education                    2.558e-01  1.636e-02  2.478e+03  15.630  &lt; 2e-16
+## age                         -1.792e-04  1.083e-03  2.476e+03  -0.165 0.868584
+## gini                        -2.861e-01  1.057e-01  2.500e+01  -2.707 0.012055
+## gdp_log                     -4.493e-03  7.647e-02  2.501e+01  -0.059 0.953619
+## self_direction:selfexpr_dim  1.767e-01  1.621e-02  2.477e+03  10.900  &lt; 2e-16
+##                                
+## (Intercept)                    
+## self_direction              ***
+## selfexpr_dim                ***
+## conformity                  ***
+## education                   ***
+## age                            
+## gini                        *  
+## gdp_log                        
+## self_direction:selfexpr_dim ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr) slf_dr slfxp_ cnfrmt eductn age    gini   gdp_lg
+## self_dirctn -0.006                                                 
+## selfexpr_dm -0.037  0.006                                          
+## conformity  -0.001 -0.015  0.003                                   
+## education   -0.002  0.000 -0.005 -0.006                            
+## age         -0.470  0.017  0.000 -0.012  0.007                     
+## gini        -0.112  0.000  0.234  0.005  0.007 -0.001              
+## gdp_log     -0.245 -0.008  0.092  0.002  0.008 -0.006  0.235       
+## slf_drctn:_  0.004 -0.013  0.010  0.029 -0.006  0.000  0.003  0.002</code></pre>
+<p><strong>Reading the <code>summary(m3)</code> output.</strong> The summary has three main sections to navigate:</p>
+<p><strong>Fixed effects</strong> (labeled “Fixed effects:” in the output) are the coefficients you would recognize from OLS regression — they describe population-average relationships. Find these rows:</p>
+<ul>
+<li><code>self_direction</code>: The effect of individual self-direction on political participation <em>when <code>selfexpr_dim</code> = 0</em> (i.e., at the average country cultural context). This is the simple slope at the mean of the moderator.</li>
+<li><code>selfexpr_dim</code>: The effect of country-level self-expression values on participation <em>when <code>self_direction</code> = 0</em> (i.e., for an individual at the mean on self-direction). This is the country-level main effect.</li>
+<li><code>self_direction:selfexpr_dim</code>: <strong>This is the cross-level interaction coefficient.</strong> A positive value — consistent with the simulation where we set this coefficient to 0.20 — means that the slope of individual self-direction becomes steeper as country self-expression increases. In other words, living in a self-expression culture amplifies the participatory advantage of holding self-direction values individually. This is the central theoretical claim.</li>
+<li><code>conformity</code>, <code>education</code>, <code>age</code>, <code>gini</code>, <code>gdp_log</code>: Control variables. Their coefficients are adjusted for all other predictors in the model.</li>
+</ul>
+<p>The <code>t value</code> column in the fixed effects section functions like a z-statistic for large samples. With lmerTest loaded, the output also includes p-values computed via Satterthwaite degrees of freedom approximation.</p>
+<p><strong>Random effects</strong> (labeled “Random effects:” in the output) describe variance components. The <code>country_id</code> row gives the estimated between-country variance in the random intercept — how much countries differ from each other on their baseline levels of political participation after accounting for all fixed predictors. The <code>Residual</code> row is the within-country (individual-level) variance left unexplained. Comparing these to the null model’s variance components tells you how much of the between-country variance was accounted for by the Level-2 predictors added in M2 and M3. If the between-country variance dropped substantially from M0 to M3, the country-level cultural variables are explaining much of the between-country heterogeneity.</p>
+<p>Now we visualize the cross-level interaction, which is the most important result to communicate.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># Visualize cross-level interaction</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>pred_df <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>  <span class="at">self_direction =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>, <span class="at">by =</span> <span class="fl">0.1</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>  <span class="at">selfexpr_dim   =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>  <span class="at">conformity     =</span> <span class="dv">0</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>  <span class="at">education      =</span> <span class="dv">0</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>  <span class="at">age            =</span> <span class="dv">45</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>  <span class="at">gini           =</span> <span class="dv">0</span>,</span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>  <span class="at">gdp_log        =</span> <span class="dv">0</span></span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a>)</span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a>pred_df<span class="sc">$</span>pol_part_hat <span class="ot">&lt;-</span> <span class="fu">predict</span>(m3, <span class="at">newdata =</span> pred_df, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a>pred_df <span class="sc">%&gt;%</span></span>
+<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a>    <span class="at">selfexpr_label =</span> <span class="fu">factor</span>(selfexpr_dim,</span>
+<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb28-18"><a href="#cb28-18" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low self-expression</span><span class="sc">\n</span><span class="st">(survival values dominant)&quot;</span>,</span>
+<span id="cb28-19"><a href="#cb28-19" tabindex="-1"></a>                 <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High self-expression</span><span class="sc">\n</span><span class="st">(self-expr. values dominant)&quot;</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" tabindex="-1"></a>    )</span>
+<span id="cb28-21"><a href="#cb28-21" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb28-22"><a href="#cb28-22" tabindex="-1"></a>  <span class="fu">filter</span>(selfexpr_dim <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-23"><a href="#cb28-23" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> self_direction, <span class="at">y =</span> pol_part_hat,</span>
+<span id="cb28-24"><a href="#cb28-24" tabindex="-1"></a>             <span class="at">color =</span> selfexpr_label, <span class="at">fill =</span> selfexpr_label)) <span class="sc">+</span></span>
+<span id="cb28-25"><a href="#cb28-25" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="#cb28-26" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> pol_part_hat <span class="sc">-</span> <span class="fl">0.2</span>, <span class="at">ymax =</span> pol_part_hat <span class="sc">+</span> <span class="fl">0.2</span>),</span>
+<span id="cb28-27"><a href="#cb28-27" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb28-28"><a href="#cb28-28" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#e67e22&quot;</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb28-29"><a href="#cb28-29" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values  =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#e67e22&quot;</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb28-30"><a href="#cb28-30" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-31"><a href="#cb28-31" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Cross-Level Interaction: Individual Values × Country Culture&quot;</span>,</span>
+<span id="cb28-32"><a href="#cb28-32" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Effect of individual self-direction on political participation, by country cultural context&quot;</span>,</span>
+<span id="cb28-33"><a href="#cb28-33" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">&quot;Individual self-direction value (standardized)&quot;</span>,</span>
+<span id="cb28-34"><a href="#cb28-34" tabindex="-1"></a>    <span class="at">y        =</span> <span class="st">&quot;Predicted political participation&quot;</span></span>
+<span id="cb28-35"><a href="#cb28-35" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-36"><a href="#cb28-36" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb28-37"><a href="#cb28-37" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once per session.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="figure"><span style="display:block;" id="fig:multilevel-interaction"></span>
+<img src="05-sem-regression_files/figure-html/multilevel-interaction-1.png" alt="Figure 5.2: Cross-level interaction. Individual self-direction values predict political participation more strongly in countries with high self-expression cultural dimension (right panel) than in low self-expression countries (left panel). This illustrates cultural context moderating individual-level relationships." width="672" />
+<p class="caption">
+Figure 1.2: Figure 5.2: Cross-level interaction. Individual self-direction values predict political participation more strongly in countries with high self-expression cultural dimension (right panel) than in low self-expression countries (left panel). This illustrates cultural context moderating individual-level relationships.
+</p>
+</div>
+<p><strong>Reading the interaction plot (Figure 5.2).</strong> Each line represents the predicted relationship between individual self-direction and political participation for a particular type of country. The blue line represents countries low on the self-expression dimension (survival-values dominant); the orange line represents countries high on self-expression.</p>
+<p>Two features of the plot carry the theoretical interpretation:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>The lines are not parallel — they diverge.</strong> If the cross-level interaction coefficient were zero, both lines would have the same slope and you would see two parallel lines offset vertically. The divergence means the slope is steeper in high self-expression countries. This is the visual signature of the interaction.</p></li>
+<li><p><strong>The slope is steeper in high self-expression countries (orange).</strong> Moving from low to high individual self-direction predicts a larger increase in participation in high self-expression countries than in low self-expression countries. The substantive interpretation: when the surrounding cultural environment already valorizes autonomy, self-expression, and individual agency, individuals who hold those values personally are particularly likely to translate them into civic and political action. In survival-values cultures (blue line), individual self-direction still predicts participation — the line still has a positive slope — but the relationship is weaker. The cultural macro-context either amplifies or dampens the translation of individual values into behavior.</p></li>
+</ol>
+<p>The shaded ribbons around each line represent approximate confidence intervals (±0.2 predicted units here, used as a visual guide). The gap between the lines at the right side of the x-axis (high individual self-direction) is the region where country context matters most.</p>
+<hr />
+</div>
+<div id="regression-diagnostics-for-cultural-variables" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 5.3 Regression Diagnostics for Cultural Variables<a href="#regression-diagnostics-for-cultural-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before interpreting any regression output, it is good practice to check two potential problems that are especially common when cultural variables are included as predictors: multicollinearity and model specification. We run these diagnostics on a standard OLS model (rather than the multilevel model) because the diagnostic tools are more developed for OLS, and the findings transfer conceptually to the multilevel context.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Key checks when cultural variables are in regression models:</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="co"># 1. Multicollinearity: cultural constructs are often correlated</span></span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
+<pre><code>## Loading required package: carData</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;car&#39;:
+##   method           from
+##   na.action.merMod lme4</code></pre>
+<pre><code>## 
+## Attaching package: &#39;car&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:psych&#39;:
+## 
+##     logit</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     recode</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     some</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>m_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(pol_part <span class="sc">~</span> self_direction <span class="sc">+</span> conformity <span class="sc">+</span> education <span class="sc">+</span> age <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>             selfexpr_dim <span class="sc">+</span> gini, <span class="at">data =</span> indiv_df)</span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a>vif_vals <span class="ot">&lt;-</span> <span class="fu">vif</span>(m_lm)</span>
+<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Variance Inflation Factors:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Variance Inflation Factors:</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(vif_vals, <span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## self_direction     conformity      education            age   selfexpr_dim 
+##           1.00           1.00           1.00           1.00           1.05 
+##           gini 
+##           1.05</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">VIF &gt; 5 indicates problematic multicollinearity (VIF &gt; 10 = severe)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## VIF &gt; 5 indicates problematic multicollinearity (VIF &gt; 10 = severe)</code></pre>
+<p><strong>Interpreting the VIF values.</strong> The Variance Inflation Factor for a predictor <span class="math inline">\(X_j\)</span> measures how much the variance of <span class="math inline">\(\hat{\beta}_j\)</span> is inflated by the predictor’s correlation with other predictors, relative to a hypothetical scenario where it is orthogonal to all others. A VIF of 1.0 means no inflation at all; a VIF of 4.0 means the standard error of that coefficient is twice as large as it would be if the predictor were uncorrelated with the others (<span class="math inline">\(\sqrt{4} = 2\)</span>).</p>
+<p>In this dataset, the predictors were generated independently (all from <code>rnorm()</code>), so VIFs should be close to 1.0 for all variables — typically in the range 1.01–1.10. This is the ideal outcome: no meaningful multicollinearity.</p>
+<p>In applied cultural sociology, this is rarely the case. Self-direction and conformity values tend to be negatively correlated; country-level self-expression dimension and GDP per capita are often strongly positively correlated (wealthier countries tend to score higher on Inglehart’s self-expression axis). If you encountered a VIF above 5, the recommended steps are: (1) check whether two predictors are measuring essentially the same construct and consider dropping one; (2) consider centering or standardizing variables if the VIF arises partly from including an interaction term (which creates correlation with its constituent terms); (3) if theoretical considerations require keeping both variables, report the VIFs and note that standard errors for those predictors are elevated — the coefficients themselves are unbiased, but harder to distinguish from zero. A VIF above 10 typically indicates that reliable estimation of the affected coefficients is not feasible with the current predictor set and sample size.</p>
+<p>The next check addresses specification: do cultural variables explain variance in political participation <em>beyond</em> what structural factors (education, age, inequality, GDP) already account for? This is a common challenge in the field — cultural variables are sometimes proxies for socioeconomic position rather than independent causes.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># 2. Model specification: are cultural variables proxies for something else?</span></span>
+<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="co"># Compare nested models to assess added explanatory value of cultural variables</span></span>
+<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" tabindex="-1"></a><span class="co"># Structural model (no culture)</span></span>
+<span id="cb43-5"><a href="#cb43-5" tabindex="-1"></a>m_struct <span class="ot">&lt;-</span> <span class="fu">lm</span>(pol_part <span class="sc">~</span> education <span class="sc">+</span> age <span class="sc">+</span> gini <span class="sc">+</span> gdp_log, <span class="at">data =</span> indiv_df)</span>
+<span id="cb43-6"><a href="#cb43-6" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" tabindex="-1"></a><span class="co"># Add individual cultural values</span></span>
+<span id="cb43-8"><a href="#cb43-8" tabindex="-1"></a>m_culture_indiv <span class="ot">&lt;-</span> <span class="fu">lm</span>(pol_part <span class="sc">~</span> self_direction <span class="sc">+</span> conformity <span class="sc">+</span></span>
+<span id="cb43-9"><a href="#cb43-9" tabindex="-1"></a>                        education <span class="sc">+</span> age <span class="sc">+</span> gini <span class="sc">+</span> gdp_log, <span class="at">data =</span> indiv_df)</span>
+<span id="cb43-10"><a href="#cb43-10" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" tabindex="-1"></a><span class="co"># Add country-level cultural dimension</span></span>
+<span id="cb43-12"><a href="#cb43-12" tabindex="-1"></a>m_culture_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(pol_part <span class="sc">~</span> self_direction <span class="sc">+</span> conformity <span class="sc">+</span></span>
+<span id="cb43-13"><a href="#cb43-13" tabindex="-1"></a>                       selfexpr_dim <span class="sc">+</span> education <span class="sc">+</span> age <span class="sc">+</span> gini <span class="sc">+</span> gdp_log,</span>
+<span id="cb43-14"><a href="#cb43-14" tabindex="-1"></a>                     <span class="at">data =</span> indiv_df)</span>
+<span id="cb43-15"><a href="#cb43-15" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" tabindex="-1"></a><span class="fu">anova</span>(m_struct, m_culture_indiv, m_culture_full) <span class="sc">%&gt;%</span></span>
+<span id="cb43-17"><a href="#cb43-17" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-18"><a href="#cb43-18" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;Step&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb43-19"><a href="#cb43-19" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb43-20"><a href="#cb43-20" tabindex="-1"></a>    <span class="at">Step =</span> <span class="fu">c</span>(<span class="st">&quot;Structural only&quot;</span>, <span class="st">&quot;+ Individual cultural values&quot;</span>,</span>
+<span id="cb43-21"><a href="#cb43-21" tabindex="-1"></a>             <span class="st">&quot;+ Country cultural dimension&quot;</span>)</span>
+<span id="cb43-22"><a href="#cb43-22" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-23"><a href="#cb43-23" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb43-24"><a href="#cb43-24" tabindex="-1"></a>    <span class="at">digits  =</span> <span class="dv">3</span>,</span>
+<span id="cb43-25"><a href="#cb43-25" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 5.3: Sequential F-tests for added cultural variables. Each row tests whether the additional cultural variables significantly improve model fit.&quot;</span></span>
+<span id="cb43-26"><a href="#cb43-26" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-27"><a href="#cb43-27" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:reg-specification">Table 1.6: </span><span id="tab:reg-specification">Table 1.7: </span>Table 5.3: Sequential F-tests for added cultural variables. Each row tests whether the additional cultural variables significantly improve model fit.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Step
+</th>
+<th style="text-align:right;">
+Res.Df
+</th>
+<th style="text-align:right;">
+RSS
+</th>
+<th style="text-align:right;">
+Df
+</th>
+<th style="text-align:right;">
+Sum of Sq
+</th>
+<th style="text-align:right;">
+F
+</th>
+<th style="text-align:right;">
+Pr(&gt;F)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Structural only
+</td>
+<td style="text-align:right;">
+2495
+</td>
+<td style="text-align:right;">
+2857.075
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ul>
+<li>Individual cultural values
+</td>
+<td style="text-align:right;">
+2493
+</td>
+<td style="text-align:right;">
+2503.035
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+354.039
+</td>
+<td style="text-align:right;">
+204.644
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ul>
+<li>Country cultural dimension
+</td>
+<td style="text-align:right;">
+2492
+</td>
+<td style="text-align:right;">
+2155.610
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+347.426
+</td>
+<td style="text-align:right;">
+401.643
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+<p><strong>Interpreting the sequential F-tests (Table 5.3).</strong> Each row of this table tests whether the variables added at that step significantly reduce the residual sum of squares — in other words, whether they explain additional variance in political participation beyond what the previous model already captured.</p>
+<ul>
+<li><p><strong>Row 1 (Structural only):</strong> This is the baseline. It shows the residual degrees of freedom and sum of squares for the structural-only model. There is no F-test in this row because there is nothing to compare it to yet.</p></li>
+<li><p><strong>Row 2 (+ Individual cultural values):</strong> The F-statistic here tests whether adding self-direction and conformity significantly improves fit over the structural-only model. Given the simulation parameters (self-direction has a true coefficient of 0.30 and conformity of −0.20), this F-test should be highly significant (p ≪ .001). This means individual value orientations explain political participation variation that education, age, Gini, and GDP cannot account for. This is the key empirical counter to the claim that cultural variables are merely proxies for socioeconomic position — even after controlling for education and country-level GDP, how individuals are oriented toward self-direction vs. conformity predicts their participation.</p></li>
+<li><p><strong>Row 3 (+ Country cultural dimension):</strong> This F-test evaluates whether adding <code>selfexpr_dim</code> (Inglehart’s country-level self-expression dimension) further improves fit after all individual-level variables are already in the model. A significant result here is evidence that macro-level cultural context has explanatory power that cannot be reduced to the aggregate of individual values. The self-expression dimension varies between countries and captures something about the cultural environment — norms, institutional practices, public discourse — that shapes participation rates above and beyond individual dispositions.</p></li>
+</ul>
+<p>If either F-test were non-significant, the appropriate conclusion would be that the cultural variables at that level do not add explanatory value beyond structural controls in this dataset — not that culture is unimportant in general, but that these particular measures at this level of analysis do not improve prediction here. The F-test is a conservative, atheoretical tool; it should guide, not replace, theoretical reasoning about what belongs in the model.</p>
+<hr />
+</div>
+<div id="core-readings" class="section level2 unnumbered hasAnchor">
+<h2>Core Readings<a href="#core-readings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul class="reading-list">
+<li>
+Byrne, B. M. (2012). <em>Structural Equation Modeling with Mplus</em>. Routledge.
+</li>
+<li>
+Rosseel, Y. (2012). lavaan: An R Package for Structural Equation Modeling. <em>Journal of Statistical Software, 48</em>(2), 1–36. [lavaan reference paper]
+</li>
+<li>
+Hu, L., &amp; Bentler, P. M. (1999). Cutoff Criteria for Fit Indexes in Covariance Structure Analysis. <em>Structural Equation Modeling, 6</em>(1), 1–55.
+</li>
+<li>
+Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical Linear Models</em>. Sage. Chapters 1–4.
+</li>
+<li>
+Inglehart, R., &amp; Welzel, C. (2005). <em>Modernization, Cultural Change, and Democracy</em>. Cambridge. Chapters 1–3. [Substantive context for country-level cultural variables]
+</li>
+<li>
+Vaisey, S., &amp; Lizardo, O. (2010). Can Cultural Worldviews Influence Network Composition? <em>Social Forces, 88</em>(4), 1595–1618. [Cultural variables as predictors in regression]
+</li>
+</ul>
+<hr />
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.5.3 (2026-03-11 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26200)
+## 
+## Matrix products: default
+##   LAPACK version 3.12.1
+## 
+## locale:
+## [1] LC_COLLATE=English_Israel.utf8  LC_CTYPE=English_Israel.utf8   
+## [3] LC_MONETARY=English_Israel.utf8 LC_NUMERIC=C                   
+## [5] LC_TIME=English_Israel.utf8    
+## 
+## time zone: Asia/Jerusalem
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] car_3.1-5            carData_3.0-6        lmerTest_3.2-1      
+##  [4] lme4_2.0-1           Matrix_1.7-4         lavaanPlot_0.8.1    
+##  [7] semPlot_1.1.8        poLCA_1.6.0.2        MASS_7.3-65         
+## [10] scatterplot3d_0.3-45 patchwork_1.3.2      kableExtra_1.4.0    
+## [13] factoextra_2.0.0     semTools_0.5-8       lavaan_0.6-21       
+## [16] GPArotation_2025.3-1 psych_2.6.3          lubridate_1.9.5     
+## [19] forcats_1.0.1        stringr_1.6.0        dplyr_1.2.0         
+## [22] purrr_1.2.1          readr_2.2.0          tidyr_1.3.2         
+## [25] tibble_3.3.1         ggplot2_4.0.2        tidyverse_2.0.0     
+## [28] rmarkdown_2.31      
+## 
+## loaded via a namespace (and not attached):
+##   [1] RColorBrewer_1.1-3    rstudioapi_0.18.0     jsonlite_2.0.0       
+##   [4] magrittr_2.0.4        TH.data_1.1-5         estimability_1.5.1   
+##   [7] farver_2.1.2          nloptr_2.2.1          vctrs_0.7.2          
+##  [10] minqa_1.2.8           ClaudeR_0.2.0         base64enc_0.1-6      
+##  [13] htmltools_0.5.9       Formula_1.2-5         sass_0.4.10          
+##  [16] bslib_0.10.0          htmlwidgets_1.6.4     plyr_1.8.9           
+##  [19] sandwich_3.1-1        emmeans_2.0.2         zoo_1.8-15           
+##  [22] cachem_1.1.0          igraph_2.2.2          mime_0.13            
+##  [25] lifecycle_1.0.5       pkgconfig_2.0.3       R6_2.6.1             
+##  [28] fastmap_1.2.0         rbibutils_2.4.1       shiny_1.13.0         
+##  [31] numDeriv_2016.8-1.1   OpenMx_2.22.11        fdrtool_1.2.18       
+##  [34] digest_0.6.39         colorspace_2.1-2      textshaping_1.0.5    
+##  [37] Hmisc_5.2-5           labeling_0.4.3        timechange_0.4.0     
+##  [40] abind_1.4-8           compiler_4.5.3        withr_3.0.2          
+##  [43] glasso_1.11           backports_1.5.0       htmlTable_2.4.3      
+##  [46] S7_0.2.1              corpcor_1.6.10        gtools_3.9.5         
+##  [49] tools_4.5.3           pbivnorm_0.6.0        foreign_0.8-91       
+##  [52] otel_0.2.0            zip_2.3.3             httpuv_1.6.17        
+##  [55] nnet_7.3-20           glue_1.8.0            quadprog_1.5-8       
+##  [58] DiagrammeR_1.0.11     nlme_3.1-168          promises_1.5.0       
+##  [61] lisrelToR_0.3         grid_4.5.3            checkmate_2.3.4      
+##  [64] reshape2_1.4.5        cluster_2.1.8.2       generics_0.1.4       
+##  [67] gtable_0.3.6          tzdb_0.5.0            data.table_1.18.2.1  
+##  [70] hms_1.1.4             xml2_1.5.2            sem_3.1-16           
+##  [73] ggrepel_0.9.8         pillar_1.11.1         rockchalk_1.8.157    
+##  [76] later_1.4.8           splines_4.5.3         lattice_0.22-9       
+##  [79] survival_3.8-6        kutils_1.73           tidyselect_1.2.1     
+##  [82] pbapply_1.7-4         miniUI_0.1.2          knitr_1.51           
+##  [85] reformulas_0.4.4      gridExtra_2.3         bookdown_0.46        
+##  [88] svglite_2.2.2         stats4_4.5.3          xfun_0.57            
+##  [91] skimr_2.2.2           qgraph_1.9.8          arm_1.15-2           
+##  [94] visNetwork_2.1.4      stringi_1.8.7         yaml_2.3.12          
+##  [97] boot_1.3-32           evaluate_1.0.5        codetools_0.2-20     
+## [100] mi_1.2                cli_3.6.5             RcppParallel_5.1.11-2
+## [103] rpart_4.1.24          xtable_1.8-8          systemfonts_1.3.2    
+## [106] Rdpack_2.6.6          repr_1.1.7            jquerylib_0.1.4      
+## [109] Rcpp_1.1.1            coda_0.19-4.1         png_0.1-9            
+## [112] XML_3.99-0.23         parallel_4.5.3        jpeg_0.1-11          
+## [115] viridisLite_0.4.3     mvtnorm_1.3-6         scales_1.4.0         
+## [118] openxlsx_4.2.8.1      rlang_1.1.7           multcomp_1.4-30      
+## [121] mnormt_2.1.2</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  },
+  "info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+# Research Design Synthesis and Thesis Development {#research-design}
+
+**Week 15 | Synthesis + Assignment 4 Workshop**
+
+---
+
+## 8.1 The Research Design Problem in Cultural Sociology
+
+By this point in the course, students have been exposed to a range of
+theoretical constructs (habitus, schema, frame, logic, narrative) and a
+range of methods (MCA, LCA, EFA/CFA, SEM, multilevel regression, topic
+modeling, belief networks, qualitative coding). The synthesis problem is:
+how do these connect in a coherent research design?
+
+The answer depends on the **research question type**. The table below maps
+question types to appropriate methods, with the key assumption that must hold
+for each method to be valid.
+
+```{r design-setup, message=FALSE}
+library(tidyverse)
+library(kableExtra)
+
+question_method_map <- tribble(
+  ~question_type,                          ~method,                          ~core_assumption,                          ~cultural_soc_example,
+  "What types of cultural orientation exist?", "Latent Class Analysis (LCA)", "Latent categorical variable underlies response patterns", "Vaisey (2009): moral types in GSS",
+  "What are the dimensions of cultural variation?", "EFA / MCA", "Continuous latent dimensions; categorical (MCA) or continuous (EFA) indicators", "Bourdieu (1984): taste space via MCA",
+  "Does construct X predict outcome Y?", "OLS / logistic regression; SEM", "Adequate operationalization; correct functional form; X measured without error (SEM) or with (OLS)", "Vaisey & Lizardo (2010): worldviews → network composition",
+  "Does X cause Y (counterfactual)?", "Natural experiment; DiD; RD design", "Exogenous variation in X; SUTVA; parallel trends (DiD)", "Limited in cultural sociology; rare but see Acemoglu et al.",
+  "Are constructs equivalent across groups?", "Measurement invariance (CFA)", "Same factor structure across groups; loadings and intercepts equal (scalar invariance) for mean comparison", "Cross-national WVS comparisons",
+  "What is the content of schema X?", "Ethnography; in-depth interviews", "Practice is theory-laden; verbal reports access discursive culture", "Lamont (1992); Wacquant (2004)",
+  "How do schemas change over time?", "Panel data; computational text analysis; historical-comparative", "Change in observed indicators reflects change in latent construct (not just measurement drift)", "Kozlowski et al. (2019): word embeddings 1900–2000",
+  "What conditions produce outcome X?", "Qualitative Comparative Analysis (fsQCA)", "Equifinality; configurational causation; Boolean logic", "Smilde (2007): conditions for evangelical conversion"
+)
+
+question_method_map %>%
+  kable(
+    col.names = c("Research Question Type", "Primary Method", "Core Assumption",
+                  "Cultural Soc. Example"),
+    caption   = "Table 8.1: Research question types mapped to methods. Method selection is a theoretical act — it embeds assumptions about the nature of the construct and the causal claim."
+  ) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), font_size = 12) %>%
+  column_spec(3, width = "18em") %>%
+  column_spec(4, width = "15em")
+```
+
+---
+
+## 8.2 Operationalization Audit
+
+Before selecting a method, every cultural construct requires an
+operationalization audit — a structured assessment of how well the
+proposed measure captures the theoretical construct.
+
+```{r operationalization-audit}
+# Template for an operationalization audit
+# Demonstrate with "cultural capital"
+
+audit_template <- tribble(
+  ~dimension,            ~question,                                                   ~example_for_cult_cap,
+  "Conceptual breadth",  "Does the theoretical construct have multiple components? Are all covered?", "Embodied (dispositions), objectified (goods), institutionalized (credentials). Most studies only measure the last.",
+  "Level of analysis",   "At what level is the construct theorized? At what level is it measured?", "Embodied capital is individual + pre-reflective. Measured via survey = aggregated explicit report. Mismatch.",
+  "Indicator validity",  "Do the proposed indicators tap the theoretical dimension?", "Education years = institutionalized capital. Arts attendance = partially embodied. Survey-based cultural knowledge tests (used by Dumais) = closer to embodied.",
+  "Indicator reliability", "Are indicators consistent in repeated measurement?", "Survey items for education: high reliability. Attendance items: medium (dependent on recall period).",
+  "Construct validity",  "Does the construct behave as theorized in relation to other variables?", "Cultural capital should predict social advantage net of economic capital. Test: does it? Lamont (1992) shows cross-national variation unexplained by Bourdieu's model.",
+  "Discriminant validity", "Is this construct distinct from related constructs?", "Cultural capital vs. social capital: these are theoretically distinct but correlated. Do they have independent predictive power?",
+  "Measurement invariance", "Does the measure mean the same thing across groups being compared?", "Cross-national: 'attending classical concerts' may have different cultural field positions in France vs. US."
+)
+
+audit_template %>%
+  kable(
+    col.names = c("Dimension", "Diagnostic Question", "Example: Cultural Capital"),
+    caption   = "Table 8.2: Operationalization audit template. Applied here to cultural capital."
+  ) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 12) %>%
+  column_spec(2:3, width = "20em")
+```
+
+---
+
+## 8.3 Pre-Registration as Research Discipline
+
+Pre-registration — specifying hypotheses, sample, variables, and
+analytic plan before data collection or analysis — is increasingly
+standard in social science. It is not yet universal in cultural
+sociology, but it trains crucial habits:
+
+1. **Separating confirmatory from exploratory inference**: any analysis
+   conducted after seeing the data is exploratory, regardless of the
+   theoretical motivation. Only pre-specified analyses are confirmatory.
+2. **Preventing HARKing** (Hypothesizing After Results are Known):
+   pre-registration creates a public record of what was predicted
+   before what was found.
+3. **Forcing precision**: the act of writing a pre-registration
+   reveals ambiguities in the research design that would otherwise
+   survive until the results are known.
+
+::: {.lab-box}
+**Pre-Registration Template** (Assignment 3 format)
+
+Students complete the following sections before running any analysis
+on their primary dataset:
+
+1. *Theoretical framework*: which constructs, defined how
+2. *Research question and hypotheses* (stated as directional predictions,
+   not "we will examine")
+3. *Dataset and sampling*: which dataset, which variables, what inclusion
+   criteria
+4. *Operationalization*: indicator selection with justification; how are
+   missing values handled
+5. *Analytic plan*: specific models, in what order, with what
+   comparison criteria
+6. *Robustness checks*: which specification alternatives will be tested
+7. *Expected limitations*
+
+After the pre-registration is submitted, students run their analysis.
+Deviations from the pre-registered plan must be disclosed and justified.
+:::
+
+---
+
+## Lab 8: Full Research Pipeline Demonstration {#lab8}
+
+::: {.lab-box}
+This final lab runs a complete research pipeline from a theoretically
+motivated question through data, analysis, and interpretation. We use
+GSS-structure data (Chapter 4) extended with behavioral outcomes and
+demographic covariates.
+
+Research question: Does latent moral orientation (as identified by LCA)
+predict civic participation, net of education and religious attendance?
+This replicates the Vaisey (2009) logic with a civic participation outcome.
+:::
+
+```{r pipeline-setup}
+library(poLCA)
+library(nnet)
+
+set.seed(20240109)
+
+# ─────────────────────────────────────────────────────────────
+# Extend GSS-structure dataset from Chapter 4 with outcomes
+# and covariates
+# ─────────────────────────────────────────────────────────────
+
+n <- 1500
+
+# Latent moral class (reproducing Chapter 4 structure)
+true_class <- sample(c(1, 2, 3), n,
+                     replace = TRUE, prob = c(0.35, 0.38, 0.27))
+
+item_by_class <- function(class_vec, p1, p2, p3, levels = 1:4) {
+  out <- integer(length(class_vec))
+  out[class_vec == 1] <- sample(levels, sum(class_vec == 1), replace = TRUE, prob = p1)
+  out[class_vec == 2] <- sample(levels, sum(class_vec == 2), replace = TRUE, prob = p2)
+  out[class_vec == 3] <- sample(levels, sum(class_vec == 3), replace = TRUE, prob = p3)
+  out
+}
+
+pipeline_df <- tibble(
+  true_class,
+  ABANY    = item_by_class(true_class, c(.80,.12,.05,.03), c(.30,.25,.25,.20), c(.05,.10,.20,.65)),
+  PREMARSX = item_by_class(true_class, c(.75,.15,.07,.03), c(.20,.25,.30,.25), c(.03,.07,.20,.70)),
+  XMARSEX  = item_by_class(true_class, c(.90,.07,.02,.01), c(.70,.18,.08,.04), c(.55,.25,.12,.08)),
+  HOMOSEX  = item_by_class(true_class, c(.82,.10,.05,.03), c(.25,.22,.25,.28), c(.04,.06,.15,.75)),
+  BIBLE    = item_by_class(true_class, c(.70,.22,.08), c(.20,.50,.30), c(.05,.30,.65), 1:3),
+  PRAY     = item_by_class(true_class, c(.70,.22,.08), c(.25,.45,.30), c(.08,.25,.67), 1:3),
+
+  # Covariates
+  educ    = round(rnorm(n, 14, 3)),  # years of education
+  age     = round(rnorm(n, 45, 15)),
+  female  = rbinom(n, 1, 0.52),
+  attend  = item_by_class(true_class, c(.65,.22,.13), c(.30,.35,.35), c(.10,.25,.65), 1:3),
+
+  # Outcomes (caused by true_class + covariates)
+  # Voted in last election
+  voted       = rbinom(n, 1,
+    plogis(-0.5 +
+           0.8 * (true_class == 1) +    # traditionalists vote more
+           0.2 * (true_class == 2) +
+           0.05 * educ +
+           -0.01 * age +
+           0.3 * rnorm(n))),
+
+  # Volunteer hours per month (count — using negative binomial logic → Poisson approx)
+  volunteer = rpois(n,
+    exp(0.5 +
+        0.4 * (true_class == 1) +
+        0.2 * (true_class == 2) +
+        0.08 * educ +
+        0.3 * rnorm(n)))
+)
+
+cat("Full pipeline dataset: N =", nrow(pipeline_df), "\n")
+cat("Outcomes: voted (binary), volunteer (count)\n")
+```
+
+```{r pipeline-lca}
+# Step 1: Run LCA to recover latent classes (as if true class unknown)
+formula_moral <- cbind(ABANY, PREMARSX, XMARSEX, HOMOSEX, BIBLE, PRAY) ~ 1
+
+lca_final <- poLCA(formula_moral,
+                   pipeline_df %>% dplyr::select(ABANY:PRAY),
+                   nclass  = 3,
+                   verbose = FALSE,
+                   maxiter = 3000,
+                   nrep    = 20)
+
+pipeline_df$lca_class <- lca_final$predclass
+cat("LCA class sizes (%):", round(lca_final$P * 100, 1), "\n")
+
+# Check correspondence with true classes (in real research: unknowable)
+cat("\nCross-tab: LCA class × True class (research validation check):\n")
+print(table(pipeline_df$lca_class, pipeline_df$true_class))
+```
+
+```{r pipeline-logit, warning=FALSE}
+# Step 2: Logistic regression: voted ~ LCA class + controls
+# IMPORTANT: This uses modal class assignment (biased; BCH needed for unbiased)
+# We note this limitation explicitly
+
+pipeline_df <- pipeline_df %>%
+  mutate(lca_class_f = factor(lca_class, labels = c("Trad.", "Mod.", "Prog.")))
+
+# Bivariate: class → voted
+m_bivar <- glm(voted ~ lca_class_f, data = pipeline_df, family = binomial)
+
+# Full model: class + controls
+m_full <- glm(voted ~ lca_class_f + educ + age + female + attend,
+              data = pipeline_df, family = binomial)
+
+# Model comparison
+broom::tidy(m_full, conf.int = TRUE, exponentiate = TRUE) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(across(c(estimate, conf.low, conf.high), ~ round(., 3)),
+         p.value = round(p.value, 4)) %>%
+  kable(
+    col.names = c("Term", "OR", "SE", "z", "p", "CI low", "CI high"),
+    caption   = "Table 8.3: Logistic regression (OR): voted ~ LCA class + controls. Reference class = Traditionalist. Note: modal class assignment introduces downward bias in class coefficient estimates."
+  ) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 13)
+```
+
+```{r pipeline-poisson}
+# Step 3: Poisson regression: volunteer hours ~ LCA class + controls
+m_volunt <- glm(volunteer ~ lca_class_f + educ + age + female + attend,
+                data = pipeline_df, family = poisson)
+
+broom::tidy(m_volunt, conf.int = TRUE, exponentiate = TRUE) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(across(c(estimate, conf.low, conf.high), ~ round(., 3)),
+         p.value = round(p.value, 4)) %>%
+  kable(
+    col.names = c("Term", "IRR", "SE", "z", "p", "CI low", "CI high"),
+    caption   = "Table 8.4: Poisson regression (IRR): volunteer hours ~ LCA class + controls. IRR = Incidence Rate Ratio (multiplicative effect on volunteer hours)."
+  ) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 13)
+```
+
+```{r pipeline-visualization, fig.cap="Figure 8.1: Predicted civic outcomes by LCA class, controlling for education, age, gender, and religious attendance. Error bars = 95% CI. Traditionalists show higher voting probability but not consistently higher volunteering — a finding with theoretical implications for models that predict uniform civic engagement by moral orientation.", fig.width=9, fig.height=5}
+library(patchwork)
+
+# Predicted probabilities: voted
+newdata_voted <- expand_grid(
+  lca_class_f = factor(c("Trad.", "Mod.", "Prog."), levels = c("Trad.", "Mod.", "Prog.")),
+  educ    = mean(pipeline_df$educ),
+  age     = mean(pipeline_df$age),
+  female  = 0.52,
+  attend  = 2
+)
+
+pp_voted <- predict(m_full, newdata = newdata_voted, type = "response", se.fit = TRUE)
+newdata_voted$pred <- pp_voted$fit
+newdata_voted$se   <- pp_voted$se.fit
+
+p1 <- ggplot(newdata_voted, aes(x = lca_class_f, y = pred,
+                                 fill = lca_class_f)) +
+  geom_col(color = "white") +
+  geom_errorbar(aes(ymin = pred - 1.96 * se, ymax = pred + 1.96 * se),
+                width = 0.2) +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1)) +
+  scale_fill_manual(values = c("#2980b9", "#e67e22", "#27ae60")) +
+  labs(title = "Predicted Voting Probability", x = "Moral class", y = "P(voted)",
+       fill = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none")
+
+# Predicted volunteer hours
+pp_vol <- predict(m_volunt, newdata = newdata_voted, type = "response", se.fit = TRUE)
+newdata_voted$pred_vol <- pp_vol$fit
+newdata_voted$se_vol   <- pp_vol$se.fit
+
+p2 <- ggplot(newdata_voted, aes(x = lca_class_f, y = pred_vol,
+                                 fill = lca_class_f)) +
+  geom_col(color = "white") +
+  geom_errorbar(aes(ymin = pred_vol - 1.96 * se_vol,
+                    ymax = pred_vol + 1.96 * se_vol), width = 0.2) +
+  scale_fill_manual(values = c("#2980b9", "#e67e22", "#27ae60")) +
+  labs(title = "Predicted Volunteer Hours/Month",
+       x = "Moral class", y = "Predicted hours", fill = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none")
+
+p1 + p2 + plot_annotation(
+  title    = "Predicted Civic Outcomes by Latent Moral Class",
+  subtitle = "Controlling for education, age, gender, religious attendance"
+)
+```
+
+---
+
+## 8.4 Thesis and Doctoral Development: Extending the Course Work
+
+::: {.theory-box}
+**From course paper to thesis/PhD chapter.**
+
+The research design paper (Assignment 4) can become the first chapter
+of an MA thesis or a doctoral dissertation chapter if it:
+
+1. Identifies a **gap that is genuinely consequential** — not just
+   "no study has done X" but "the absence of X leaves a significant
+   theoretical problem unresolved."
+
+2. Proposes a **feasible empirical contribution** given available data
+   and methods. Ambition should be bounded by what can be executed
+   with appropriate rigor.
+
+3. Situates itself within **one clear conversation** in the literature —
+   not three conversations at once. The contribution is sharpest when
+   the paper knows exactly which debate it is entering.
+
+4. Has a **falsifiable claim** — either a prediction that could be
+   wrong, or an analytical framework that produces determinate
+   implications for the data.
+:::
+
+**High-priority underdeveloped areas in cultural and cognitive sociology
+(as of 2024) — productive for thesis development:**
+
+| Area | Why underdeveloped | Methodological entry point |
+|------|-------------------|---------------------------|
+| Cross-cultural measurement of implicit culture | Surveys measure explicit; implicit culture is underoperationalized cross-culturally | Vignette experiments + LCA; implicit association paradigms |
+| Longitudinal schema stability | LCA is cross-sectional; how do moral types change over the life course? | Latent Transition Analysis (LTA) on panel data |
+| Institutional logics at individual level | Multi-level assumption rarely tested | Multilevel LCA; MSEM |
+| Cultural omnivorousness in digital consumption | Digital taste (Spotify, streaming) poorly integrated with field theory | Behavioral data + MCA |
+| Schema activation vs. schema possession | Having a schema ≠ activating it; context effects undertheorized | Experimental vignette designs |
+| Narrative measurement at scale | Narrative analysis has been qualitative; computational narrative detection is nascent | STM topic models with narrative sequence coding |
+
+---
+
+## 8.5 Final Session: Peer Design Review Protocol
+
+```{r peer-review-rubric}
+review_rubric <- tribble(
+  ~dimension,               ~criteria,                                              ~weight,
+  "Theoretical clarity",    "Is the construct clearly defined? Is its relation to existing literature explicit?", "20%",
+  "Research question",      "Is the question specific, feasible, and consequential? Is it answerable with the proposed data/method?", "20%",
+  "Operationalization",     "Are indicators justified theoretically? Are limitations acknowledged?", "20%",
+  "Method-question fit",    "Does the method match the research question type? Are assumptions stated?", "20%",
+  "Anticipated limitations","Are threats to validity acknowledged (measurement, endogeneity, scope)?", "10%",
+  "Development potential",  "Can this design be extended to a thesis/PhD? Is the contribution clear?", "10%"
+)
+
+review_rubric %>%
+  kable(
+    col.names = c("Dimension", "Criteria", "Weight"),
+    caption   = "Table 8.5: Peer design review rubric for Assignment 4 workshop"
+  ) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 13) %>%
+  column_spec(2, width = "30em")
+```
+
+---
+
+## Assignment 4: Research Design Paper {-}
+
+::: {.assignment-box}
+**Assignment 4 — Research Design Paper (Due Week 15)**
+
+*Length*: 7,000–10,000 words (not including references and code appendix)
+
+*Structure*:
+
+**I. Introduction** (~500 words)  
+State the research question. Explain why it matters theoretically.
+Identify which debate in the literature this enters.
+
+**II. Theoretical Framework** (~1,500 words)  
+Specify the construct(s) studied. Define them rigorously.
+State your theoretical claims as testable implications.
+
+**III. Prior Empirical Research** (~1,000 words)  
+What has been done? What is missing or contested?
+
+**IV. Data** (~500 words)  
+Which dataset? Why is it appropriate? What are its limitations?
+
+**V. Operationalization** (~800 words)  
+Which variables map to which constructs? Justify each choice.
+State how missing data are handled.
+
+**VI. Analytic Plan** (~1,000 words)  
+Specify the models. Explain the sequence. State what would confirm
+and what would disconfirm each hypothesis.
+
+**VII. Preliminary Results** (~1,000 words)  
+Present preliminary analysis (descriptives + one primary model).
+Interpret in light of your theoretical framework.
+
+**VIII. Discussion and Limitations** (~1,000 words)  
+What do the results mean? What cannot be concluded?
+What are the three most serious threats to validity?
+
+**IX. Future Directions** (~500 words)  
+How could this become a full thesis? What additional data or
+methods would be needed?
+
+**Appendix**: R Markdown document with all code, fully reproducible.
+
+*Evaluation*: Use the rubric in Table 8.5.
+:::
+
+---
+
+## Course Wrap: Connections Across All Modules
+
+```{r course-map, fig.cap="Figure 8.2: Course conceptual map. Arrows indicate the primary theoretical and methodological connections developed across the fifteen weeks. The central claim of the course: method selection and operationalization decisions are embedded in theoretical assumptions, and these assumptions must be made explicit.", fig.width=10, fig.height=7}
+library(igraph)
+
+# Build course concept network
+nodes <- data.frame(
+  name = c(
+    # Theory nodes
+    "Habitus", "Field", "Cultural Capital",
+    "Schema", "Frame", "Cultural Logic",
+    "Dual-Process Theory", "Strong Program",
+    # Methods nodes
+    "MCA", "LCA", "EFA/CFA", "SEM",
+    "Multilevel Models", "Topic Models",
+    "Belief Networks", "Ethnography",
+    # Empirical targets
+    "Cultural Taste", "Moral Orientation",
+    "Values", "Civic Participation",
+    "Institutional Change"
+  ),
+  type = c(
+    rep("Theory", 8),
+    rep("Method", 8),
+    rep("Empirical Target", 5)
+  )
+)
+
+edges <- data.frame(from = c(
+  "Habitus", "Habitus", "Field", "Cultural Capital",
+  "Schema", "Schema", "Frame", "Cultural Logic",
+  "Dual-Process Theory", "Dual-Process Theory",
+  "MCA", "LCA", "LCA", "EFA/CFA", "SEM",
+  "Multilevel Models", "Topic Models", "Belief Networks",
+  "Ethnography", "Ethnography",
+  "Cultural Capital", "Schema", "Cultural Logic"
+), to = c(
+  "Cultural Capital", "Schema", "Cultural Capital",
+  "MCA", "LCA", "EFA/CFA", "Ethnography",
+  "Topic Models",
+  "LCA", "Schema",
+  "Cultural Taste", "Moral Orientation", "Civic Participation",
+  "Values", "Civic Participation",
+  "Values", "Institutional Change", "Moral Orientation",
+  "Schema", "Frame",
+  "Cultural Taste", "Moral Orientation", "Institutional Change"
+))
+
+g <- graph_from_data_frame(edges, vertices = nodes, directed = TRUE)
+
+colors <- c("Theory" = "#2980b9", "Method" = "#27ae60", "Empirical Target" = "#e67e22")
+V(g)$color <- colors[V(g)$type]
+
+plot(
+  g,
+  vertex.color       = V(g)$color,
+  vertex.label.color = "white",
+  vertex.label.cex   = 0.65,
+  vertex.size        = 18,
+  edge.arrow.size    = 0.4,
+  edge.color         = "grey50",
+  layout             = layout_with_fr(g),
+  main               = "Course Conceptual Map"
+)
+
+legend("bottomright",
+       legend = names(colors),
+       fill   = colors,
+       border = NA,
+       bty    = "n",
+       cex    = 0.9)
+```
+
+---
+
+## Core Readings {-}
+
+<ul class="reading-list">
+<li>King, G., Keohane, R. O., & Verba, S. (1994). <em>Designing Social Inquiry</em>. Princeton University Press. Chapters 1–3.</li>
+<li>Brady, H. E., & Collier, D. (Eds.) (2010). <em>Rethinking Social Inquiry</em>. Rowman & Littlefield. Part I.</li>
+<li>Gerber, A. S., & Green, D. P. (2012). <em>Field Experiments</em>. Norton. Chapter 1. [Causal inference standard]</li>
+<li>Mohr, J. W., et al. (2020). <em>Measuring Culture</em>. Columbia University Press. Conclusion.</li>
+<li>Lamont, M., & Swidler, A. (2014). Methodological Pluralism and the Possibilities and Limits of Interviewing. <em>Qualitative Sociology, 37</em>(2), 153–171.</li>
+<li>Open Science Framework Pre-Registration Templates: osf.io/prereg</li>
+</ul>
+
+---
+
+```{r session-final}
+sessionInfo()
+```

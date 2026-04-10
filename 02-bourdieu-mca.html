@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1 Bourdieu: Habitus, Field, Capital, and Multiple Correspondence Analysis | 02-bourdieu-mca.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1 Bourdieu: Habitus, Field, Capital, and Multiple Correspondence Analysis | 02-bourdieu-mca.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1 Bourdieu: Habitus, Field, Capital, and Multiple Correspondence Analysis | 02-bourdieu-mca.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cultural & Cognitive Sociology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#bourdieu"><i class="fa fa-check"></i><b>1</b> Bourdieu: Habitus, Field, Capital, and Multiple Correspondence Analysis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#habitus-the-central-concept"><i class="fa fa-check"></i><b>1.1</b> 2.1 Habitus: The Central Concept</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#field"><i class="fa fa-check"></i><b>1.2</b> 2.2 Field</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#cultural-capital-and-distinction"><i class="fa fa-check"></i><b>1.3</b> 2.3 Cultural Capital and <em>Distinction</em></a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#the-omnivore-univore-thesis"><i class="fa fa-check"></i><b>1.4</b> 2.4 The Omnivore-Univore Thesis</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#lab2"><i class="fa fa-check"></i><b>1.5</b> Lab 2: Multiple Correspondence Analysis</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path=""><a href="#data-construction"><i class="fa fa-check"></i><b>1.5.1</b> 2.4.1 Data Construction</a></li>
+<li class="chapter" data-level="1.5.2" data-path=""><a href="#running-mca"><i class="fa fa-check"></i><b>1.5.2</b> 2.4.2 Running MCA</a></li>
+<li class="chapter" data-level="1.5.3" data-path=""><a href="#interpreting-the-factor-map"><i class="fa fa-check"></i><b>1.5.3</b> 2.4.3 Interpreting the Factor Map</a></li>
+<li class="chapter" data-level="1.5.4" data-path=""><a href="#projecting-class-as-a-supplementary-variable"><i class="fa fa-check"></i><b>1.5.4</b> 2.4.4 Projecting Class as a Supplementary Variable</a></li>
+<li class="chapter" data-level="1.5.5" data-path=""><a href="#variable-contributions-and-cos%C2%B2"><i class="fa fa-check"></i><b>1.5.5</b> 2.4.5 Variable Contributions and Cos²</a></li>
+<li class="chapter" data-level="1.5.6" data-path=""><a href="#loading-real-ess-data"><i class="fa fa-check"></i><b>1.5.6</b> 2.4.6 Loading Real ESS Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#core-readings"><i class="fa fa-check"></i>Core Readings</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com" target="blank">Source</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="bourdieu" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Week 1</span> Bourdieu: Habitus, Field, Capital, and Multiple Correspondence Analysis<a href="#bourdieu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Weeks 3–4 | Theory + Lab 2: MCA</strong></p>
+<hr />
+<div id="habitus-the-central-concept" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 2.1 Habitus: The Central Concept<a href="#habitus-the-central-concept" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bourdieu defines habitus as a system of <strong>durable, transposable dispositions</strong>
+— acquired through lasting exposure to objective conditions, generative of
+practices and representations that are “regular without being the product of
+obedience to rules” (Bourdieu, 1990, p. 53).</p>
+<p>Three properties are analytically critical:</p>
+<p><strong>Durability</strong>: Habitus resists change because it is embodied — laid down in
+the body through repetitive practice, not stored as propositional knowledge.
+This is why sudden social mobility does not immediately transform taste:
+the habitus of origin persists as a “hysteresis effect.”</p>
+<p><strong>Transposability</strong>: Dispositions acquired in one field transfer to others.
+The ease and manner of speaking acquired in bourgeois domestic life transfers
+to school performance, which transfers to occupational trajectory. This is
+the mechanism of <em>cultural reproduction</em>.</p>
+<p><strong>Pre-reflective operation</strong>: Habitus generates practice without conscious
+deliberation. It is the “feel for the game” (<em>sens du jeu</em>) — the practical
+mastery of the rules of a field that is below the level of discourse.</p>
+<div class="caution-box">
+<p><strong>The measurement problem, stated clearly.</strong> If habitus operates below
+the level of conscious deliberation, it cannot be reliably accessed via
+self-report survey instruments. This is not a minor technical problem —
+it is a fundamental constraint. Survey-based research on “cultural capital”
+typically measures <em>institutionalized</em> cultural capital (credentials) or
+<em>objectified</em> cultural capital (cultural goods consumed), which are observable
+proxies. Whether these proxies adequately capture <em>embodied</em> cultural capital
+(dispositions, classificatory schemes) is theoretically contested and
+rarely empirically tested.</p>
+</div>
+<hr />
+</div>
+<div id="field" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 2.2 Field<a href="#field" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>field</strong> is a structured space of positions defined by the distribution of
+capital (economic, cultural, social, symbolic). Fields have:</p>
+<ul>
+<li><strong>Stakes</strong> (<em>illusio</em>): the practical investment in the game, the sense
+that it matters. Entry into a field requires acceptance of the illusio.</li>
+<li><strong>Capital distributions</strong>: the structure of the field is its distribution
+of the relevant capital forms.</li>
+<li><strong>Relative autonomy</strong>: fields have their own logic that is not fully
+reducible to the logic of adjacent fields. The artistic field, e.g., has
+an “anti-economic” logic (Bourdieu, 1993).</li>
+</ul>
+<p>Field analysis in practice means identifying: (1) what are the relevant
+capital forms? (2) how are they distributed? (3) what are the positions and
+position-takings? Network methods (especially two-mode networks) and MCA
+are the primary quantitative tools.</p>
+<hr />
+</div>
+<div id="cultural-capital-and-distinction" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> 2.3 Cultural Capital and <em>Distinction</em><a href="#cultural-capital-and-distinction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Distinction</em> (Bourdieu, 1984) is the empirical landmark. Using national
+survey data from France (1963–1967–1968), Bourdieu argues that cultural
+tastes (for music, art, food, sport, interior design) correspond
+systematically to social position — and that this correspondence is not
+incidental but is the mechanism by which class distinctions are <em>made and
+maintained</em>.</p>
+<p>The key empirical finding: cultural practices are structured by two
+dimensions — <strong>cultural capital volume</strong> and <strong>economic capital volume</strong> —
+which are inversely correlated for some class fractions (professionals vs.
+business owners). The social space is a two-dimensional space of capital
+compositions, not a one-dimensional hierarchy.</p>
+<p>Bourdieu’s method was essentially MCA, applied to taste items crossed
+by class position. We replicate this logic in Lab 2.</p>
+<div class="case-box">
+<p><strong>Normative Case Study: The Great British Class Survey (Savage et al., 2013)</strong></p>
+<p>Savage et al. (2013) applied MCA and LCA to a national UK survey of
+~160,000 respondents and a nationally representative follow-up (N ≈ 1,026).
+The study measured three capital forms: economic capital (income, savings,
+house value), cultural capital (cultural activities, reading, music), and
+social capital (contact network prestige). MCA produced a social space;
+LCA on the MCA scores produced seven class categories (including “elite,”
+“established middle class,” “emergent service workers,” “precariat”). The
+result challenged the conventional three-class model (upper/middle/working).</p>
+<p>This is the methodological template for combining MCA and LCA. We replicate
+the MCA component below and return to the LCA component in Chapter 4.</p>
+<p><strong>Key methodological tension</strong>: the study attracted criticism for its sampling
+strategy (online + snowball) and for the gap between the theoretical
+definition of the classes and the formal statistical criteria used to assign
+respondents. Read alongside Chan &amp; Goldthorpe (2007) for a different
+operationalization of cultural class.</p>
+</div>
+<hr />
+</div>
+<div id="the-omnivore-univore-thesis" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 2.4 The Omnivore-Univore Thesis<a href="#the-omnivore-univore-thesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Peterson &amp; Kern (1996) reported a shift in US cultural consumption: high-status
+individuals no longer display “snob” taste (exclusive preference for
+highbrow genres) but rather <strong>omnivorous</strong> taste (broad consumption across
+highbrow and lowbrow genres). This challenges Bourdieu’s homology thesis
+(that cultural capital is specifically highbrow).</p>
+<p>Subsequent research has qualified and partly contested this:</p>
+<ul>
+<li>Chan &amp; Goldthorpe (2007) — UK data distinguish <strong>quantity</strong> of cultural
+participation (which is class-stratified) from genre boundary-crossing.</li>
+<li>Warde et al. (2008) — cultural omnivorousness is not social indifference;
+highbrow genres remain more prestigious.</li>
+<li>Lizardo &amp; Skiles (2012) — the omnivore pattern is predominantly among
+younger, highly educated cohorts.</li>
+</ul>
+<p>The omnivore-univore debate is useful for students because it shows how
+a single empirical claim becomes contested through (1) replication across
+national contexts, (2) measurement choices (which genres count as
+“highbrow”?), and (3) alternative theoretical interpretations of the
+same pattern.</p>
+<hr />
+</div>
+<div id="lab2" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Lab 2: Multiple Correspondence Analysis<a href="#lab2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lab-box">
+<p>MCA reduces categorical survey data (e.g., cultural participation items)
+to a geometric space — analogous to PCA but for categorical variables.
+It is Bourdieu’s native multivariate method. The output is a “social space”
+in which individuals and variable categories are positioned according to
+their profile similarities.</p>
+<p>We use a synthetic dataset that mirrors the structure of the ESS cultural
+participation module. Instructions for loading real ESS data are provided
+at the end of this section.</p>
+</div>
+<div id="data-construction" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> 2.4.1 Data Construction<a href="#data-construction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20240102</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># Simulate a cultural participation survey (N = 800)</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Variable structure mirrors ESS Round 8 cultural module</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># Variables: music (genre preferences), arts visits, sport, reading</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co"># We embed class-based taste differences:</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co">#   - Upper-middle class (UMC): highbrow music, museum visits, book reading</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">#   - Middle class (MC): mixed tastes, some highbrow</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co">#   - Working class (WC): popular music, less arts attendance</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">800</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>class_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">UMC =</span> <span class="fl">0.25</span>, <span class="at">MC =</span> <span class="fl">0.40</span>, <span class="at">WC =</span> <span class="fl">0.35</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">names</span>(class_probs), n, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> class_probs)</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="co"># Helper: generate ordinal item with class-varying probabilities</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>ord_item <span class="ot">&lt;-</span> <span class="cf">function</span>(class_vec, probs_umc, probs_mc, probs_wc,</span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Never&quot;</span>, <span class="st">&quot;Sometimes&quot;</span>, <span class="st">&quot;Often&quot;</span>)) {</span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="fu">length</span>(class_vec))</span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;UMC&quot;</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;UMC&quot;</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>                                     <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> probs_umc)</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>]  <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>                                     <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> probs_mc)</span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>  out[class_vec <span class="sc">==</span> <span class="st">&quot;WC&quot;</span>]  <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, <span class="fu">sum</span>(class_vec <span class="sc">==</span> <span class="st">&quot;WC&quot;</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>                                     <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> probs_wc)</span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>  <span class="fu">factor</span>(out, <span class="at">levels =</span> levels, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>}</span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>  <span class="at">id         =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>  <span class="at">class      =</span> <span class="fu">factor</span>(class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;UMC&quot;</span>, <span class="st">&quot;MC&quot;</span>, <span class="st">&quot;WC&quot;</span>)),</span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>  <span class="at">education  =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a>    class <span class="sc">==</span> <span class="st">&quot;UMC&quot;</span> <span class="sc">~</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Tertiary&quot;</span>, <span class="st">&quot;Post-grad&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>                             <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)),</span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>    class <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>  <span class="sc">~</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Secondary&quot;</span>, <span class="st">&quot;Tertiary&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a>                             <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.45</span>, <span class="fl">0.55</span>)),</span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>    class <span class="sc">==</span> <span class="st">&quot;WC&quot;</span>  <span class="sc">~</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Primary&quot;</span>, <span class="st">&quot;Secondary&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>                             <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.35</span>, <span class="fl">0.65</span>))</span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>  ),</span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>  <span class="co"># Cultural participation items</span></span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a>  <span class="at">classical   =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">30</span>,.<span class="dv">65</span>), <span class="fu">c</span>(.<span class="dv">15</span>,.<span class="dv">45</span>,.<span class="dv">40</span>), <span class="fu">c</span>(.<span class="dv">55</span>,.<span class="dv">38</span>,.<span class="dv">07</span>)),</span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a>  <span class="at">jazz        =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">10</span>,.<span class="dv">40</span>,.<span class="dv">50</span>), <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">45</span>,.<span class="dv">30</span>), <span class="fu">c</span>(.<span class="dv">50</span>,.<span class="dv">35</span>,.<span class="dv">15</span>)),</span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>  <span class="at">pop         =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">55</span>,.<span class="dv">25</span>), <span class="fu">c</span>(.<span class="dv">10</span>,.<span class="dv">55</span>,.<span class="dv">35</span>), <span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">40</span>,.<span class="dv">55</span>)),</span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>  <span class="at">rock        =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">50</span>,.<span class="dv">25</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">50</span>,.<span class="dv">30</span>), <span class="fu">c</span>(.<span class="dv">15</span>,.<span class="dv">45</span>,.<span class="dv">40</span>)),</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>  <span class="at">museum      =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">25</span>,.<span class="dv">70</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">45</span>,.<span class="dv">35</span>), <span class="fu">c</span>(.<span class="dv">55</span>,.<span class="dv">35</span>,.<span class="dv">10</span>)),</span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>  <span class="at">theatre     =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">10</span>,.<span class="dv">30</span>,.<span class="dv">60</span>), <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">45</span>,.<span class="dv">30</span>), <span class="fu">c</span>(.<span class="dv">60</span>,.<span class="dv">30</span>,.<span class="dv">10</span>)),</span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>  <span class="at">cinema      =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">15</span>,.<span class="dv">45</span>,.<span class="dv">40</span>), <span class="fu">c</span>(.<span class="dv">10</span>,.<span class="dv">45</span>,.<span class="dv">45</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">40</span>,.<span class="dv">40</span>)),</span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>  <span class="at">reading_lit =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">20</span>,.<span class="dv">75</span>), <span class="fu">c</span>(.<span class="dv">15</span>,.<span class="dv">40</span>,.<span class="dv">45</span>), <span class="fu">c</span>(.<span class="dv">45</span>,.<span class="dv">35</span>,.<span class="dv">20</span>)),</span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>  <span class="at">sport_watch =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">40</span>,.<span class="dv">40</span>,.<span class="dv">20</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">40</span>,.<span class="dv">40</span>), <span class="fu">c</span>(.<span class="dv">10</span>,.<span class="dv">35</span>,.<span class="dv">55</span>)),</span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a>  <span class="at">sport_play  =</span> <span class="fu">ord_item</span>(class, <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">45</span>,.<span class="dv">30</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">45</span>,.<span class="dv">35</span>), <span class="fu">c</span>(.<span class="dv">20</span>,.<span class="dv">40</span>,.<span class="dv">40</span>))</span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a>)</span>
+<span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a><span class="co"># Collapse to binary (Attended vs. Not) for cleaner MCA illustration</span></span>
+<span id="cb1-63"><a href="#cb1-63" tabindex="-1"></a>binary_items <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb1-64"><a href="#cb1-64" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(classical<span class="sc">:</span>sport_play, <span class="sc">~</span> <span class="fu">if_else</span>(. <span class="sc">==</span> <span class="st">&quot;Never&quot;</span>, <span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>)))</span>
+<span id="cb1-65"><a href="#cb1-65" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Dataset dimensions:&quot;</span>, <span class="fu">nrow</span>(df), <span class="st">&quot;observations,&quot;</span>, <span class="fu">ncol</span>(df), <span class="st">&quot;variables</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Dataset dimensions: 800 observations, 13 variables</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">head</span>(df, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 13
+##      id class education classical jazz      pop      rock  museum theatre cinema
+##   &lt;int&gt; &lt;fct&gt; &lt;chr&gt;     &lt;ord&gt;     &lt;ord&gt;     &lt;ord&gt;    &lt;ord&gt; &lt;ord&gt;  &lt;ord&gt;   &lt;ord&gt; 
+## 1     1 UMC   Tertiary  Often     Sometimes Often    Never Often  Often   Somet…
+## 2     2 MC    Tertiary  Never     Often     Often    Often Often  Often   Somet…
+## 3     3 MC    Tertiary  Never     Often     Sometim… Often Often  Someti… Never 
+## # ℹ 3 more variables: reading_lit &lt;ord&gt;, sport_watch &lt;ord&gt;, sport_play &lt;ord&gt;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Frequency tables for key items</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>participation_rates <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(class, classical, museum, reading_lit, sport_watch) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>class, <span class="at">names_to =</span> <span class="st">&quot;activity&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">group_by</span>(class, activity, freq) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="fu">filter</span>(freq <span class="sc">==</span> <span class="st">&quot;Often&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>participation_rates <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(class, activity, pct) <span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> activity, <span class="at">values_from =</span> pct) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 2.1: % &#39;Often&#39; participating, by class. Note class gradients.&quot;</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Class&quot;</span>, <span class="st">&quot;Classical music&quot;</span>, <span class="st">&quot;Museum visits&quot;</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>                  <span class="st">&quot;Literary reading&quot;</span>, <span class="st">&quot;Watching sport&quot;</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:mca-describe">Table 1.1: </span><span id="tab:mca-describe">Table 1.2: </span>Table 2.1: % ‘Often’ participating, by class. Note class gradients.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:right;">
+Classical music
+</th>
+<th style="text-align:right;">
+Museum visits
+</th>
+<th style="text-align:right;">
+Literary reading
+</th>
+<th style="text-align:right;">
+Watching sport
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+UMC
+</td>
+<td style="text-align:right;">
+63.5
+</td>
+<td style="text-align:right;">
+67.0
+</td>
+<td style="text-align:right;">
+76.8
+</td>
+<td style="text-align:right;">
+16.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MC
+</td>
+<td style="text-align:right;">
+42.7
+</td>
+<td style="text-align:right;">
+31.9
+</td>
+<td style="text-align:right;">
+46.1
+</td>
+<td style="text-align:right;">
+40.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WC
+</td>
+<td style="text-align:right;">
+6.0
+</td>
+<td style="text-align:right;">
+10.3
+</td>
+<td style="text-align:right;">
+17.2
+</td>
+<td style="text-align:right;">
+53.3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="running-mca" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> 2.4.2 Running MCA<a href="#running-mca" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Select only the cultural participation items for MCA</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># Class is treated as a SUPPLEMENTARY variable (projected post-hoc)</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># This is Bourdieu&#39;s logic: the social space is constructed from cultural</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># practices, then class is overlaid to check correspondence.</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>mca_data <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(classical, jazz, pop, rock, museum, theatre,</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>         cinema, reading_lit, sport_watch, sport_play) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), as.factor))</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co"># Run MCA</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co"># ncp = number of dimensions to retain</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co"># graph = FALSE (we plot manually)</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>mca_result <span class="ot">&lt;-</span> <span class="fu">MCA</span>(mca_data, <span class="at">ncp =</span> <span class="dv">5</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co"># Inertia explained by each dimension</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>eig <span class="ot">&lt;-</span> <span class="fu">get_eigenvalue</span>(mca_result)</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>eig[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ] <span class="sc">%&gt;%</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>    <span class="at">digits  =</span> <span class="dv">3</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 2.2: Eigenvalues and variance explained (first 5 dimensions)&quot;</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:mca-run">Table 1.3: </span><span id="tab:mca-run">Table 1.4: </span>Table 2.2: Eigenvalues and variance explained (first 5 dimensions)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+eigenvalue
+</th>
+<th style="text-align:right;">
+variance.percent
+</th>
+<th style="text-align:right;">
+cumulative.variance.percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Dim.1
+</td>
+<td style="text-align:right;">
+0.221
+</td>
+<td style="text-align:right;">
+11.045
+</td>
+<td style="text-align:right;">
+11.045
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dim.2
+</td>
+<td style="text-align:right;">
+0.127
+</td>
+<td style="text-align:right;">
+6.353
+</td>
+<td style="text-align:right;">
+17.398
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dim.3
+</td>
+<td style="text-align:right;">
+0.122
+</td>
+<td style="text-align:right;">
+6.109
+</td>
+<td style="text-align:right;">
+23.508
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dim.4
+</td>
+<td style="text-align:right;">
+0.116
+</td>
+<td style="text-align:right;">
+5.784
+</td>
+<td style="text-align:right;">
+29.292
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dim.5
+</td>
+<td style="text-align:right;">
+0.112
+</td>
+<td style="text-align:right;">
+5.600
+</td>
+<td style="text-align:right;">
+34.892
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">fviz_screeplot</span>(mca_result, <span class="at">addlabels =</span> <span class="cn">TRUE</span>, <span class="at">ncp =</span> <span class="dv">10</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>               <span class="at">barfill =</span> <span class="st">&quot;#2c3e50&quot;</span>, <span class="at">barcolor =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MCA Scree Plot: Variance Explained by Dimension&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Dimension&quot;</span>, <span class="at">y =</span> <span class="st">&quot;% of Inertia Explained&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:mca-scree"></span>
+<img src="02-bourdieu-mca_files/figure-html/mca-scree-1.png" alt="Figure 2.1: Scree plot for MCA. In MCA, eigenvalues are typically small; the first two dimensions usually carry 15–30% of total inertia. This does not imply poor fit — it reflects the nature of categorical data." width="672" />
+<p class="caption">
+Figure 1.1: Figure 2.1: Scree plot for MCA. In MCA, eigenvalues are typically small; the first two dimensions usually carry 15–30% of total inertia. This does not imply poor fit — it reflects the nature of categorical data.
+</p>
+</div>
+</div>
+<div id="interpreting-the-factor-map" class="section level3 hasAnchor" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> 2.4.3 Interpreting the Factor Map<a href="#interpreting-the-factor-map" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Extract category coordinates</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(mca_result<span class="sc">$</span>var<span class="sc">$</span>coord[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>cats<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="fu">rownames</span>(cats)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Color by activity type</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>cats <span class="ot">&lt;-</span> cats <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    <span class="at">activity_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>      <span class="fu">str_detect</span>(label, <span class="st">&quot;classical|jazz|museum|theatre|reading&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Highbrow / Arts&quot;</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>      <span class="fu">str_detect</span>(label, <span class="st">&quot;pop|rock|cinema&quot;</span>)                       <span class="sc">~</span> <span class="st">&quot;Popular culture&quot;</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>      <span class="fu">str_detect</span>(label, <span class="st">&quot;sport&quot;</span>)                                 <span class="sc">~</span> <span class="st">&quot;Sport&quot;</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>      <span class="cn">TRUE</span>                                                        <span class="sc">~</span> <span class="st">&quot;Other&quot;</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>    )</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>  )</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="fu">ggplot</span>(cats, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>                  <span class="at">color =</span> activity_type, <span class="at">label =</span> label)) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey60&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey60&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">box.padding =</span> <span class="fl">0.4</span>, <span class="at">max.overlaps =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Highbrow / Arts&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2980b9&quot;</span>,</span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a>               <span class="st">&quot;Popular culture&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e67e22&quot;</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a>               <span class="st">&quot;Sport&quot;</span>           <span class="ot">=</span> <span class="st">&quot;#27ae60&quot;</span>,</span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a>               <span class="st">&quot;Other&quot;</span>           <span class="ot">=</span> <span class="st">&quot;#95a5a6&quot;</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a>    <span class="at">title  =</span> <span class="st">&quot;MCA Factor Map: Cultural Participation Categories&quot;</span>,</span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a>    <span class="at">x      =</span> <span class="fu">paste0</span>(<span class="st">&quot;Dimension 1 (&quot;</span>, <span class="fu">round</span>(eig[<span class="dv">1</span>, <span class="dv">2</span>], <span class="dv">1</span>), <span class="st">&quot;% inertia)&quot;</span>),</span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a>    <span class="at">y      =</span> <span class="fu">paste0</span>(<span class="st">&quot;Dimension 2 (&quot;</span>, <span class="fu">round</span>(eig[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dv">1</span>), <span class="st">&quot;% inertia)&quot;</span>),</span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a>    <span class="at">color  =</span> <span class="st">&quot;Activity type&quot;</span></span>
+<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:mca-biplot"></span>
+<img src="02-bourdieu-mca_files/figure-html/mca-biplot-1.png" alt="Figure 2.2: MCA factor map. Each point is a variable category. Categories close together are associated with the same respondent profiles. Dimension 1 (horizontal) distinguishes highbrow from popular culture. Dimension 2 (vertical) contrasts active sport participation from arts attendance." width="864" />
+<p class="caption">
+Figure 1.2: Figure 2.2: MCA factor map. Each point is a variable category. Categories close together are associated with the same respondent profiles. Dimension 1 (horizontal) distinguishes highbrow from popular culture. Dimension 2 (vertical) contrasts active sport participation from arts attendance.
+</p>
+</div>
+</div>
+<div id="projecting-class-as-a-supplementary-variable" class="section level3 hasAnchor" number="1.5.4">
+<h3><span class="header-section-number">1.5.4</span> 2.4.4 Projecting Class as a Supplementary Variable<a href="#projecting-class-as-a-supplementary-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Add class as supplementary (quali.sup)</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>mca_supp <span class="ot">&lt;-</span> <span class="fu">MCA</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  mca_data,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="at">ncp     =</span> <span class="dv">5</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">graph   =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="at">quali.sup =</span> <span class="cn">NULL</span>  <span class="co"># will add class manually as supplementary</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co"># Compute class centroids in MCA space</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>ind_coords <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(mca_result<span class="sc">$</span>ind<span class="sc">$</span>coord[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>ind_coords<span class="sc">$</span>class <span class="ot">&lt;-</span> df<span class="sc">$</span>class</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>class_centroids <span class="ot">&lt;-</span> ind_coords <span class="sc">%&gt;%</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>  <span class="fu">group_by</span>(class) <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Dim1 =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span>), <span class="at">Dim2 =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>))</span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co"># Base plot: variable categories</span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cats, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey70&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> activity_type), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> label, <span class="at">color =</span> activity_type),</span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">box.padding =</span> <span class="fl">0.3</span>, <span class="at">max.overlaps =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Highbrow / Arts&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2980b9&quot;</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a>               <span class="st">&quot;Popular culture&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e67e22&quot;</span>,</span>
+<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a>               <span class="st">&quot;Sport&quot;</span>           <span class="ot">=</span> <span class="st">&quot;#27ae60&quot;</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a>               <span class="st">&quot;Other&quot;</span>           <span class="ot">=</span> <span class="st">&quot;#95a5a6&quot;</span>),</span>
+<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a>    <span class="at">name   =</span> <span class="st">&quot;Activity type&quot;</span></span>
+<span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a>  )</span>
+<span id="cb9-31"><a href="#cb9-31" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a><span class="co"># Add individual points (light, transparent)</span></span>
+<span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb9-34"><a href="#cb9-34" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> ind_coords,</span>
+<span id="cb9-35"><a href="#cb9-35" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>, <span class="at">shape =</span> class),</span>
+<span id="cb9-36"><a href="#cb9-36" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.12</span>, <span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">&quot;grey40&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-37"><a href="#cb9-37" tabindex="-1"></a>  <span class="co"># Class centroids</span></span>
+<span id="cb9-38"><a href="#cb9-38" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> class_centroids,</span>
+<span id="cb9-39"><a href="#cb9-39" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> Dim1, <span class="at">y =</span> Dim2), <span class="at">shape =</span> <span class="dv">17</span>, <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;#8e44ad&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-41"><a href="#cb9-41" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">data =</span> class_centroids,</span>
+<span id="cb9-42"><a href="#cb9-42" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> Dim1, <span class="at">y =</span> Dim2, <span class="at">label =</span> class),</span>
+<span id="cb9-43"><a href="#cb9-43" tabindex="-1"></a>             <span class="at">nudge_y =</span> <span class="fl">0.08</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">color =</span> <span class="st">&quot;#8e44ad&quot;</span>,</span>
+<span id="cb9-44"><a href="#cb9-44" tabindex="-1"></a>             <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">label.size =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb9-45"><a href="#cb9-45" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-46"><a href="#cb9-46" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;MCA Social Space with Class Centroids&quot;</span>,</span>
+<span id="cb9-47"><a href="#cb9-47" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Triangles (▲) = class centroids. Points = cultural categories.&quot;</span>,</span>
+<span id="cb9-48"><a href="#cb9-48" tabindex="-1"></a>    <span class="at">x        =</span> <span class="fu">paste0</span>(<span class="st">&quot;Dimension 1 (&quot;</span>, <span class="fu">round</span>(eig[<span class="dv">1</span>, <span class="dv">2</span>], <span class="dv">1</span>), <span class="st">&quot;% inertia)&quot;</span>),</span>
+<span id="cb9-49"><a href="#cb9-49" tabindex="-1"></a>    <span class="at">y        =</span> <span class="fu">paste0</span>(<span class="st">&quot;Dimension 2 (&quot;</span>, <span class="fu">round</span>(eig[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dv">1</span>), <span class="st">&quot;% inertia)&quot;</span>)</span>
+<span id="cb9-50"><a href="#cb9-50" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-51"><a href="#cb9-51" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb9-52"><a href="#cb9-52" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0.
+## ℹ Please use the `linewidth` argument instead.
+## This warning is displayed once per session.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">print</span>(p)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:mca-class-overlay"></span>
+<img src="02-bourdieu-mca_files/figure-html/mca-class-overlay-1.png" alt="Figure 2.3: MCA factor map with class centroids overlaid as supplementary points (triangles). Supplementary variables do not participate in construction of the axes — they are projected post-hoc. This is Bourdieu's method: the cultural space is constructed from practices, then class is shown to structure that space." width="864" />
+<p class="caption">
+Figure 1.3: Figure 2.3: MCA factor map with class centroids overlaid as supplementary points (triangles). Supplementary variables do not participate in construction of the axes — they are projected post-hoc. This is Bourdieu’s method: the cultural space is constructed from practices, then class is shown to structure that space.
+</p>
+</div>
+</div>
+<div id="variable-contributions-and-cos²" class="section level3 hasAnchor" number="1.5.5">
+<h3><span class="header-section-number">1.5.5</span> 2.4.5 Variable Contributions and Cos²<a href="#variable-contributions-and-cos%C2%B2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Contributions to Dimension 1</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>contrib_d1 <span class="ot">&lt;-</span> <span class="fu">fviz_contrib</span>(mca_result, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span>, <span class="at">top =</span> <span class="dv">15</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>                            <span class="at">fill =</span> <span class="st">&quot;#2980b9&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Category Contributions to Dimension 1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># Contributions to Dimension 2</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>contrib_d2 <span class="ot">&lt;-</span> <span class="fu">fviz_contrib</span>(mca_result, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">2</span>, <span class="at">top =</span> <span class="dv">15</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>                            <span class="at">fill =</span> <span class="st">&quot;#27ae60&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Category Contributions to Dimension 2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>contrib_d1 <span class="sc">/</span> contrib_d2</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:mca-contributions"></span>
+<img src="02-bourdieu-mca_files/figure-html/mca-contributions-1.png" alt="Figure 2.4: Contribution of each category to Dimensions 1 and 2. Categories contributing more than the average (red line) are the primary structuring elements of that dimension." width="672" />
+<p class="caption">
+Figure 1.4: Figure 2.4: Contribution of each category to Dimensions 1 and 2. Categories contributing more than the average (red line) are the primary structuring elements of that dimension.
+</p>
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># cos² = quality of representation on each dimension</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># Low cos² = category is poorly represented in this 2D solution</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>cos2_tab <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(mca_result<span class="sc">$</span>var<span class="sc">$</span>cos2[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>cos2_tab<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">rownames</span>(cos2_tab)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>cos2_tab <span class="ot">&lt;-</span> cos2_tab <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_cos2 =</span> <span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_cos2)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(category, <span class="st">`</span><span class="at">Dim 1</span><span class="st">`</span>, <span class="st">`</span><span class="at">Dim 2</span><span class="st">`</span>, total_cos2)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>cos2_tab <span class="sc">%&gt;%</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>    <span class="at">digits  =</span> <span class="dv">3</span>,</span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Table 2.3: Cos² values for top 12 categories (quality of representation in 2D space). Categories with low total cos² are poorly captured by the first two dimensions.&quot;</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">font_size =</span> <span class="dv">12</span>)</span></code></pre></div>
+<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:mca-cos2">Table 1.5: </span><span id="tab:mca-cos2">Table 1.6: </span>Table 2.3: Cos² values for top 12 categories (quality of representation in 2D space). Categories with low total cos² are poorly captured by the first two dimensions.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:right;">
+Dim 1
+</th>
+<th style="text-align:right;">
+Dim 2
+</th>
+<th style="text-align:right;">
+total_cos2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+classical_Often
+</td>
+<td style="text-align:left;">
+classical_Often
+</td>
+<td style="text-align:right;">
+0.397
+</td>
+<td style="text-align:right;">
+0.028
+</td>
+<td style="text-align:right;">
+0.425
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+museum_Never
+</td>
+<td style="text-align:left;">
+museum_Never
+</td>
+<td style="text-align:right;">
+0.341
+</td>
+<td style="text-align:right;">
+0.026
+</td>
+<td style="text-align:right;">
+0.367
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reading_lit_Often
+</td>
+<td style="text-align:left;">
+reading_lit_Often
+</td>
+<td style="text-align:right;">
+0.333
+</td>
+<td style="text-align:right;">
+0.001
+</td>
+<td style="text-align:right;">
+0.334
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+museum_Often
+</td>
+<td style="text-align:left;">
+museum_Often
+</td>
+<td style="text-align:right;">
+0.330
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reading_lit_Never
+</td>
+<td style="text-align:left;">
+reading_lit_Never
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+<td style="text-align:right;">
+0.004
+</td>
+<td style="text-align:right;">
+0.308
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jazz_Sometimes
+</td>
+<td style="text-align:left;">
+jazz_Sometimes
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+theatre_Often
+</td>
+<td style="text-align:left;">
+theatre_Often
+</td>
+<td style="text-align:right;">
+0.272
+</td>
+<td style="text-align:right;">
+0.005
+</td>
+<td style="text-align:right;">
+0.277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cinema_Never
+</td>
+<td style="text-align:left;">
+cinema_Never
+</td>
+<td style="text-align:right;">
+0.003
+</td>
+<td style="text-align:right;">
+0.267
+</td>
+<td style="text-align:right;">
+0.270
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+theatre_Never
+</td>
+<td style="text-align:left;">
+theatre_Never
+</td>
+<td style="text-align:right;">
+0.236
+</td>
+<td style="text-align:right;">
+0.015
+</td>
+<td style="text-align:right;">
+0.251
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+classical_Never
+</td>
+<td style="text-align:left;">
+classical_Never
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.033
+</td>
+<td style="text-align:right;">
+0.232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jazz_Often
+</td>
+<td style="text-align:left;">
+jazz_Often
+</td>
+<td style="text-align:right;">
+0.115
+</td>
+<td style="text-align:right;">
+0.113
+</td>
+<td style="text-align:right;">
+0.228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sport_play_Never
+</td>
+<td style="text-align:left;">
+sport_play_Never
+</td>
+<td style="text-align:right;">
+0.011
+</td>
+<td style="text-align:right;">
+0.214
+</td>
+<td style="text-align:right;">
+0.225
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="loading-real-ess-data" class="section level3 hasAnchor" number="1.5.6">
+<h3><span class="header-section-number">1.5.6</span> 2.4.6 Loading Real ESS Data<a href="#loading-real-ess-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="co"># To run MCA on real ESS Round 10 data:</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co"># 1. Download from https://europeansocialsurvey.org/data/round10.html</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#    (SPSS format recommended)</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co"># 2. Place the .sav file in data/ESS10.sav</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co"># ─────────────────────────────────────────────────────────────</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="fu">library</span>(labelled)</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>ess_raw <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">&quot;data/ESS10.sav&quot;</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co"># ESS cultural participation variables (Round 8, module D)</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co"># Variable names vary by round — check codebook</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>ess_culture <span class="ot">&lt;-</span> ess_raw <span class="sc">%&gt;%</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a>    cntry,</span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a>    atchctr,   <span class="co"># Attachment to country</span></span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>    ppltrst,   <span class="co"># Trust in people (used as outcome later)</span></span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a>    <span class="co"># Cultural participation block</span></span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>    wrclmch,   <span class="co"># Worked for a cultural or arts organisation</span></span>
+<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a>    clsprty,   <span class="co"># Close to a political party</span></span>
+<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a>    <span class="co"># Taste items — Round 8 supplement</span></span>
+<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a>    <span class="co"># (Round 10 uses different module; adjust accordingly)</span></span>
+<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a>    eduyrs,    <span class="co"># Years of education</span></span>
+<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a>    hinctnta   <span class="co"># Household income decile</span></span>
+<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a>  <span class="co"># Convert to unabelled</span></span>
+<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), as_factor)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" tabindex="-1"></a><span class="co"># Then run MCA as above</span></span>
+<span id="cb14-33"><a href="#cb14-33" tabindex="-1"></a>mca_ess <span class="ot">&lt;-</span> <span class="fu">MCA</span>(ess_culture <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>cntry, <span class="sc">-</span>eduyrs, <span class="sc">-</span>hinctnta),</span>
+<span id="cb14-34"><a href="#cb14-34" tabindex="-1"></a>               <span class="at">ncp =</span> <span class="dv">5</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-35"><a href="#cb14-35" tabindex="-1"></a>               <span class="at">quali.sup =</span> <span class="fu">which</span>(<span class="fu">names</span>(ess_culture) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;eduyrs&quot;</span>, <span class="st">&quot;hinctnta&quot;</span>)) <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<hr />
+<div class="assignment-box">
+<p><strong>Assignment 2 — Data Exploration (Due Week 6)</strong></p>
+<p>Using either the ESS (Round 10), the GSS (2018 or 2022), or the
+WVS (Wave 7), identify a set of cultural participation, taste, or
+value items (minimum 8 items) and:</p>
+<ol style="list-style-type: decimal">
+<li>Produce descriptive statistics showing class / education gradients</li>
+<li>Run MCA on your selected items</li>
+<li>Interpret the first two dimensions with theoretical justification</li>
+<li>Project at least one supplementary variable (class, education, income)</li>
+<li>Discuss one finding that is consistent with Bourdieu’s model and
+one that is inconsistent or ambiguous</li>
+</ol>
+<p><em>Length</em>: 2,500–3,500 words + R code appendix.<br />
+<em>Format</em>: R Markdown, rendered.</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="core-readings" class="section level2 unnumbered hasAnchor">
+<h2>Core Readings<a href="#core-readings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul class="reading-list">
+<li>
+Bourdieu, P. (1984). <em>Distinction: A Social Critique of the Judgement of Taste</em>. Harvard University Press. Introduction + Part I.
+</li>
+<li>
+Bourdieu, P. (1986). The Forms of Capital. In J. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em>. Greenwood.
+</li>
+<li>
+Bourdieu, P., &amp; Wacquant, L. (1992). <em>An Invitation to Reflexive Sociology</em>. University of Chicago Press. Chapters 1–2.
+</li>
+<li>
+Lamont, M. (1992). <em>Money, Morals, and Manners</em>. University of Chicago Press. Chapters 1–3.
+</li>
+<li>
+Peterson, R. A., &amp; Kern, R. M. (1996). Changing Highbrow Taste: From Snob to Omnivore. <em>American Sociological Review, 61</em>(5), 900–907.
+</li>
+<li>
+Savage, M., et al. (2013). A New Model of Social Class. <em>Sociology, 47</em>(2), 219–250.
+</li>
+<li>
+Chan, T. W., &amp; Goldthorpe, J. H. (2007). Class and Status: The Conceptual Distinction and its Empirical Relevance. <em>American Sociological Review, 72</em>(4), 512–532.
+</li>
+</ul>
+<hr />
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.5.3 (2026-03-11 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26200)
+## 
+## Matrix products: default
+##   LAPACK version 3.12.1
+## 
+## locale:
+## [1] LC_COLLATE=English_Israel.utf8  LC_CTYPE=English_Israel.utf8   
+## [3] LC_MONETARY=English_Israel.utf8 LC_NUMERIC=C                   
+## [5] LC_TIME=English_Israel.utf8    
+## 
+## time zone: Asia/Jerusalem
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] patchwork_1.3.2  factoextra_2.0.0 FactoMineR_2.13  ggrepel_0.9.8   
+##  [5] kableExtra_1.4.0 lubridate_1.9.5  forcats_1.0.1    stringr_1.6.0   
+##  [9] dplyr_1.2.0      purrr_1.2.1      readr_2.2.0      tidyr_1.3.2     
+## [13] tibble_3.3.1     ggplot2_4.0.2    tidyverse_2.0.0  rmarkdown_2.31  
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.2.1     viridisLite_0.4.3    farver_2.1.2        
+##  [4] S7_0.2.1             fastmap_1.2.0        TH.data_1.1-5       
+##  [7] promises_1.5.0       digest_0.6.39        estimability_1.5.1  
+## [10] timechange_0.4.0     mime_0.13            lifecycle_1.0.5     
+## [13] cluster_2.1.8.2      multcompView_0.1-11  survival_3.8-6      
+## [16] magrittr_2.0.4       compiler_4.5.3       rlang_1.1.7         
+## [19] sass_0.4.10          tools_4.5.3          utf8_1.2.6          
+## [22] yaml_2.3.12          knitr_1.51           ggsignif_0.6.4      
+## [25] labeling_0.4.3       htmlwidgets_1.6.4    scatterplot3d_0.3-45
+## [28] xml2_1.5.2           RColorBrewer_1.1-3   abind_1.4-8         
+## [31] multcomp_1.4-30      miniUI_0.1.2         withr_3.0.2         
+## [34] grid_4.5.3           ggpubr_0.6.3         xtable_1.8-8        
+## [37] ClaudeR_0.2.0        emmeans_2.0.2        scales_1.4.0        
+## [40] MASS_7.3-65          flashClust_1.1-4     cli_3.6.5           
+## [43] mvtnorm_1.3-6        generics_0.1.4       otel_0.2.0          
+## [46] rstudioapi_0.18.0    tzdb_0.5.0           cachem_1.1.0        
+## [49] splines_4.5.3        base64enc_0.1-6      vctrs_0.7.2         
+## [52] Matrix_1.7-4         sandwich_3.1-1       carData_3.0-6       
+## [55] jsonlite_2.0.0       car_3.1-5            bookdown_0.46       
+## [58] hms_1.1.4            rstatix_0.7.3        Formula_1.2-5       
+## [61] systemfonts_1.3.2    jquerylib_0.1.4      glue_1.8.0          
+## [64] codetools_0.2-20     DT_0.34.0            stringi_1.8.7       
+## [67] gtable_0.3.6         later_1.4.8          pillar_1.11.1       
+## [70] htmltools_0.5.9      R6_2.6.1             textshaping_1.0.5   
+## [73] evaluate_1.0.5       shiny_1.13.0         lattice_0.22-9      
+## [76] backports_1.5.0      leaps_3.2            broom_1.0.12        
+## [79] httpuv_1.6.17        bslib_0.10.0         Rcpp_1.1.1          
+## [82] svglite_2.2.2        coda_0.19-4.1        xfun_0.57           
+## [85] zoo_1.8-15           pkgconfig_2.0.3</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  },
+  "info": false
+});
+});
+</script>
+
+</body>
+
+</html>
